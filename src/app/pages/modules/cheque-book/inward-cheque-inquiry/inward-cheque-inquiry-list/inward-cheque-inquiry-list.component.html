@@ -1,0 +1,71 @@
+<div class="row1">
+	<div class="col-12 col-sm-12 col-md-12 col-lg-12">
+		<div class="widget-box5 mb-3">
+			<div class="bg-white1 pad-custom p-0">
+				<ul class="inward-grid-list">
+					<li *ngFor="let inwardchecks of inwardchecks">
+						<div class="grid-info">
+							<div class="full-info">
+								<h6> {{"CHEQUK_NUMBER" | translate }}</h6>
+								<!-- <h5>{{inwardchecks.cheque_Number}}</h5> -->
+								<em *ngIf="inwardchecks.cheque_Number.length==1"> {{'00000' + inwardchecks.cheque_Number}}</em>
+								 <em *ngIf="inwardchecks.cheque_Number.length==2"> {{'0000' + inwardchecks.cheque_Number}}</em>
+								<em *ngIf="inwardchecks.cheque_Number.length==3"> {{'000' + inwardchecks.cheque_Number}}</em>
+								 <em *ngIf="inwardchecks.cheque_Number.length==4"> {{'00' + inwardchecks.cheque_Number}}</em>
+								<em *ngIf="inwardchecks.cheque_Number.length==5"> {{'0' + inwardchecks.cheque_Number}}</em>
+								<em *ngIf="inwardchecks.cheque_Number.length==6"> {{inwardchecks.cheque_Number}}</em>
+								 </div>
+						</div>
+						<div class="grid-info">
+							<div class="full-info">
+								<h6> {{"ISSUER_NAME" | translate }}</h6>
+								<h5 *ngIf="inwardchecks.dateOfIssue!=''">{{inwardchecks.dateOfIssue}}</h5>
+								<h5 *ngIf="inwardchecks.dateOfIssue==''">xx-xx-xxxx</h5> </div>
+						</div>
+						<div class="grid-info">
+							<div class="full-info">
+								<h6> {{"PASSING_REJECTION_DATE" | translate }}</h6>
+								<h5 *ngIf="inwardchecks.inquiryStatus=='PASSED'">{{inwardchecks.dateOfPassing}}</h5>
+								<h5 *ngIf="inwardchecks.inquiryStatus=='REJECTED'">{{inwardchecks.dateOfRejection}}</h5> </div>
+						</div>
+						<div class="grid-info">
+							<div class="full-info">
+								<h6> {{"AMOUNT" | translate }}</h6>
+								<h5>{{inwardchecks.amount  | customcurrency: "symbol"}}</h5> </div>
+						</div>
+						<div class="grid-info" *ngIf="inwardchecks.inquiryStatus==''">
+							<div class="full-info text-status"> <em class="text-present"><img
+										src="assets/images/svg/pending1.svg"
+										alt="pending-icon"> {{"PRESENTED" | translate }}</em> </div>
+						</div>
+						<div class="grid-info" *ngIf="inwardchecks.inquiryStatus=='PASSED'">
+							<div class="full-info text-status"> <em class="text-pass"><img
+									  src="assets/images/svg/success-circle.svg"
+									  alt="reject-icon"> {{"PASSED" | translate }}</em> </div>
+						</div>
+						<div class="grid-info" *ngIf="inwardchecks.inquiryStatus=='REJECTED'">
+							<div class="full-info text-status"> <em class="text-reject"><img
+									src="assets/images/svg/declined.svg"
+									alt="reject-icon"> {{"REJECTED" | translate }}</em> </div>
+						</div>
+						<div class="grid-info">
+							<div class="full-info view-btn text-right">
+								<button class="ux-button sm secondary md" (click)="gotoInwardcheckDetail(inwardchecks)"> {{"VIEW" | translate }}</button>
+							</div>
+						</div>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-12 col-md-12 d-none d-sm-block">
+		<ul class="bottom-footer1">
+			<li>
+				<div class="btn-div">
+					<button class="ux-button secondary sm-mob" (click)="goToPage()"> {{'BACK' | translate}}</button>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

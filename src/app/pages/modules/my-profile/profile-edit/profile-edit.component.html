@@ -1,0 +1,477 @@
+<div class="main bg-m">
+	<div class="nav-overlay"></div>
+	<div class="right-main-column ">
+		<div class="right-col-container pad-b full-width">
+			<!-- ======== body page content start from here ======== -->
+			<div class="body-page-container main-dashborad manage-payee myprofile mob-aligment">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-12 p-0">
+							<app-breadcrumb routeName="PROFILE_EDIT">  </app-breadcrumb>
+						</div>
+					</div>
+					<!--.row -->
+					<div class="vspacer15 customize d-none d-md-block d-lg-block d-xl-block"></div>
+					<div class="row no-gutters">
+						<div class="col-12">
+							<div class="row1">
+								<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-9">
+									<!-- Greencard2 Start here -->
+									<div class="greencard2">
+										<div class="row1 hide-m">
+											<div class="col-md-8 col-12">
+												<h4>{{'MY_PROFILE' |
+													translate}}</h4>
+											</div>
+											<div class="col-md-4 col-12"> </div>
+										</div>
+                                        <app-profile-img></app-profile-img>
+
+
+										<!-- Username Section -->
+											<div class="row1" *ngIf="profileModuleType== 'username' ">
+												<div class="col-sm-12 col-12 col-md-12">
+													<div class="widget-box5 mb-3">
+														<div class="bg-white1 pad-custom">
+															<div class="row1 hide-m">
+																<div class="col-md-12 col-12">
+																	<div class="row1">
+																		<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																			<h6 class="detail-heading">  {{"CHANGE_USERNAME" | translate}}</h6> </div>
+																	</div>
+																</div>
+															</div>
+															<form [formGroup]="usernameForm">
+																<div class="row1">
+																	<div class="col-md-12 col-12">
+																		<div class="row1  my-2">
+																			<div class="col-12"> <small class="profile-msg"> {{"YOUR_EXISTING_USERNAME_IS" | translate}} <span>{{dataService.userName}}</span></small> </div>
+																			<div class="col-12"> <small class="profile-msg">{{"YOU_ARE_ALLOWED_TO_UPDATE_USERNAME" | translate}}</small> </div>
+																		</div>
+																		<div class="row1">
+																			<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																				<div class="ux-input">
+																					<label>  {{"NEW_USERNAME" | translate}} <img src="assets/images/svg/completed.svg" class="tick-img" *ngIf="isuserNameVerfied"></label>
+																<!-- <a href="javascript:;" data-toggle="modal" data-target="#usernamePolicy"><img src="assets/images/svg/information.svg" class="right-img"> </a> -->
+																					<input type="text" username autocomplete="off" name="username" placeholder='{{"ENTER_NEW_USERNAME" | translate}}' limit-to="25" formControlName="username">
+
+																					<p class="error-message" *ngIf="usernameForm.controls['username'].hasError('required') && (usernameForm.controls['username'].dirty || usernameForm.controls['username'].touched)"> {{"REQUIRED_MSG" | translate}} </p>
+																					<p class="error-message" *ngIf="usernameForm.controls['username'].hasError('minlength') && (usernameForm.controls['username'].dirty || usernameForm.controls['username'].touched)">  {{"USERNAME_LENGHT_IS_SHORT" | translate}}</p>
+																					<p class="error-message" *ngIf="!isuserNameVerfied && (usernameForm.controls['username'].dirty || usernameForm.controls['username'].touched)"> {{"PLEASE_CHECK_AVAILABILITY_OF_USERNAME" | translate}}</p>
+																					<div *ngIf="!usernameForm.controls['username'].hasError('minlength')" class="text-right"> <a href="javascript:;" class="reg-txt" (click)="checkAvailability()">{{"CHECK_AVAILABILITY" | translate}}</a> </div>
+															
+																				</div>
+																			</div>
+																		
+																		</div>
+																	</div>
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>
+												<div class="col-12 col-md-12">
+													<ul class="bottom-footer1">
+														<li>
+															<div class="btn-div">
+																<button class=" ux-button secondary sm-mob" (click)="prevEventSection()"> {{"CANCEL" | translate}}</button>
+															</div>
+															<div class="btn-div">
+																<button id="selectAcct-submit" class=" ux-button primary sm-mob" (click)="onEditFormSubmit(usernameForm, profileModuleType )"> {{"SUBMIT" | translate}}</button>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<!-- Username Section -->
+											<!-- Email Section -->
+											<div class="row1" *ngIf="profileModuleType== 'email' ">
+												<div class="col-sm-12 col-12 col-md-12">
+													<div class="widget-box5 mb-3">
+														<div class="bg-white1 pad-custom">
+															<div class="row1 hide-m">
+																<div class="col-md-12 col-12">
+																	<div class="row1">
+																		<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																			<h6 class="detail-heading"> {{"CHANGE_EMAIL_ID" | translate}}</h6> </div>
+																	</div>
+																</div>
+															</div>
+															<form [formGroup]="emailForm">
+																<div class="row1">
+																	<div class="col-md-12 col-12">
+																		<div class="row1  my-2">
+																			<div class="col-12"> <small class="profile-msg"> {{"YOUR_EXISTING_EMAIL_ID_IS" | translate}} <span>{{emailId}}</span></small> </div>
+																		</div>
+																		<div class="row1">
+																			<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																				<div class="ux-input">
+																					<label> {{"NEW_EMAIL_ID" | translate}}</label>
+																					<input type="text" autocomplete="off" name="emailId" placeholder='{{"ENTER_NEW_EMAIL_ID" | translate}}' limit-to="100" formControlName="emailId">
+																					<p class="error-message" *ngIf="emailForm.controls['emailId'].hasError('required') && (emailForm.controls['emailId'].dirty || emailForm.controls['emailId'].touched)"> {{"REQUIRED_MSG" | translate}}</p>
+																					<p class="error-message" *ngIf="emailForm.controls['emailId'].touched && emailForm.controls['emailId'].hasError('pattern')">{{"PLEASE_ENTER_VALID_EMAIL" | translate }}</p>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="vspacer30 customize d-block d-md-none d-lg-none d-xl-none"></div>
+																		<div class="vspacer30 customize d-block d-md-none d-lg-none d-xl-none"></div>
+																		<div class="vspacer30 customize d-block d-md-none d-lg-none d-xl-none"></div>
+																		<div class="vspacer30 customize d-block d-md-none d-lg-none d-xl-none"></div>
+																		<div class="vspacer30 customize d-block d-md-none d-lg-none d-xl-none"></div>
+																	</div>
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>
+												<div class="col-12 col-md-12">
+													<ul class="bottom-footer1">
+														<li>
+															<div class="btn-div">
+																<button class=" ux-button secondary sm-mob" (click)="prevEventSection()">  {{"CANCEL" | translate}}</button>
+															</div>
+															<div class="btn-div">
+																<button id="selectAcct-submit" class=" ux-button primary sm-mob" (click)="onEditFormSubmit(emailForm,profileModuleType )"> {{"SUBMIT" | translate}}</button>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<!-- End of Email section -->
+											<!-- Aadhar Section -->
+											<div class="row1" *ngIf="profileModuleType== 'aadhar' ">
+												<div class="col-sm-12 col-12 col-md-12">
+													<div class="widget-box5 mb-3">
+														<div class="bg-white1 pad-custom">
+															<div class="row1 hide-m">
+																<div class="col-md-12 col-12">
+																	<div class="row1">
+																		<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																			<h6 class="detail-heading"> {{"CHANGE_AADHAAR_NUMBER" | translate}}</h6> </div>
+																	</div>
+																</div>
+															</div>
+															<form [formGroup]="aadharForm">
+																<div class="row1">
+																	<div class="col-md-12 col-12">
+																		<div class="row1  my-2">
+																			<div class="col-12"> <small class="profile-msg"> {{"YOUR_EXISTING_AADHAAR_NUMBER_IS" | translate}} <span>{{addharCard}}</span></small> </div>
+																		</div>
+																		<div class="row1">
+																			<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																				<div class="ux-input">
+																					<label> {{"NEW_AADHAAR_NUMBER" | translate}}</label>
+																					<input type="text" name="aadhar" numbersOnly placeholder='{{"ENTER_NEW_AADHAAR_NUMBER" | translate}}' limit-to="12" formControlName="aadhar">
+																					<p class="error-message" *ngIf="aadharForm.controls['aadhar'].hasError('required') && (aadharForm.controls['aadhar'].dirty || aadharForm.controls['aadhar'].touched)"> {{"REQUIRED_MSG" | translate}}</p>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="vspacer30 customize d-block d-md-none d-lg-none d-xl-none"></div>
+																		<div class="vspacer30 customize d-block d-md-none d-lg-none d-xl-none"></div>
+																		<div class="vspacer30 customize d-block d-md-none d-lg-none d-xl-none"></div>
+																		<div class="vspacer30 customize d-block d-md-none d-lg-none d-xl-none"></div>
+																		<div class="vspacer30 customize d-block d-md-none d-lg-none d-xl-none"></div>
+																	</div>
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>
+												<div class="col-12 col-md-12">
+													<ul class="bottom-footer1">
+														<li>
+															<div class="btn-div">
+																<button class=" ux-button secondary sm-mob" (click)="prevEventSection()">  {{"CANCEL" | translate}}</button>
+															</div>
+															<div class="btn-div">
+																<button id="selectAcct-submit" class=" ux-button primary sm-mob" (click)="onEditFormSubmit(aadharForm,profileModuleType )">  {{"SUBMIT" | translate}}</button>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<!-- End of Aadhar section -->
+											<!-- PAN Section -->
+											<div class="row1" *ngIf="profileModuleType== 'pan' ">
+												<div class="col-sm-12 col-12 col-md-12">
+													<div class="widget-box5 mb-3">
+														<div class="bg-white1 pad-custom">
+															<div class="row1 hide-m">
+																<div class="col-md-12 col-12">
+																	<div class="row1">
+																		<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																			<h6 class="detail-heading">  {{"CHANGE_PAN_NUMBER" | translate}}</h6> </div>
+																	</div>
+																</div>
+															</div>
+															<form [formGroup]="panForm">
+																<div class="row1">
+																	<div class="col-md-12 col-12">
+																		<div class="row1  my-2">
+																			<div class="col-12"> <small class="profile-msg">  {{"YOUR_EXISTING_PAN_NUMBER" | translate}} <span>{{panCard}}</span></small> </div>
+																		</div>
+																		<div class="row1">
+																			<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																				<div class="ux-input">
+																					<label>  {{"NEW_PAN_NUMBER" | translate}}</label>
+																					<input type="text" autocomplete="off" name="pan" limit-to="10" placeholder='{{"ENTER_NEW_PAN_NUMBER" | translate}}'  formControlName="pan">
+																					<p class="error-message" *ngIf="panForm.controls['pan'].hasError('required') && (panForm.controls['pan'].dirty || panForm.controls['pan'].touched)"> {{"REQUIRED_MSG" | translate}}</p>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="vspacer30 customize d-block d-md-none d-lg-none d-xl-none"></div>
+																		<div class="vspacer30 customize d-block d-md-none d-lg-none d-xl-none"></div>
+																		<div class="vspacer30 customize d-block d-md-none d-lg-none d-xl-none"></div>
+																		<div class="vspacer30 customize d-block d-md-none d-lg-none d-xl-none"></div>
+																		<div class="vspacer30 customize d-block d-md-none d-lg-none d-xl-none"></div>
+																	</div>
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>
+												<div class="col-12 col-md-12">
+													<ul class="bottom-footer1">
+														<li>
+															<div class="btn-div">
+																<button class=" ux-button secondary sm-mob" (click)="prevEventSection()">  {{"CANCEL" | translate}}</button>
+															</div>
+															<div class="btn-div">
+																<button id="selectAcct-submit" class=" ux-button primary sm-mob" (click)="onEditFormSubmit(panForm,profileModuleType)">Submit  {{"NEW_AADHAAR_NUMBER" | translate}}</button>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<!-- End of Aadhar section -->
+											<!-- Address Section -->
+											<div class="row1" *ngIf="profileModuleType == 'address' ">
+												<div class="col-sm-12 col-12 col-md-12">
+													<div class="widget-box5 mb-3">
+														<div class="bg-white1 pad-custom">
+															<div class="row1 hide-m">
+																<div class="col-md-12 col-12">
+																	<div class="row1">
+																		<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																			<h6 class="detail-heading">  {{"UPDATE_COMMUNICATION_ADDRESS" | translate}}</h6> </div>
+																	</div>
+																</div>
+															</div>
+															<form [formGroup]="addressForm">
+																<div class="row1">
+																	<div class="col-md-12 col-12">
+																		<div class="row1">
+																			<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																				<div class="ux-input">
+																					<label>  {{"ADDRESS_LINE_ONE" | translate}}</label>
+																					<input type="text" autocomplete="off" name="address1" placeholder='{{"ENTER_ADDRESS_LINE_ONE" | translate}}' formControlName="address1">
+																					<p class="error-message" *ngIf="addressForm.controls['address1'].hasError('required') && (addressForm.controls['address1'].dirty || addressForm.controls['address1'].touched)"> {{"REQUIRED_MSG" | translate}}</p>
+																				</div>
+																			</div>
+																			<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																				<div class="ux-input">
+																					<label>  {{"ADDRESS_LINE_TWO" | translate}}</label>
+																					<input type="text" autocomplete="off" name="address2" placeholder='{{"ENTER_ADDRESS_LINE_TWO" | translate}}' formControlName="address2">
+																					<p class="error-message" *ngIf="addressForm.controls['address2'].hasError('required') && (addressForm.controls['address2'].dirty || addressForm.controls['address2'].touched)"> {{"REQUIRED_MSG" | translate}}</p>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="row1">
+																			<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																				<div class="ux-input">
+																					<label>  {{"ADDRESS_LINE_THREE" | translate}}</label>
+																					<input type="text" autocomplete="off" name="address3" placeholder='{{"ENTER_ADDRESS_LINE_3" | translate}}' formControlName="address3">
+																					<p class="error-message" *ngIf="addressForm.controls['address3'].hasError('required') && (addressForm.controls['address3'].dirty || addressForm.controls['address3'].touched)"> {{"REQUIRED_MSG" | translate}}</p>
+																				</div>
+																			</div>
+																			<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																				<div class="ux-input">
+																					<label>  {{"CITY" | translate}}</label>
+																					<input type="text" autocomplete="off" name="city" placeholder='{{"ENTER_CITY" | translate}}' formControlName="city">
+																					<p class="error-message" *ngIf="addressForm.controls['city'].hasError('required') && (addressForm.controls['city'].dirty || addressForm.controls['city'].touched)"> {{"REQUIRED_MSG" | translate}}</p>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="row1">
+																			<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																				<div class="ux-input">
+																					<label>  {{"STATE" | translate}}</label>
+																					<input type="text" autocomplete="off" name="state" placeholder='{{"ENTER_STATE" | translate}}' formControlName="state">
+																					<p class="error-message" *ngIf="addressForm.controls['state'].hasError('required') && (addressForm.controls['state'].dirty || addressForm.controls['state'].touched)"> {{"REQUIRED_MSG" | translate}}</p>
+																				</div>
+																			</div>
+																			<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																				<div class="ux-input">
+																					<label>  {{"PINCODE" | translate}}</label>
+																					<input type="text" autocomplete="off" name="pinCode" placeholder='{{"ENTER_PINCODE" | translate}}' formControlName="pinCode">
+																					<p class="error-message" *ngIf="addressForm.controls['pinCode'].hasError('required') && (addressForm.controls['pinCode'].dirty || addressForm.controls['pinCode'].touched)"> {{"REQUIRED_MSG" | translate}}</p>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="row1">
+																			<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																				<div class="ux-input">
+																					<label> {{"DOCUMENT_TYPE" | translate}}</label>
+																					<select formControlName="documentTye">
+																						<option value="">Select</option>
+																						<option value="Abc">Abc</option>
+																						<option value="Def">Def</option>
+																						<option value="Ghi">Ghi</option>
+																					</select>
+																					<p class="error-message" *ngIf="addressForm.controls['documentTye'].hasError('required') && (addressForm.controls['documentTye'].dirty || addressForm.controls['documentTye'].touched)"> {{"REQUIRED_MSG" | translate}}</p>
+																				</div>
+																			</div>
+																			<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																				<div class="ux-input">
+																					<label>Document Number</label>
+																					<input type="text" autocomplete="off" numbersOnly name="documentNumber" placeholder='{{"ENTER_DOCUMENT_NUMBER" | translate}}' limit-to="6" formControlName="documentNumber">
+																					<p class="error-message" *ngIf="addressForm.controls['documentNumber'].hasError('required') && (addressForm.controls['documentNumber'].dirty || addressForm.controls['documentNumber'].touched)"> {{"REQUIRED_MSG" | translate}}</p>
+																				</div>
+																			</div>
+																		</div>
+																		<!-- <div class="row1">
+																			<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																				<div class="ux-input input-info">
+																					<label>Address Proof Document</label>
+																					<div class="custom-file mt-2 mb-2">
+																						<input type="file" class="custom-file-input" id="customFile" formControlName="addressProof">
+																						<label class="custom-file-label" for="customFile">Upload document</label>
+																					</div>
+																				</div>
+																			</div>
+																		</div> -->
+																		<div class="row1">
+																			<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																				<div class="ux-selection ux-input">
+																					<div class="ux-selection1 mar-rcustom p-0">
+																						<label>Terms and Conditions
+																							<input type="checkbox" name="" formControlName="termCondition"> <span class="checkmark"></span> </label>
+																						<p class="error-message" *ngIf="addressForm.controls['termCondition'].hasError('required') && (addressForm.controls['termCondition'].dirty || addressForm.controls['termCondition'].touched)"> {{"REQUIRED_MSG" | translate}}</p>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>
+												<div class="col-12 col-md-12">
+													<ul class="bottom-footer1">
+														<li>
+															<div class="btn-div">
+																<button class=" ux-button secondary sm-mob" (click)="prevEventSection()">Cancel</button>
+															</div>
+															<div class="btn-div">
+																<button class=" ux-button primary sm-mob" (click)="onEditFormSubmit(addressForm,profileModuleType )">Submit</button>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<!-- End of Address Section -->
+											<!-- Start of Pan Edit section -->
+											<div class="row1" *ngIf="profileModuleType == 'pan1' ">
+												<div class="col-sm-12 col-12 col-md-12">
+													<div class="widget-box5 mb-3">
+														<div class="bg-white1 pad-custom">
+															<div class="row1 hide-m">
+																<div class="col-md-12 col-12">
+																	<div class="row1">
+																		<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																			<h6 class="detail-heading">Add PAN Card Details</h6> </div>
+																	</div>
+																</div>
+															</div>
+															<div class="row1">
+																<div class="col-md-12 col-12">
+																	<div class="row1">
+																		<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																			<div class="ux-input">
+																				<label>Document Number</label>
+																				<input type="text" name="username" placeholder="Enter Pincode">
+																				<p class="error-message"></p>
+																			</div>
+																		</div>
+																		<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																			<div class="ux-input input-info">
+																				<label>Address Proof Document</label>
+																				<div class="custom-file mt-2 mb-2">
+																					<input type="file" class="custom-file-input" id="customFile">
+																					<label class="custom-file-label" for="customFile">Upload document</label>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-12 col-md-12">
+													<ul class="bottom-footer1">
+														<li>
+															<div class="btn-div">
+																<button class=" ux-button secondary sm-mob" (click)="prevEventSection()">Cancel</button>
+															</div>
+															<div class="btn-div">
+																<button class=" ux-button primary sm-mob">Submit</button>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<!-- End of Pan Edit Section -->
+
+											<!-- </div> -->
+											</div>
+											<!-- Greencard2 End here -->
+											</div>
+											<!-- Right Column Ads Start -->
+											<div class="col-12 col-md-12 col-lg-12 col-xl-3 d-none d-xl-block">
+												<app-banner></app-banner>
+										</div>
+										<!-- Right Column Ads Ends -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+<!--.right-col-container-->
+			</div>
+<!--.right-main-column-->
+	</div>
+	<ng-container *ngIf="otpstart">
+		<app-common-otpPopup [otpModel]="OTPInputMessage" (otpPopOutput) ="GetOtpPopData($event)"></app-common-otpPopup>
+	</ng-container>
+
+
+	<ng-container  *ngIf="otpstartEmail">
+		<!-- <app-common-otp-email-popup></app-common-otp-email-popup> -->
+		<app-common-otp-email-popup [otpEmailModel]="OTPEmailInputMessage"  (otpEmailPopOutput)="GetOtpEmailPopData($event)"></app-common-otp-email-popup>
+	</ng-container>
+
+	<!-- Popup Start -->
+<div class="popup-bottom sm-popup profile-limit-info">
+	<div class="row1">
+		<div class="col-12">
+			<h4 class="text-center"> 
+                <img src="assets/images/svg/check.svg" alt="information-icon" *ngIf="icontype == 'success'" >
+				<img src="assets/images/svg/information.svg" alt="information-icon"  *ngIf="icontype =='info'">
+				{{'INFORMATION' | translate}}</h4>
+		</div>
+	</div>
+	<div class="row1">
+		<div class="col-12">
+			<p>{{limitsUpdateInfo | translate}}</p>
+		</div>
+	</div>
+	<div class="row1  mt-2">
+		<div class="col-12 text-center">
+			<button class="ux-button primary submit-btn" type="button"
+				(click)="commonMethod.closeAllPopup()">{{'OK' | translate}}</button>
+		</div>
+	</div>
+</div>

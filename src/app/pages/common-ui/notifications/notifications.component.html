@@ -1,0 +1,81 @@
+<!-- Notification Panel Section :: Start -->
+<aside class="notification-panel sticky-panel">
+    <div class="notp-header">
+        <div class="row1">
+            <div class="col-6">
+                <a href="javascript:;" class="btn-closenoty"></a>
+                <h5>Notifications</h5>
+            </div>
+            <div class="col-6">
+                <ul class="notification-filter">
+                    <!-- <li (click)="filter()">
+						<a>
+							<img src="assets/images/svg/filter-g.svg" alt="filter">
+						</a>
+					</li>
+					<li (click)="generatePDF()">
+						<a>
+							<img src="assets/images/svg/download.svg" alt="filter">
+						</a>
+					</li>
+					<li (click)="shareNotification()">
+						<a>
+							<img src="assets/images/svg/share-notify.svg" alt="filter">
+						</a>
+					</li> -->
+                </ul>
+            </div>
+        </div>
+    </div><!--.notp-header-->
+    <div class="notp-content fancy-scroll">
+
+        <div class="notp-innercontent">
+            <div class="notp-list">
+                <div class="notp-footer" *ngIf="dataService.notificationArray.length == 0">
+                    <a>No records to display.</a>
+                </div>
+                <ul class="notification-list-web">
+                    <li *ngFor="let notification of dataService.notificationArray; let i = index"
+                        (click)="readNotification(notification.NotificationID)">
+                        <div class="full-container">
+                            <div class="notify-icon">
+                                <img src="assets/images/svg/login.svg" alt="">
+                            </div>
+                            <div class="row1">
+                                <div class="col-12 col-md-12">
+                                    <div class="left-info">
+                                        <h6>{{notification.header}}</h6>
+                                        <em>{{notification.remarks}}</em>
+                                        <!-- <small>{{notification.TransactionDate}}</small> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row1">
+                                <div class="col-12 col-md-5">
+                                    <div class="left-info1">
+                                        <em>{{notification.TransactionDate | date :'dd MMM yyyy'}}</em>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-7">
+                                    <div class="right-info">
+                                        <a class="share-btn" (click)="share(notification)">
+                                        <img src="assets/images/svg/share.svg" alt="share-icon" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                   
+                </ul>
+
+            </div><!--.notp-list-->
+
+        </div><!--.notp-innercontent-->
+
+    </div><!--.notp-content-->
+    <div class="notp-footer">
+    <a (click)="goToPage('omniNotification')">View All Notifications</a>
+    </div><!--.notp-footer-->
+</aside><!--.notification-panel-->
+<div class="notpanel-overlay"></div><!--.notpanel-overlay-->
+<!-- Notification Panel Section :: End   -->

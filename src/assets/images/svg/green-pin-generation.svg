@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38">
+  <g id="detailed-statement" transform="translate(0 -0.171)">
+    <g id="base" transform="translate(0 0)" opacity="0">
+      <rect id="Rectangle_982" data-name="Rectangle 982" width="38" height="38" transform="translate(0 0.171)" fill="#148AFF"/>
+      <rect id="Rectangle_983" data-name="Rectangle 983" width="32" height="32" transform="translate(3 3.171)" fill="#148AFF"/>
+    </g>
+    <g id="credit-card-5" transform="translate(2.986 -11.846)">
+      <g id="Group_42395" data-name="Group 42395" transform="translate(3.754 29.14)">
+        <g id="Group_42394" data-name="Group 42394">
+          <path id="Path_46008" data-name="Path 46008" d="M66.695,226H60.939a.939.939,0,0,0,0,1.877h5.756a.939.939,0,1,0,0-1.877Z" transform="translate(-60 -226)" fill="#148AFF" stroke="#fff" stroke-width="0.3"/>
+        </g>
+      </g>
+      <g id="Group_42397" data-name="Group 42397" transform="translate(3.754 32.894)">
+        <g id="Group_42396" data-name="Group 42396">
+          <path id="Path_46009" data-name="Path 46009" d="M66.695,286H60.939a.939.939,0,0,0,0,1.877h5.756a.939.939,0,0,0,0-1.877Z" transform="translate(-60 -286)" fill="#148AFF" stroke="#fff" stroke-width="0.3"/>
+        </g>
+      </g>
+      <g id="Group_42399" data-name="Group 42399" transform="translate(0 16)">
+        <g id="Group_42398" data-name="Group 42398">
+          <path id="Path_46010" data-name="Path 46010" d="M28.281,29.144V18.816A2.819,2.819,0,0,0,25.466,16H2.816A2.819,2.819,0,0,0,0,18.816V35.709a2.819,2.819,0,0,0,2.816,2.816H13.453a9.385,9.385,0,1,0,14.828-9.381ZM1.877,18.816a.94.94,0,0,1,.939-.939h22.65a.94.94,0,0,1,.939.939v.939H1.877Zm0,2.816H26.4v1.877H1.877ZM13.265,36.648H2.816a.94.94,0,0,1-.939-.939V25.385H26.4v2.662a9.384,9.384,0,0,0-13.14,8.6Zm9.385,7.508a7.508,7.508,0,1,1,7.508-7.508A7.517,7.517,0,0,1,22.65,44.156Z" transform="translate(0 -16)" fill="#148AFF" stroke="#fff" stroke-width="0.3"/>
+        </g>
+      </g>
+      <circle id="Ellipse_2812" data-name="Ellipse 2812" cx="1" cy="1" r="1" transform="translate(17.014 35.734)" fill="#148AFF"/>
+      <circle id="Ellipse_2813" data-name="Ellipse 2813" cx="1" cy="1" r="1" transform="translate(20.014 35.734)" fill="#148AFF"/>
+      <circle id="Ellipse_2814" data-name="Ellipse 2814" cx="1" cy="1" r="1" transform="translate(23.014 35.734)" fill="#148AFF"/>
+      <circle id="Ellipse_2815" data-name="Ellipse 2815" cx="1" cy="1" r="1" transform="translate(26.014 35.734)" fill="#148AFF"/>
+    </g>
+  </g>
+</svg>

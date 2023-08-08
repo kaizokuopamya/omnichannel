@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="housing-society" transform="translate(14043 -12817)">
+    <g id="fingerprint" transform="translate(-13400 14815)" opacity="0">
+      <g id="Group_40181" data-name="Group 40181">
+        <rect id="Rectangle_982" data-name="Rectangle 982" width="24" height="24" transform="translate(-643 -1998)" fill="#148AFF"/>
+        <rect id="Rectangle_983" data-name="Rectangle 983" width="20" height="20" transform="translate(-641 -1996)" fill="#148AFF"/>
+      </g>
+    </g>
+    <path id="Subtraction_41" data-name="Subtraction 41" d="M-158.879,19.008h-13.834a.5.5,0,0,1-.5-.5V10.036l-.524.525a.5.5,0,0,1-.355.147.5.5,0,0,1-.356-.147.5.5,0,0,1-.148-.356.5.5,0,0,1,.148-.356l.56-.56,6.427-6.427,1.313-1.312A.5.5,0,0,1-165.8,1.4a.5.5,0,0,1,.356.148l8.3,8.3a.5.5,0,0,1,.147.356.5.5,0,0,1-.147.356.5.5,0,0,1-.356.147.5.5,0,0,1-.355-.147l-.525-.525V18.5A.5.5,0,0,1-158.879,19.008Zm-9.684-6.54h5.534a.5.5,0,0,1,.5.5V18h3.144V9.03L-165.8,2.615-172.21,9.03V18h3.144v-5.03A.5.5,0,0,1-168.563,12.468Zm.5,1.007V18h4.526V13.475Z" transform="translate(-13865.2 12818.8)" fill="#148AFF"/>
+  </g>
+</svg>

@@ -1,0 +1,165 @@
+{
+  "name": "omnichannel",
+  "version": "1.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --aot",
+    "produat": "ng build --aot --configuration produat",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^16.0.0",
+    "@angular/cdk": "^16.0.0",
+    "@angular/common": "^16.0.0",
+    "@angular/compiler": "^16.0.0",
+    "@angular/core": "^16.0.0",
+    "@angular/forms": "^16.0.0",
+    "@angular/platform-browser": "^16.0.0",
+    "@angular/platform-browser-dynamic": "^16.0.0",
+    "@angular/router": "^16.0.0",
+    "@ng-idle/core": "^12.0.4",
+    "@ng-idle/keepalive": "^12.0.4",
+    "@types/crypto-js": "^4.1.1",
+    "bootstrap": "^4.5.0",
+    "cordova": "^12.0.0",
+    "cordova-open-native-settings": "1.5.3",
+    "cordova-pdf-generator": "2.1.1",
+    "cordova-plugin-add-swift-support": "^2.0.2",
+    "cordova-plugin-advanced-http": "^3.1.0",
+    "cordova-plugin-android-permissions": "^1.1.0",
+    "cordova-plugin-camera": "5.0.1",
+    "cordova-plugin-cors": "^1.0.6",
+    "cordova-plugin-crop": "^0.4.0",
+    "cordova-plugin-customurlscheme": "5.0.2",
+    "cordova-plugin-file-opener2": "3.0.5",
+    "cordova-plugin-geolocation": "^4.0.2",
+    "cordova-plugin-imei": "^1.1.0",
+    "cordova-plugin-inappbrowser": "4.1.0",
+    "cordova-plugin-ip-mac-address": "1.0.1",
+    "cordova-plugin-iroot": "^2.1.0",
+    "cordova-plugin-network-information": "2.0.2",
+    "cordova-plugin-request-location-accuracy": "2.3.0",
+    "cordova-plugin-share": "^0.1.3",
+    "cordova-plugin-sim": "^1.3.3",
+    "cordova-plugin-splashscreen": "^6.0.0",
+    "cordova-plugin-telerik-imagepicker": "2.3.3",
+    "cordova-plugin-touch-id": "^3.4.0",
+    "cordova-plugin-x-socialsharing": "6.0.2",
+    "cordova-plugin-zip": "^3.1.0",
+    "cordova-sms-plugin": "^1.0.0",
+    "crypto-js": "^4.1.1",
+    "dayjs": "^1.11.9",
+    "exceljs": "^4.3.0",
+    "file-saver": "^2.0.5",
+    "html-to-image": "^1.11.11",
+    "jquery": "^3.7.0",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.5.29",
+    "moment": "^2.29.4",
+    "ng-pick-datetime-ex": "^15.0.0",
+    "ngx-owl-carousel-o": "^16.0.0",
+    "ngx-pagination": "^6.0.3",
+    "ngx-webstorage-service": "^5.0.0",
+    "popper.js": "^1.16.1",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.13.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^16.0.5",
+    "@angular/cli": "~16.0.5",
+    "@angular/compiler-cli": "^16.0.0",
+    "@types/jasmine": "~4.3.0",
+    "jasmine-core": "~4.6.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.0.0",
+    "typescript": "~5.0.2"
+  },
+  "browser": {
+    "crypto": false
+  },
+  "cordova": {
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-imei": {},
+      "cordova-plugin-sim": {},
+      "cordova-plugin-touch-id": {},
+      "cordova-plugin-geolocation": {
+        "GPS_REQUIRED": "true"
+      },
+      "cordova-plugin-cors": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-android-permissions": {},
+      "cordova-sms-plugin": {},
+      "cordova-plugin-iroot": {},
+      "cordova-plugin-ip-mac-address": {},
+      "cordova-plugin-network-information": {},
+      "cordova-plugin-fingerprint-aio": {},
+      "cordova-plugin-x-socialsharing": {},
+      "cordova-plugin-actionsheet": {},
+      "cordova-plugin-file": {},
+      "cordova-plugin-file-opener2": {
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      },
+      "cordova-plugin-inappbrowser": {},
+      "nl.madebymark.share": {},
+      "cordova-pdf-generator": {},
+      "skwas-cordova-plugin-datetimepicker": {},
+      "com.darktalker.cordova.screenshot": {},
+      "cordova-plugin-telerik-imagepicker": {
+        "PHOTO_LIBRARY_USAGE_DESCRIPTION": "Janata Sahakari Bank Ltd.,Pune like to access your photo library to let you pick a photo"
+      },
+      "cordova-plugin-camera": {
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      },
+      "cordova-plugin-crop": {},
+      "cordova-plugin-qrcodejs": {},
+      "cordova-open-native-settings": {},
+      "cordova-plugin-customurlscheme": {
+        "URL_SCHEME": "upi"
+      },
+      "cordova-plugin-request-location-accuracy": {
+        "PLAY_SERVICES_LOCATION_VERSION": "16.+"
+      },
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-file-transfer": {},
+      "cordova-plugin-contacts-phonenumbers": {
+        "CONTACTS_USAGE_DESCRIPTION": "This app needs contacts access"
+      },
+      "cordova-plugin-dialogs": {},
+      "cordova-plugin-firebasex": {
+        "FIREBASE_ANALYTICS_COLLECTION_ENABLED": "true",
+        "FIREBASE_PERFORMANCE_COLLECTION_ENABLED": "true",
+        "FIREBASE_CRASHLYTICS_COLLECTION_ENABLED": "true",
+        "ANDROID_ICON_ACCENT": "#FF00FFFF",
+        "ANDROID_PLAY_SERVICES_TAGMANAGER_VERSION": "17.0.0",
+        "ANDROID_PLAY_SERVICES_AUTH_VERSION": "18.0.0",
+        "ANDROID_FIREBASE_ANALYTICS_VERSION": "17.4.0",
+        "ANDROID_FIREBASE_MESSAGING_VERSION": "20.1.6",
+        "ANDROID_FIREBASE_CONFIG_VERSION": "19.1.4",
+        "ANDROID_FIREBASE_PERF_VERSION": "19.0.7",
+        "ANDROID_FIREBASE_AUTH_VERSION": "19.3.1",
+        "ANDROID_FIREBASE_INAPPMESSAGING_VERSION": "19.0.6",
+        "ANDROID_FIREBASE_FIRESTORE_VERSION": "21.4.3",
+        "ANDROID_CRASHLYTICS_VERSION": "2.10.1",
+        "ANDROID_CRASHLYTICS_NDK_VERSION": "2.1.1",
+        "ANDROID_GSON_VERSION": "2.8.6"
+      },
+      "cordova-plugin-media": {
+        "KEEP_AVAUDIOSESSION_ALWAYS_ACTIVE": "NO"
+      },
+      "cordova.plugins.diagnostic": {}
+    }
+  }
+}

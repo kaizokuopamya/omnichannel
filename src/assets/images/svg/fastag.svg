@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="fastag" transform="translate(643 1998)">
+    <g id="base" transform="translate(-643 -1998)" opacity="0">
+      <rect id="Rectangle_982" data-name="Rectangle 982" width="32" height="32" fill="#7e2323"/>
+      <rect id="Rectangle_983" data-name="Rectangle 983" width="26" height="26" transform="translate(3 3)" fill="#e88e8e"/>
+    </g>
+    <g id="toll-road" transform="translate(-639.033 -1994.012)">
+      <path id="Path_46010" data-name="Path 46010" d="M22.154,10.851H8.267V1.374A1.162,1.162,0,0,0,7.106.213H1.161A1.162,1.162,0,0,0,0,1.374V22.811a1.162,1.162,0,0,0,1.161,1.161H7.106a1.162,1.162,0,0,0,1.161-1.161V15.867H22.154a1.627,1.627,0,0,0,1.626-1.626V12.476a1.627,1.627,0,0,0-1.626-1.626ZM6.874,22.579H1.393V19.393h5.48Zm0-7.409V18H1.393V12.244h5.48Zm0-4.319H1.393V1.606h5.48ZM9.98,14.473H8.267V12.244h3.161Zm3.792,0H11.641l1.448-2.229H15.22Zm3.792,0H15.433l1.448-2.229h2.131Zm4.822-.232a.232.232,0,0,1-.232.232H19.225l1.448-2.229h1.48a.232.232,0,0,1,.232.232Z" transform="translate(0 -0.213)"/>
+      <path id="Path_46011" data-name="Path 46011" d="M61.428,306.606H62.66a.7.7,0,1,0,0-1.393H61.428a.7.7,0,1,0,0,1.393Z" transform="translate(-57.91 -291.048)"/>
+    </g>
+  </g>
+</svg>

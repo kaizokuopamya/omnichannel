@@ -1,0 +1,68 @@
+
+
+<div class="popup-bottom md-popup otp-popuplimit commonOTP otp login-otp ">
+	<div class="row1">
+		<div class="col-10"> </div>
+		<div class="col-2" *ngIf="otpModel.showCloseButton">
+			<button class="ux-button-icon close-btn" (click)="closeOtpPopup()" > <img src="assets/images/svg/close-b.svg" alt="cross-icon" class="img-vsmall"> </button>
+		</div>
+	</div>
+	<div class="row1">
+		<div class="col-12 col-md-8 col-lg-8 col-xl-8 m-auto">
+			<div class="mob-icon"  *ngIf="otpModel.authType == 'OTP'"> <img src="assets/images/icons/mobile.svg" alt="mobile-icon"> </div>
+			<div class="mob-icon" *ngIf="otpModel.authType == 'TPIN'"> <img src="assets/images/icons/tpin-icon.svg" alt="mobile-icon"> </div>
+			<h4 class="greentext text-center mar-b ">{{ otpModel.headerMsg | translate}}</h4>
+			<h6 class="text-center" *ngIf="otpModel.authType == 'OTP'">{{ otpModel.subHeaderMsg }}</h6></div>
+	</div>
+	<div class="row1">
+		<div class="col-12 col-md-8 col-lg-8 col-xl-8  m-auto">
+			<div class="row1">
+				<div class="col-12 col-md-12">
+					<form [formGroup]="otpFormLimit">
+						<div class="row4">
+							<div class="" [ngClass]="loopLength == 6 ? 'col-sm-2 col-2 col-md-2' : 'col-sm-3 col-3 col-md-3'" *ngFor="let otp of otpInput | slice:0:6; index as i">
+								<div class="ux-input password1 mb-1">
+									<input id="otppassword{{i}}"autocomplete="off" #otpRow type="password" maxlength="1" placeholder="●" numbersOnly (keyup)="onKeyUpEventOtp(i, $event, 'otp')" (focus)="onFocusEvent(i,'otp')" formControlName="{{otp}}" pattern="\d*">
+								</div>
+							</div>
+						</div>	
+					</form>
+					<div class="row1">
+						<div class="col-12">
+							<div class="ux-input password1 mt-0 mb-0">
+								<p class="error-message"></p>
+							</div>
+							<div class="text-center">
+								<span class="errormsg">{{otpfailMsg}}</span>
+							</div>
+						</div>
+					</div>
+					<div class="row4"  *ngIf="otpModel.authType == 'OTP'">
+						<div class="col-6 col-md-6">
+							<div class="text-left">
+								<p class="text-left" > <span class="success-text" *ngIf="counter > 0" >{{counter | formatTimer }}</span> </p>
+							</div>
+						</div>
+						<div class="col-6 col-md-6">
+							<div class="text-right">
+								<button class="ux-linkbutton default-underline mt-3" (click)="resendOtp('resend')" [ngClass]="counter > 0 ? 'mydisabled' : 'resendActive'" tabindex="-1">{{ 'RESEND' | translate }}</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row1 mt-2">
+		<div class="col-12 col-md-8 col-lg-8 col-xl-8  m-auto">
+			<div class="row1">
+				<div class="col-6 text-center" *ngIf="otpModel.showCloseButton">
+					<button class="ux-button secondary sm-mob close-btn" (click)="closeOtpPopup()">Cancel</button>
+				</div>
+				<div class="text-center" [ngClass]="otpModel.showCloseButton ? 'col-6':'col-12'">
+					<button class="ux-button primary sm-mob otp-submit" (click)="validateOtpAddlimit()" [disabled]="otpFormLimit.invalid" tabindex="7">{{ 'SUBMIT' | translate }}</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

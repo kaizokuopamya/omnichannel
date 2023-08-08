@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8' standalone="yes"?>
+<plugin id="cordova-plugin-sandblast" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>SBAndroidPlugin</name>
+    <description>SandBlast Cordova Android Plugin for fraud,malware app detection.</description>
+    <engines>
+        <engine name="cordova" version=">=7.1.0"/>
+        <engine name="cordova-android" version=">=6.3.0"/>
+    </engines>
+    <js-module name="SBAndroidPlugin" src="www/SB.js">
+        <clobbers target="cordova.plugins.sb" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="SBAndroidPlugin">
+                <param name="android-package" value="com.cordova.plugins.sb.SB" />
+            </feature>
+        </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+        </config-file>
+        <source-file src="src/android/com/cordova/plugins/sb/SB.java" target-dir="src/com/cordova/plugins/sb" />
+        
+        <framework src="src/android/sbplugin.gradle" custom="true" type="gradleReference"/>
+        <framework src="com.checkpoint.sbm.sdk:sbm:3.8.7.5102" />
+		<framework src="com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava" />
+
+    </platform>
+</plugin>
+
+
+
+
+

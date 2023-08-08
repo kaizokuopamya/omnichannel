@@ -1,0 +1,27 @@
+.bg-white1 {
+    min-height: 250px;
+
+}
+.errornote{
+    color: gray; text-align: left; font-size: 12px; line-height: 12px;
+    b{
+        font-size: 12px; line-height: 12px;
+    }
+}
+.filter-history{
+    @media (max-width: 767px) {
+        background: #007c3e;
+        position: fixed;
+        bottom: 21px;
+        z-index: 9999;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        border-radius: 100px;
+        padding: 7px;
+        text-align: center;
+    }
+}
+.bill-wrapper .header-actions{
+    z-index: 99999;
+}

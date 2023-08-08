@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+
+<html>
+
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Dashboard - Kiya</title>
+    <link href="../css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/lib/jquery-ui.min.css" rel="stylesheet">
+    <link href="../css/lib/owl.carousel.min.css" rel="stylesheet">
+    <link href="../css/lib/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="main ">
+
+        <!-- Start Global Nav -->
+  
+       <nav class="global-nav whitebg">
+        <div class="nav-header">
+            <a href="javascript:;" class="btn-closeglnav hi-btn-menu"></a>
+            <div class="user-details1">
+                <a href="javascript:;">
+                    <span class="round-circle red">
+                        <h3>RS</h3>
+                        <!-- <img src="../assets/images/icons/user1.png" alt="user-img"> -->
+                        <!-- <img src="../assets/images/svg/user-profile-w.svg" alt="user-img"> -->
+                    </span>
+                </a>
+                <div class="in-details">
+                    <h5>Mr. Rajesh Shah</h5>
+                    <small>Last Login 08 Jun 2020, 20:45:23 IST</small>
+                    <small class="custom-text">Version 1.0</small>
+                </div>
+            </div> 
+        </div>
+        <div class="nav-items">
+            <ul class="lst-nav-items">
+                <li>
+                    <a href="#" class="search-btn" >
+                        <img src="../assets/images/sidemenu-mob/search.svg" alt="search-icon">
+                       Search
+                     </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../assets/images/sidemenu-mob/profile.svg" alt="profile-icon">
+                        Profile
+                     </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../assets/images/sidemenu-mob/inbox.svg" alt="inbox-icon">
+                        Inbox
+                     </a>
+                </li>
+                <li>
+                    <a href="#" class="glnv-dropdown">
+                        <img src="../assets/images/sidemenu-mob/settings.svg" alt="setting-icon">
+                        Settings
+                        <span class="chevron"></span>
+                    </a>
+                    <div class="mysubnavigation-items">
+                        <ul class="lst-subnavigation">
+                            <li><a href="#">Transaction Limit Management</a></li>
+                            <li><a href="#">Change Language</a></li>
+                            <li><a href="#">Change MPIN</a></li>
+                            <li><a href="#">Change TPIN</a></li>
+                            <li><a href="#">Reset TPIN</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../assets/images/sidemenu-mob/refer-friend.svg" alt="refer-friend-icon">
+                         Refer a Friend
+                     </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../assets/images/sidemenu-mob/feedback.svg" alt="feedback-icon">
+                        Feedback
+                     </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../assets/images/sidemenu-mob/biometric.svg" alt="biometric-icon">
+                        Biometric Login
+                     </a>
+                     <div class="custom-control-new" >
+                        <div class="custom-control enable-service custom-switch pad-2">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                            <label class="custom-control-label md" for="customSwitch1"> </label>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../assets/images/sidemenu-mob/de-register.svg" alt="de-register-icon">
+                        De-Register
+                     </a>
+                </li>
+            </ul>
+           <div class="nav-footer pad">
+                <div class="powered">
+                    <div class="row1">
+                        <div class="col-12 col-md-12">
+                            <a href="#" class="logout-btn">
+                                <img src="../assets/images/sidemenu-mob/logout.svg" alt="logout-icon">
+                                Logout
+                            </a>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+ <div class="nav-overlay"></div>
+
+  <!-- End Global Nav -->
+ 
+     
+  <!--  Mobile Header Section Start -->
+ 
+    <header class="global-header primary-bg">
+        <div class="in-header">
+            
+            <div class="header-icons-lft">
+                <div class="header-actions">
+                    <button class="ux-button-header  menu-btn d-lg-none d-md-block">
+                        <img src="../assets/images/svg/open-menu1.svg" alt="open-menu-icon"/>
+                    </button>
+                </div>
+            </div>
+
+            <div class="brand-logo m-auto">
+                <img src="../assets/images/logo/logo_center_white.svg" alt="kiya-logo">
+            </div>
+
+            <div class="header-icons-rit">
+                <div class="header-actions">
+                    <button class="ux-button-header btn-notification-bell2" onclick="window.location.href = 'notification.html'">
+                        <img src="../assets/images/svg/bell-w.svg" class="img-small" alt="bell-icon" />
+                        <span class="red-dot"></span>
+                        <!-- <span class="point">1</span> -->
+                    </button>
+                    <button class="ux-button-header btn-logout">
+                        <img src="../assets/images/svg/shutdown-w.svg" class="img-small" alt="logout-icon" />
+                    </button>
+                    <button class="ux-button-header btn-user profile-btn">
+                        <span class="round-circle red">
+                            <h5>RS</h5>
+                            <!-- <img src="../assets/images/icons/user1.png" alt="user-img"> -->
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+ 
+   <!-- Mobile Header Section End -->
+
+
+     <!--  Right Main Column Section Start -->
+
+        <div class="right-main-column main-bg">
+            <div class="right-col-container pad-b">
+
+                <div class="body-page-container">
+                    <div class="upper-dashboard-wrapp">
+                        <div class="container-fluid">
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <div class="scroll-box2">
+                                        <div class="owl-carousel  box-owl21" role="list">
+                                            <div class="item" role="listitem">
+                                                <div class="ux-component5 no-margin">
+                                                    <div class="ux-dropdown">
+                                                        <div class="drp-box">
+                                                            <a href="#" class="drp-enterdata active">
+                                                                <div class="card-section">
+                                                                    <div class="card-info">
+                                                                        <div class="card-actions">
+                                                                            <h4>Savings Accounts <span>(02)</span></h4>
+                                                                            <span class="d-block d-md-none d-lg-none d-xl-none text-left">001184918391</span>
+                                                                        </div>
+                                                                        <div class="show-btn">
+                                                                            <button class="refresh-btn">
+                                                                                <!-- <img src="../assets/images/svg/eye-g.svg" alt="eye-icon"> -->
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="card-info">
+                                                                        <div class="card-actions">
+                                                                            <span class="account-balance disable-status">
+                                                                                <em class="entered-data " amt="50,000.00">
+                                                                                    <i> <img src="../assets/images/svg/rupee-bl.svg" alt="rupees-icon"> </i> <b>50,000.00</b>
+                                                                                </em>
+                                                                            </span>
+                                                                            <div class="total-target">
+                                                                                <small>Total Available Balance</small>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="ref-btn">
+                                                                            <button class="refresh-btn">
+                                                                                <img src="../assets/images/svg/refresh-g.svg" alt="refresh-icon">
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item" role="listitem">
+                                                <div class="ux-component5 no-margin">
+                                                    <div class="ux-dropdown">
+                                                        <div class="drp-box">
+                                                            <a href="#" class="drp-enterdata active">
+                                                                <div class="card-section">
+                                                                    <div class="card-info">
+                                                                        <div class="card-actions">
+                                                                            <h4>Savings Accounts <span>(02)</span></h4>
+                                                                            <span class="d-block d-md-none d-lg-none d-xl-none text-left">001184918391</span>
+                                                                        </div>
+                                                                        <div class="show-btn">
+                                                                            <button class="refresh-btn">
+                                                                                <!-- <img src="../assets/images/svg/eye-g.svg" alt="eye-icon"> -->
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="card-info">
+                                                                        <div class="card-actions">
+                                                                            <span class="account-balance disable-status">
+                                                                                <em class="entered-data " amt="50,000.00">
+                                                                                    <i> <img src="../assets/images/svg/rupee-bl.svg" alt="rupees-icon"> </i> <b>50,000.00</b>
+                                                                                </em>
+                                                                            </span>
+                                                                            <div class="total-target">
+                                                                                <small>Total Available Balance</small>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="ref-btn">
+                                                                            <button class="refresh-btn">
+                                                                                <img src="../assets/images/svg/refresh-g.svg" alt="refresh-icon">
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="below-dashboard-wrapp">
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <div class="widget-box5 ">
+                                        <div class="component-title6">
+                                            <div class="row1">
+                                                <div class="col-8 col-md-9">
+                                                    <h3>Banking & Services</h3>
+                                                </div>
+                                                <div class="col-4 col-md-3 d-none">
+                                                    <a class="ux-linkbutton sm float-right">View All</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="component-box">
+
+                                            <ul class="information-list owl-carousel mobiledashboard-owl1">
+                                                <li class="item">
+                                                    <a href="#">
+                                                        <div class="icon1">
+                                                            <img src="../assets/images/svg/MyAccounts-mb.svg" alt="pending-request-icon" />
+                                                        </div>
+                                                        <em>My Accounts</em>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="#">
+                                                        <div class="icon1">
+                                                            <img src="../assets/images/svg/send-money.svg" alt="balance-enquiry-icon" />
+                                                        </div>
+                                                        <em>Fund Transfer</em>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="#">
+                                                        <div class="icon1">
+                                                            <img src="../assets/images/svg/cheque-services-g.svg" alt="transaction-icon" />
+                                                        </div>
+                                                        <em>Cheque Services</em>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="#">
+                                                        <div class="icon1">
+                                                            <img src="../assets/images/svg/tax-centre-g.svg" alt="tax-center-icon" />
+                                                        </div>
+                                                        <em>Tax Center</em>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="#">
+                                                        <div class="icon1">
+                                                            <img src="../assets/images/svg/Donations.svg" alt="setting-icon" />
+                                                        </div>
+                                                        <em>Donations</em>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="#">
+                                                        <div class="icon1">
+                                                            <img src="../assets/images/svg/Standing-instructions.svg" alt="transaction-icon" />
+                                                        </div>
+                                                        <em>Create SI</em>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="#">
+                                                        <div class="icon1">
+                                                            <img src="../assets/images/svg/Schedule Transactions.svg" alt="transaction-icon" />
+                                                        </div>
+                                                        <em>Schedule Pay</em>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="#">
+                                                        <div class="icon1">
+                                                            <img src="../assets/images/svg/Manage payee.svg" alt="transaction-icon" />
+                                                        </div>
+                                                        <em>Manage Payee</em>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="#">
+                                                        <div class="icon1">
+                                                            <img src="../assets/images/svg/eToken.svg" alt="transaction-icon" />
+                                                        </div>
+                                                        <em>eToken</em>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="#">
+                                                        <div class="icon1">
+                                                            <img src="../assets/images/svg/CardlessCash.svg" alt="transaction-icon" />
+                                                        </div>
+                                                        <em>Cardless Cash</em>
+                                                        <span class="badge-upcoming">
+                                                            Upcoming
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="#">
+                                                        <div class="icon1">
+                                                            <img src="../assets/images/svg/eMandate.svg" alt="transaction-icon" />
+                                                        </div>
+                                                        <em>eMandate</em>
+                                                        <span class="badge-upcoming">
+                                                            Upcoming
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="#">
+                                                        <div class="icon1">
+                                                            <img src="../assets/images/svg/eTokenization.svg" alt="transaction-icon" />
+                                                        </div>
+                                                        <em>eTokenization</em>
+                                                        <span class="badge-upcoming">
+                                                            Upcoming
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="widget-box5 ">
+                                        <div class="component-title6">
+                                            <div class="row1">
+                                                <div class="col-8 col-md-9">
+                                                    <h3>Payments & Recharge</h3>
+                                                </div>
+                                                <div class="col-4 col-md-3 d-none">
+                                                    <a class="ux-linkbutton sm float-right">View All</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="component-box">
+                                            <div class="row">
+                                                <ul class="information-list owl-carousel mobiledashboard-owl2">
+                                                    <li class="item">
+                                                        <a href="#">
+                                                            <div class="icon1">
+                                                                <img src="../assets/images/svg/pay-bills-g.svg" alt="mobile-recharge-icon" />
+                                                            </div>
+                                                            <em>Pay Bills</em>
+                                                        </a>
+                                                    </li>
+                                                    <li class="item">
+                                                        <a href="#">
+                                                            <div class="icon1">
+                                                                <img src="../assets/images/svg/Registered Biller.svg" alt="dth-icon" />
+                                                            </div>
+                                                            <em>Registered Biller</em>
+                                                        </a>
+                                                    </li>
+
+                                                    <li class="item">
+                                                        <a href="#">
+                                                            <div class="icon1">
+                                                                <img src="../assets/images/svg/Bill Reminder.svg" alt="fast-tag-icon" />
+                                                            </div>
+                                                            <em>Bill Reminder</em>
+                                                        </a>
+                                                    </li>
+                                                    <li class="item">
+                                                        <a href="#">
+                                                            <div class="icon1">
+                                                                <img src="../assets/images/svg/Pending bills.svg" alt="mobile-recharge-icon" />
+                                                            </div>
+                                                            <em>Pending Bills</em>
+                                                        </a>
+                                                    </li>
+                                                    <li class="item">
+                                                        <a href="#">
+                                                            <div class="icon1">
+                                                                <img src="../assets/images/svg/Payment History.svg" alt="electricity-icon" />
+                                                            </div>
+                                                            <em>Payment History</em>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 ">
+                                    <div class="widget-box5">
+                                        <div class="component-title6">
+                                            <div class="row1">
+                                                <div class="col-8 col-md-9">
+                                                    <h3>Recent</h3>
+                                                </div>
+                                                <div class="col-4 col-md-3">
+                                                    <a class="ux-linkbutton sm float-right">View All</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="component-box">
+                                            <div class="row1">
+                                                <div class="col-12">
+                                                    <ul class="recent-list2">
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="red">
+                                                                    <h6>AS</h6>
+                                                                    <!-- <img src="../assets/images/icons/user2.png" alt="user-img"> -->
+                                                                </span>
+                                                                <em>Aarti Singh</em>
+                                                                <small class="debit-text">₹1200.00</small>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="yellow">
+                                                                     <h6>PB</h6> 
+                                                                    <!-- <img src="../assets/images/icons/user3.png" alt="user-img">  -->
+                                                                </span>
+                                                                <em>Pravin Bhat</em>
+                                                                <small class="credit-text">₹1800.00</small>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="blue">
+                                                                    <h6>OK</h6>
+                                                                  </span>
+                                                                <em>Omkar Katti</em>
+                                                                <small class="debit-text">₹100.00</small>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="green">
+                                                                    <h6>RS</h6>
+                                                                </span>
+                                                                <em>Rohan Singh</em>
+                                                                <small class="credit-text">₹120.00</small>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="col-12">
+                                    <div class="widget-box5 ">
+                                        <div class="component-title6">
+                                            <div class="row1">
+                                                <div class="col-8 col-md-9">
+                                                    <h3>Investments & Insurance</h3>
+                                                </div>
+                                                <div class="col-4 col-md-3 d-none">
+                                                    <a class="ux-linkbutton sm float-right">View All</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="component-box">
+                                            <div class="row">
+                                                <ul class="information-list  owl-carousel mobiledashboard-owl2">
+                                                    <li class="item">
+                                                        <a href="#">
+                                                            <div class="icon1">
+                                                                <img src="../assets/images/svg/OpenRd-FD-new.svg" alt="mobile-recharge-icon" />
+                                                            </div>
+                                                            <em>Open RD/ FD</em>
+                                                        </a>
+                                                    </li>
+                                                    <li class="item">
+                                                        <a href="#">
+                                                            <div class="icon1">
+                                                                <img src="../assets/images/svg/others-icon.svg" alt="mobile-recharge-icon" />
+                                                            </div>
+                                                            <em>Social Security</em>
+                                                        </a>
+                                                    </li>
+                                                    <li class="item">
+                                                        <a href="#">
+                                                            <div class="icon1">
+                                                                <img src="../assets/images/svg/IPO-new.svg" alt="IPO-icon" />
+                                                            </div>
+                                                            <em>ASBA/ IPO</em>
+                                                            <span class="badge-upcoming">
+                                                                Upcoming
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="item">
+                                                        <a href="#">
+                                                            <div class="icon1">
+                                                                <img src="../assets/images/svg/Gov-Schemes-new.svg" alt="mobile-recharge-icon" />
+                                                            </div>
+                                                            <em>Govt. Schemes</em>
+                                                            <span class="badge-upcoming">
+                                                                Upcoming
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="item">
+                                                        <a href="#">
+                                                            <div class="icon1">
+                                                                <img src="../assets/images/svg/Insurance-umbrella-new.svg" alt="Insurance-icon" />
+                                                            </div>
+                                                            <em>Insurance</em>
+                                                            <span class="badge-upcoming">
+                                                                Upcoming
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="item">
+                                                        <a href="#">
+                                                            <div class="icon1">
+                                                                <img src="../assets/images/svg/Gold-Bonds-new.svg" alt="IPO-icon" />
+                                                            </div>
+                                                            <em>Gold Bonds</em>
+                                                            <span class="badge-upcoming">
+                                                                Upcoming
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="col-12 ">
+                                    <div class="widget-box5">
+                                        <div class="component-box">
+                                            <div class="row">
+                                                <div class=" card-details">
+                                                    <div class="row1">
+                                                        <div class="col-6 col-xl-6 col-lg-6 col-md-6 pr-0">
+                                                            <img src="../assets/images/svg/debit-creditcard.svg" alt="card-icon">
+                                                        </div>
+                                                        <div class="col-6	 col-xl-6 col-lg-6 col-md-6">
+                                                            <div class="card-info">
+
+                                                                <h4>Congratulation!</h4>
+                                                                <span> You are eligible for pre approved Card</span>
+                                                                <button class="ux-button sm secondary">Apply Now</button>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <!-- <div class="col-12 col-md-12">
+                            <div class="row">
+                                 <div class="banner-section">
+                                    <div class="scroll-section">
+                                        <div class="owl-carousel img-owl" role="list">
+                                            <div class="item ux-img-scroll" role="listitem">
+                                                <a href="#">
+                                                    <span>
+                                                        <img src="../assets/images/slides/Ads.png" alt="banner1">
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="item ux-img-scroll" role="listitem">
+                                                <a href="#">
+                                                    <span>
+                                                        <img src="../assets/images/slides/Ads.png" alt="banner1">
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="item ux-img-scroll" role="listitem">
+                                                <a href="#">
+                                                    <span>
+                                                        <img src="../assets/images/slides/Ads.png" alt="banner1">
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+
+                </div>
+            </div>
+
+      <!--  Right Main Column Section End -->
+  
+        </div>
+
+        <!-- main -->
+
+
+
+        <!-- Footer Section Start -->
+
+        <!-- <footer>
+            <nav class="ios-global-nav2">
+                <ul class="lst-ios-nav">
+                    <li class="left-col">
+                        <a href="javascript:;">
+                            <span class="inav-icon">
+                                 <img src="../assets/images/svg/papl-b.svg" alt="papl-icon">
+                            </span>
+                           PMPL
+                        </a>
+                    </li>
+                    <li class="left-col">
+                        <a href="javascript:;">
+                            <span class="inav-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                    <g id="my-cards" transform="translate(12848 -12879)">
+                                        <g id="Group_39984" data-name="Group 39984" transform="translate(-12848 12879)">
+                                            <rect id="Rectangle_18667" data-name="Rectangle 18667" width="30" height="30" fill="" opacity="0"/>
+                                        </g>
+                                        <path id="my-cards-2" data-name="my-cards" d="M5.144,20a1.454,1.454,0,0,1-1.453-1.453V8.834A1.454,1.454,0,0,1,5.144,7.381H20.657A1.454,1.454,0,0,1,22.11,8.834v9.713A1.454,1.454,0,0,1,20.657,20ZM4.71,8.834v9.713a.434.434,0,0,0,.434.434H20.657a.434.434,0,0,0,.433-.434V8.834a.434.434,0,0,0-.433-.433H5.144A.434.434,0,0,0,4.71,8.834Zm11.09,8.53a.51.51,0,0,1,0-1.019h3.163a.51.51,0,1,1,0,1.019Zm-4.745,0a.51.51,0,1,1,0-1.019h2.636a.51.51,0,1,1,0,1.019Zm-4.745,0a.51.51,0,1,1,0-1.019H8.946a.51.51,0,0,1,0,1.019Zm9.508-4.991A1.828,1.828,0,1,1,17.645,14.2,1.83,1.83,0,0,1,15.818,12.373Zm1.019,0a.809.809,0,1,0,.809-.808A.809.809,0,0,0,16.837,12.373Zm-15.292.246A1.645,1.645,0,0,1,0,10.892V1.729A1.731,1.731,0,0,1,1.729,0h14.96a1.731,1.731,0,0,1,1.729,1.729V6.31a.51.51,0,1,1-1.019,0V5.765H1.019v5.128c0,.383.24.707.525.707H2.618a.509.509,0,1,1,0,1.019ZM1.019,4.745H17.4V3.655H1.019ZM17.4,2.636V1.729a.711.711,0,0,0-.71-.71H1.729a.711.711,0,0,0-.71.71v.907Z" transform="translate(-12844 12884)" fill=""/>
+                                    </g>
+                                </svg>
+                             </span>
+                            My Cards
+                        </a>
+                    </li>
+                    <li class="right-col">
+                        <a href="javascript:;">
+                            <span class="inav-icon">
+                                 <img src="../assets/images/svg/favorites-mb.svg" alt="home-icon">   
+                            </span>
+                            Favorite
+                        </a>
+                    </li>
+                    <li class="right-col">
+                        <a href="javascript:;">
+                            <span class="inav-icon">
+                               <img src="../assets/images/svg/bill-pay.svg" alt="recharge-bill-pay-icon"> 
+                            </span>
+                            Recharge & Bill Pay
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="inav-icon">
+                                <img src="../assets/images/svg/qr-w.svg" alt="QRcode-icon">
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+  -->
+        <!-- Footer Section End -->
+
+
+        <!--  modal popup start -->
+
+
+        <!-- Logout Popup Start -->
+
+        <div class="popup-bottom sm-popup logout1">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="text-center">Logout</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Are you sure you want to Logout?
+                    </p>
+                </div>
+            </div>
+            <div class="row1 mt-2">
+                <div class="col-6 text-center">
+                    <button class="ux-button secondary no md close-btn" onclick="window.location.href = '#'">No</button>
+                </div>
+                <div class="col-6 text-center">
+                    <button class="logout-btn ux-button primary md" onclick="window.location.href = '#'">Yes</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logout Popup End -->
+
+        <!-- Session Timeout Popup Start -->
+
+        <div class="popup-bottom sm-popup timeout1">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="text-center">Heading</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Warning! Better check yourself, <br /> you're not looking too good.
+                    </p>
+                </div>
+            </div>
+            <div class="row1 mt-2">
+                <div class="col-12 text-center">
+                    <button class="ux-button primary md" onclick="window.location.href = '#'">Ok</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Session Timeout Popup End -->
+
+
+        <!-- Upload Profile Picture Popup Start -->
+
+        <div class="popup-bottom sm-popup profile1">
+            <div class="row1">
+                <div class="col-10">
+                    <h4>Upload Profile Picture</h4>
+                </div>
+                <div class="col-2">
+                    <button class="ux-button-icon close-btn">
+                        <img src="../assets/images/svg/close-b.svg" alt="cross-icon" class="img-vsmall">
+                    </button>
+                </div>
+            </div>
+            <div class="row1">
+                <div class="col-12">
+                    <ul class="profile-list">
+                        <li>
+                            <a href="#">
+                                <img src="../assets/images/svg/gallery1.svg" alt="gallery-icon"> Select From Gallery
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="../assets/images/svg/photo-camera.svg" alt="camera-icon"> Take Photo
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="delete-btn">
+                                <img src="../assets/images/svg/delete.svg" alt="remove-icon"> Remove Profile Pitcute
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-12 text-center">
+                    <button class="ux-button primary submit-btn" onclick="window.location.href = '#'">Confirm</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upload Profile Picture Popup End -->
+
+
+        <!-- Delete Profile Picture Popup Start -->
+
+        <div class="popup-bottom sm-popup delete-profile-pic">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="text-center">Delete Profile Picture</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Are you sure you want to delete?
+                    </p>
+                </div>
+            </div>
+            <div class="row1 mt-2">
+                <div class="col-6 text-center">
+                    <button class="ux-button secondary no md close-btn" onclick="window.location.href = '#'">No</button>
+                </div>
+                <div class="col-6 text-center">
+                    <button class="logout-btn ux-button primary md" onclick="window.location.href = '#'">Yes</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Delete Profile Picture Popup End -->
+
+
+        <div class="ios-nav-overlay"></div>
+
+        <!--  modal popup end -->
+
+
+        <script src="../js/lib/jquery.min.js"></script>
+        <script src="../js/lib/bootstrap.min.js"></script>
+        <script src="../js/lib/jquery-ui.min.js"></script>
+        <script src="../js/lib/owl.carousel.min.js"></script>
+        <script src="../js/lib/popper.min.js"></script>
+        <script src="../js/lib/jquery.mousewheel.min.js"></script>
+        <script src="../js/lib/jquery.mCustomScrollbar.js"></script>
+        <script src="../js/lib/datatables.min.js"></script>
+        <script src="../js/common.js"></script>
+      
+        <script type="text/javascript">
+ 
+                // $("ul.lst-nav-items3").mCustomScrollbar({
+                //     axis:"y",
+                //     theme: "dark-2",
+                //         //theme:"dark-thin",
+                //     // autoExpandScrollbar:true,
+                //     advanced:{autoExpandHorizontalScroll:true}
+                // });
+
+     $('body').on('change', '.custom-control.enable-service  input[type="checkbox"]', function(e) {
+        console.log('its working');
+        e.preventDefault();
+        e.stopPropagation();
+        // if ($(this).prop("checked")) {
+        //     $('div.popup-bottom.biometric-popup').addClass('popup-active');
+        //     $('div.ios-nav-overlay').fadeIn(400); 
+        //     $('nav.global-nav').removeClass('nav-showing');
+        //     $('div.nav-overlay').fadeOut(300);
+        // } else {
+        //     $('div.popup-bottom.biometric-popup').removeClass('popup-active');
+        //     $('div.ios-nav-overlay').fadeOut(400); 
+        // }
+     })        
+
+
+         imgCarousel();
+            $(document).ready(function() {
+                $('.mobiledashboard-owl1').owlCarousel({
+                    autoplay: false,
+                    autoplayTimeout: 3000,
+                    loop: true,
+                    nav: false,
+                    items: 4,
+                    dots: true,
+                })
+                $('.mobiledashboard-owl2').owlCarousel({
+                    autoplay: false,
+                    autoplayTimeout: 3000,
+                    loop: true,
+                    nav: false,
+                    items: 4,
+                    dots: true,
+                })
+                $('.box-owl21').owlCarousel({
+                    autoplay: false,
+                    autoplayTimeout: 3000,
+                    loop: true,
+                    nav: false,
+                    items: 1,
+                    dots: true,
+                })
+
+            })
+            //  createGlobalNavMore();
+            boxCarousel();
+        
+            $("a.drp-enterdata.balance-info").click(function() {
+
+                if ($(this).hasClass("active")) {
+                    $(this).removeClass('active')
+                } else {
+                    $(this).addClass('active')
+                }
+            })
+
+            // Check Balance Amount 
+ 
+            $("button.btn-logout").click(function() {
+                // console.log('working');
+                if (!$('div.popup-bottom.logout1').hasClass('popup-active')) {
+                    $('div.popup-bottom.logout1').addClass('popup-active');
+                    $('div.ios-nav-overlay').fadeIn(400);
+                } else {
+                    $('div.popup-bottom.logout1').removeClass('popup-active');
+                    $('div.ios-nav-overlay').fadeOut(400);
+                }
+            });
+
+            $("button.profile-btn").click(function() {
+                // console.log('working');
+                if (!$('div.popup-bottom.profile1').hasClass('popup-active')) {
+                    $('div.popup-bottom.profile1').addClass('popup-active');
+                    $('div.ios-nav-overlay').fadeIn(400);
+                } else {
+                    $('div.popup-bottom.profile1').removeClass('popup-active');
+                    $('div.ios-nav-overlay').fadeOut(400);
+                }
+            });
+
+            $("a.delete-btn").click(function() {
+                // console.log('working');
+                $('div.popup-bottom.profile1').removeClass('popup-active');
+                if (!$('div.popup-bottom.delete-profile-pic').hasClass('popup-active')) {
+                    $('div.popup-bottom.delete-profile-pic').addClass('popup-active');
+                    $('div.ios-nav-overlay').fadeIn(400);
+                } else {
+                    $('div.popup-bottom.delete-profile-pic').removeClass('popup-active');
+                    $('div.ios-nav-overlay').fadeOut(400);
+                }
+            });
+
+            $("button.close-btn").click(function() {
+                // console.log('working');
+                $('div.popup-bottom.logout1').removeClass('popup-active');
+                $('div.popup-bottom.profile1').removeClass('popup-active');
+                $('div.popup-bottom.delete-profile-pic').removeClass('popup-active');
+                $('div.ios-nav-overlay').fadeOut(400);
+            });
+
+            $("div.ios-nav-overlay").click(function(e) {
+                event.stopPropagation();
+                // console.log('working');
+                $('div.popup-bottom.logout1').removeClass('popup-active');
+                $('div.popup-bottom.profile1').removeClass('popup-active');
+                $('div.popup-bottom.delete-profile-pic').removeClass('popup-active');
+                $('div.ios-nav-overlay').fadeOut(400);
+            });
+
+            $('div.show-btn button.refresh-btn').click(function(e) {
+                console.log('clicked me!');
+                e.preventDefault();
+                e.stopPropagation();
+                // $(this).parent().siblings().removeClass('active')
+
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active')
+                } else {
+                    $(this).addClass('active')
+                }
+
+            });
+
+            function imgCarousel() {
+            $('.img-owl').owlCarousel({
+                autoplay: true,
+                autoplayTimeout: 4000,
+                loop: false,
+                rewind: true,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2,
+                        nav: false,
+                        // loop:false
+                    },
+                    1024: {
+                        items: 2,
+                        nav: false,
+                        // loop:false
+                    },
+                    1200: {
+                        items: 2,
+                        nav: false,
+                        // loop:false
+                    },
+                    1366: {
+                        items: 3,
+                        nav: false,
+                        // loop:false
+                    },
+                    1400: {
+                        items: 3,
+                        nav: false,
+                        // loop:false
+                    },
+                    1600: {
+                        items: 3,
+                        nav: false,
+                        // loop:false
+                    }
+                }
+            })
+        }
+        </script>
+
+</body>
+
+</html>

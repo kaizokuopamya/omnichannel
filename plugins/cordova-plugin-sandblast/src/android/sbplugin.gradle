@@ -1,0 +1,21 @@
+repositories {
+    google()
+    maven {
+      url "https://us-artifactory01.locsec.net/artifactory/sand-blast-mobile-sdk"
+      credentials {
+        username = "97080d4d-2463-413d-a921-9eb543bd7770"
+        password = "eyJ2ZXIiOiIyIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYiLCJraWQiOiJvNjNTUzN4UnBRWG9wckh0RnAxMGEwWEdrVE5EVWxCLUZKaXplOUJsSTJBIn0.eyJzdWIiOiJqZnJ0QDAxZGMxeGYzMjRqejUxMGdyeXh0azkxdHNwXC91c2Vyc1wvOTcwODBkNGQtMjQ2My00MTNkLWE5MjEtOWViNTQzYmQ3NzcwIiwic2NwIjoibWVtYmVyLW9mLWdyb3VwczpcImFwcC1wcm90ZWN0LWN1c3RvbWVyXCIgYXBpOioiLCJhdWQiOiJqZnJ0QDAxZGMxeGYzMjRqejUxMGdyeXh0azkxdHNwIiwiaXNzIjoiamZydEAwMWRjMXhmMzI0ano1MTBncnl4dGs5MXRzcFwvdXNlcnNcL2FwcC1wcm90ZWN0IiwiaWF0IjoxNjQ1MDEyNjAwLCJqdGkiOiI1MmI5MmQ4Yi0wOTUwLTQ0NmUtYjI3MS05ODk3MTM5Njc3MTEifQ.Fj-Uu6IgbNu4h7U1KJsLROP7uH2n5rCoZDpqFtcBLx8qPFHJOHZCpNjyKqLB202JCa_M3MZUkHDFIUvzhfrdY-V369jmwSWivpdcbBUcdpJ6JBUCbZBWstriFF1ry_Xbk4VbVSJpmy04mPFe0qJlC4FU5m2mQMPyjryzVCvWsbEetCzOLVLqnCfq6I3JVf6xY4geYJKhGrnmLlSbT7dQU5ArhxApY4vkhCzk7-THUGSAT7dI7K4ihWMq9hsm4VnKGwhYn2C3tMvDqwNZhNR4PJdhGxfTf6yq1ssvIcLco-vxRlrRMbhMlZxuRS-cvBtU8H1W2ilQh72dBITECLiINw"
+      }
+    }
+  }
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+}
+
+android {
+    packagingOptions {
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+}

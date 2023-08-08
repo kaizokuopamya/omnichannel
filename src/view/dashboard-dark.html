@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="en" theme='dark'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Dashboard - Kiya</title>
+    <link href="../css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/lib/owl.carousel.min.css" rel="stylesheet">
+    <link href="../css/lib/jquery-ui.min.css" rel="stylesheet">
+    <link href="../css/lib/datatables.min.css" rel="stylesheet">
+    <link href="../css/lib/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="main bg-m">
+
+    <!-- Start Global Nav -->
+
+        <nav class="global-nav" >
+            <div class="nav-header">
+               <a href="javascript:;" class="btn-closeglnav hi-btn-menu"></a>
+                <div class="user-details1">
+                 <a href="javascript:;">
+                     <span class="round-circle">
+                         <h3>RS</h3>
+                         <!-- <img src="../assets/images/icons/user1.png" alt="user-img"> -->
+                         <!-- <img src="../assets/images/svg/user-profile-w.svg" alt="user-img"> -->
+                     </span>
+                 </a>
+                 <div class="in-details">
+                     <h5>Mr. Rajesh Shah</h5>
+                     <small>Last Login 08 Jun 2020, 20:45:23 IST</small>
+                     <small class="custom-text">Version 1.0</small>
+                 </div>
+             </div> 
+           </div>
+            <div class="nav-items">
+               <ul class="lst-nav-items">
+                    <li>
+                        <a href="dashboard.html" class="active">
+                            <img src="../assets/images/menu_web/dashboard.svg" alt="dashboard-icon">
+                            Dashboard
+                         </a>
+                    </li>
+                    <li>
+                        <a href="#" class="glnv-dropdown">
+                            <img src="../assets/images/menu_web/my_account.svg" alt="my-account-icon">
+                            My Account
+                            <span class="chevron"></span>
+                        </a>
+                        <div class="mysubnavigation-items">
+                            <ul class="lst-subnavigation">
+                                <li><a href="my-accounts.html">Operative Accounts</a></li>
+                                <li><a href="my-deposits.html">My Deposits</a></li>
+                                <li><a href="my-borrowing.html">My Borrowings</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="glnv-dropdown">
+                            <img src="../assets/images/menu_web/send_money.svg" alt="dfund-transfer-icon">
+                             Fund Transfer
+                            <span class="chevron"></span>
+                        </a>
+                        <div class="mysubnavigation-items">
+                            <ul class="lst-subnavigation">
+                                <li><a href="manage-payee.html">Manage Payee</a> </li>
+                                <li><a href="send-money.html">Send Money</a></li>
+                                <li><a href="insta-pay.html">Insta Pay</a></li>
+                                <li><a href="cardless-cash-withdrawal.html">Cardless Cash Withdrawals</a></li>
+                                <li><a href="card-to-card-transfer.html">Card to Card Transfer</a></li>
+                                <li><a href="transaction-status-list-new.html">Transaction Status</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+					   <a href="#" class="glnv-dropdown ">
+                            <img src="../assets/images/menu_web/cards.svg" alt="my-card-icon">
+							My Cards
+						    <span class="chevron "></span>
+						</a>
+						 <div class="mysubnavigation-items">
+                             <ul class="lst-subnavigation">
+								<li><a href="my-debit-cards.html">Debit Cards</a></li>
+								<li><a href="apply-for-card.html">Apply for New Card</a></li>
+								<li><a href="track-application.html">Track Your Card</a></li>
+							</ul>
+						</div>
+					</li> 
+                    <li>
+                        <a href="#" class="glnv-dropdown">
+                            <img src="../assets/images/menu_web/billpay.svg" alt="bill-pay-icon">
+                            Recharge & Bill Pay
+                            <span class="chevron"></span>
+                        </a>
+                        <div class="mysubnavigation-items">
+                            <ul class="lst-subnavigation">
+                                <li><a href="bill-payment.html"> Bill Payment</a></li>
+                                <li><a href="register-new-biller.html">Registered Pay</a></li>
+                                <li><a href="#">Recent Transactions</a></li>
+                                <li><a href="pending-bill-reminder.html">Pending Bill Reminder</a></li>
+                                <li><a href="bill-complaint.html">Complaints</a></li>
+                                <li><a href="payment-history.html">Payment History</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="glnv-dropdown">
+                            <img src="../assets/images/menu_web/cheque.svg" alt="cheque-icon">
+                            Services
+                            <span class="chevron"></span>
+                        </a>
+                        <div class="mysubnavigation-items ">
+                            <ul class="lst-subnavigation">
+                                <li><a href="tds-certificate.html">TDS Certificate / Form 16A</a> </li>
+                                <li><a href="form15-gh.html">Form 15G/H</a> </li>
+                                <li><a href="freeze-account.html">Freeze Account</a> </li>
+                                <li><a href="link-account.html">Link Account</a> </li>
+                                <li><a href="delink-account.html">De-link Account</a> </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="glnv-dropdown ">
+                            <img src="../assets/images/menu_web/cheque.svg" alt="cheque-icon">
+                            Tax Centre
+                            <span class="chevron"></span>
+                        </a>
+                         <div class="mysubnavigation-items">
+                            <ul class="lst-subnavigation">
+                                <li><a href="direct-tax.html">Direct Tax</a> </li>
+                                <li><a href="indirect-tax.html">Indirect Tax</a> </li>
+                                <li><a href="form-26-AS.html">Form 26AS</a> </li>
+                                <li><a href="tax-payment-history.html">Tax Payment History</a> </li>
+                                <li> <a href="e-filing.html">e-Filing/Verification</a></li>
+                                <li><a href="traces-form-26-A.html">Traces ( Form 26A)</a> </li>
+                                
+                             </ul>
+                        </div>
+                    </li> 
+                     <li>
+                        <a href="#" class="glnv-dropdown">
+                            <img src="../assets/images/menu_web/cheque.svg" alt="cheque-icon">
+                            Cheque Book
+                            <span class="chevron"></span>
+                        </a>
+                        <div class="mysubnavigation-items">
+                            <ul class="lst-subnavigation">
+                                <li><a href="my-cheque-book.html">My Cheque Book</a></li>
+                                <li><a href="cheque-status-inquiry.html">Cheque Status Enquiry</a> </li>
+                                <li><a href="positive-pay.html">Positive Pay</a></li>
+                                <li><a href="stop-cheque.html">Stop Cheque</a></li>
+                                <li><a href="inward-cheque-inquiry.html">Inward Cheque Inquiry</a></li>
+                                <li><a href="new-chequebook-request.html">New Cheque Book Request</a></li>
+                            </ul>
+                        </div>
+                    </li>  
+                    <li>
+					  <a href="#" class="glnv-dropdown ">
+                        <img src="../assets/images/menu_web/social_security.svg" alt="social-security-icon">
+							Social Securities
+						   <span class="chevron "></span>
+						</a>
+						  <div class="mysubnavigation-items">
+							<ul class="lst-subnavigation">
+								<li><a href="social-security-landing-page.html">APY</a></li>
+								<li><a href="pmjjby.html">PMJJBY</a></li>
+								<li><a href="pmsby.html">PMSBY</a></li>
+                            </ul>
+						</div>
+					</li>
+                    <li>
+                        <a href="#" class="glnv-dropdown">
+                          <img src="../assets/images/menu_web/value_added_service.svg" alt="value-added-service-icon">
+                              Value Added Services
+                            <span class="chevron"></span>
+                        </a>
+                        <div class="mysubnavigation-items">
+                            <ul class="lst-subnavigation">
+                                <li><a href="#">Issue Demand Draft</a> </li>
+                                <li><a href="#">Standing Instruction</a> </li>
+                                <li><a href="#">Request for Account Statement</a> </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-footer pad">
+                <div class="poweredby">
+                    <div class="row">
+                        <div class="col-12 col-xl-12 p-0">
+                            <p class="hide-m">
+                                <img src="../assets/images/svg/version-g.svg" alt="version-icon">	 
+                                Version 2.0
+                            </p>
+                            <p class=" hide-desk">
+                                <a href="#" class="logout-btn">
+                                    <img src="../assets/images/sidemenu-mob/logout.svg" alt="logout-icon">Logout
+                                </a>
+                            </p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+   <div class="nav-overlay"></div>
+ 
+    <!-- End Global Nav -->
+
+
+    <!-- Web header section Start -->
+
+       <header class="global-header">
+        <div class="desk-header ">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-2 d-lg-none">
+                        <div class="header-actions">
+                            <button class="ux-button-header menu-btn">
+                                <img src="../assets/images/svg/open-menu1.svg" alt="open-menu-icon">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-3 col-md-1 col-sm-1 col-2 pl-0 pr-0 d-none d-xl-block d-lg-block d-md-none d-sm-none ">
+                        <div id="nav-icon1">
+                            <div class="inner-div">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-5 col-sm-6 col-6 position-static">
+                        <div class="brand-heading">
+                            <span class="logo-img align-left">
+                                <img src="../assets/images/logo/logo_center_white.svg" alt="kiya-logo">
+                             </span>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-5 col-4">
+                        <div class="header-items">
+                            <ul class="lst-header-items">
+                                <li>
+                                    <div class="user-details item-user">
+                                        <span class="round-circle red">
+                                            <h4>RC</h4>
+                                            <!-- <img src="../assets/images/icons/john.png" alt="user-img"> -->
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="hil-setting">
+                                    <a href="javascript:;" class="expander">
+                                        <img src="../assets/images/svg/expander.svg" alt="fullscreen-icon">
+                                    </a>
+                                </li>
+                                <li class="hil-setting">
+                                    <a href="javascript:;" class="item-font">
+                                        <img src="../assets/images/svg/aa.svg" alt="textlarge-icon">
+                                    </a>
+                                </li>
+                                <li class="hil-setting">
+                                    <a href="javascript:;" class="item-settings">
+                                        <img src="../assets/images/svg/settings-w.svg" alt="setting-icon">
+                                    </a>
+                                </li>
+                                <li class="hil-notification">
+                                    <a href="javascript:;" class="item-notification">
+                                        <div class="notify">
+                                            <!-- <span class="pulse"></span>  -->
+                                            <!-- <span class="point">1</span> -->
+                                        </div>
+                                        <img src="../assets/images/svg/notificaion.svg" alt="bell-icon">
+                                    </a>
+                                 </li>
+                                <li>
+                                    <a href="javascript:;" class="btn-logout">
+                                       <img src="../assets/images/svg/logout.svg" alt="logout-icon">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+   <!-- Web header section End -->
+
+
+     <!-- right main column Start -->
+
+        <div class="right-main-column">
+            <div class="right-col-container pad-b full-width"> 
+               <div class="body-page-container main-dashborad">
+                    <div class="container-fluid">
+                        <div class="row no-gutters">
+                            <div class="col-12">
+                                <div class="row1 mt-custom ">
+
+                                    <div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 col-12">
+
+                                        <div class="row">
+                                            <div class="dcustom-bg">
+                                                <div class="row1">
+                                                    <div class="col-12">
+                                                        <h2>Welcome, Ravindra Chakrapani, <span>Last Login, 29 Jul 2020, 18:45</h2>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="flex-container no-bg mb-0">
+                                                            <div class="full-info">
+                                                                <div class="row1">
+                                                                    <div class="col-12 col-md-12 col-lg-12 col-xl-10">
+                                                                        <div class="ac-info">
+                                                                            <h5>My Total Networth</h5>
+                                                                        </div>
+                                                                        <div class="ac-info">
+                                                                            <div class="greenbg-input ux-input">
+                                                                                <p class="info-message2 with-bg"> <i>Available bal.</i> <span>₹ 90,000.00</span></p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="ac-info hide-m">
+                                                                            <button class="refresh-btn"><img src="../assets/images/svg/refresh.svg" alt="refresh-icon"></button>
+                                                                            <span class="refresh-text"> Last refreshed on 30 Jul 2021, 20:30</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row1">
+                                                    <div class="col-12">
+                                                        <div class="scroll-box2 mt-0">
+                                                            <div class="owl-carousel wc-cardlist" role="list">
+                                                                <!-- LOOP through all cards :: Start -->
+                                                                <div class="item" role="listitem">
+                                                                    <div class="ux-component5 mar-tb">
+                                                                        <div class="ux-dropdown">
+                                                                            <div class="drp-box">
+                                                                                <a href="#" class="drp-enterdata active">
+                                                                                    <div class="card-section2">
+                                                                                        <div class="card-info3">
+                                                                                            <div class="card-actions2">
+                                                                                                <h4>Operative Accounts (04)</h4>
+                                                                                                <h6 class="light-t">Savings, Current & OD Accounts</h6>
+                                                                                            </div>
+                                                                                            <div class="show-btn">
+                                                                                                <button class="refresh-btn"> </button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="card-info2">
+                                                                                            <div class="show-icon">
+                                                                                                <img src="../assets/images/svg/saving1.svg" alt="deposit-icon">
+                                                                                            </div>
+                                                                                            <div class="card-actions3">
+                                                                                                <h4><img src="../assets/images/svg/rupee-bl.svg" alt="rupees-icon">
+                                                                                                    <span class="bal-info">XXXXX.XX</span>
+                                                                                                    <span class="bal-info-show">1,25,000.00</span>
+                                                                                                </h4>
+                                                                                                <h6 class="light-t">Total Available Balance</h6>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="item" role="listitem">
+                                                                    <div class="ux-component5 mar-tb">
+                                                                        <div class="ux-dropdown">
+                                                                            <div class="drp-box">
+                                                                                <a href="#" class="drp-enterdata active">
+                                                                                    <div class="card-section2">
+                                                                                        <div class="card-info3">
+                                                                                            <div class="card-actions2">
+                                                                                                <h4>My Deposits (02)</h4>
+                                                                                                <h6 class="light-t">FD/ RD Accounts</h6>
+                                                                                            </div>
+                                                                                            <div class="show-btn">
+                                                                                                <button class="refresh-btn"> </button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="card-info2">
+                                                                                            <div class="show-icon">
+                                                                                                <img src="../assets/images/svg/deposits.svg" alt="deposit-icon">
+                                                                                            </div>
+                                                                                            <div class="card-actions3">
+                                                                                                <h4><img src="../assets/images/svg/rupee-bl.svg" alt="rupees-icon">
+                                                                                                    <span class="bal-info">XXXXX.XX</span>
+                                                                                                    <span class="bal-info-show">3,00,000.00</span>
+                                                                                                </h4>
+                                                                                                <h6 class="light-t">Total Available Balance</h6>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="item" role="listitem">
+                                                                    <div class="ux-component5 mar-tb">
+                                                                        <div class="ux-dropdown">
+                                                                            <div class="drp-box">
+                                                                                <a href="#" class="drp-enterdata active">
+                                                                                    <div class="card-section2">
+                                                                                        <div class="card-info3">
+                                                                                            <div class="card-actions2">
+                                                                                                <h4>My Borrowings (01)</h4>
+                                                                                                <h6 class="light-t">Loans & Credit cards</h6>
+                                                                                            </div>
+                                                                                            <div class="show-btn">
+                                                                                                <button class="refresh-btn"> </button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="card-info2">
+                                                                                            <div class="show-icon">
+                                                                                                <img src="../assets/images/svg/loans.svg" alt="loan-icon">
+                                                                                            </div>
+                                                                                            <div class="card-actions3">
+                                                                                                <h4><img src="../assets/images/svg/rupee-bl.svg" alt="rupees-icon">
+                                                                                                    <span class="bal-info">XXXXX.XX</span>
+                                                                                                    <span class="bal-info-show">90,000.00</span>
+                                                                                                </h4>
+                                                                                                <h6 class="light-t">Total Available Balance</h6>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+ 
+                                        <div class="row">
+                                            <div class="col-12  slider-box">
+                                                <div class="owl-carousel box-owl1" role="list">
+                                                    <div class="item ux-small-scroll4" role="listitem">
+                                                        <a href="javascript:;">
+                                                            <div class="icon-card">
+                                                                <span>
+                                                                    <img src="../assets/images/svg/send-money.svg" alt="send-money-icon" class="align-self-center">
+                                                                </span>
+                                                                <div class="badge1">
+                                                                    Upcoming
+                                                                </div>
+                                                                <em>Send Money</em>
+                                                            </div>
+                                                         </a>
+                                                    </div>
+                                                    <div class="item ux-small-scroll4" role="listitem">
+                                                        <a href="javascript:;">
+                                                            <div class="icon-card">
+                                                            <span>
+                                                                <img src="../assets/images/svg/my-cards.svg" alt="my-cards-icon" class="align-self-center">
+                                                            </span>
+                                                            <em>My Cards</em>
+                                                          </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="item ux-small-scroll4" role="listitem">
+                                                        <a href="javascript:;">
+                                                            <div class="icon-card">
+                                                            <span>
+                                                                <img src="../assets/images/svg/recharge-bill-pay.svg" alt="recharge-bill-pay-icon" class="align-self-center">
+                                                            </span>
+                                                            <em>Recharge Billpay</em>
+                                                          </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="item ux-small-scroll4" role="listitem">
+                                                        <a href="javascript:;">
+                                                            <div class="icon-card">
+                                                            <span>
+                                                                <img src="../assets/images/svg/loans.svg" alt="loan-icon" class="align-self-center">
+                                                            </span>
+                                                            <em>Loans</em>
+                                                          </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="item ux-small-scroll4" role="listitem">
+                                                        <a href="javascript:;">
+                                                            <div class="icon-card">
+                                                            <span>
+                                                                <img src="../assets/images/svg/apply-products.svg" alt="apply-products-icon" class="align-self-center">
+                                                            </span>
+                                                            <em>Apply Products</em>
+                                                          </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="item ux-small-scroll4" role="listitem">
+                                                        <a href="javascript:;">
+                                                            <div class="icon-card">
+                                                            <span>
+                                                                <img src="../assets/images/svg/positive-pay.svg" alt="positive-pay-icon" class="align-self-center">
+                                                            </span>
+                                                            <em>Positive Pay</em>
+                                                          </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="item ux-small-scroll4" role="listitem">
+                                                        <a href="javascript:;">
+                                                            <div class="icon-card">
+                                                            <span>
+                                                                <img src="../assets/images/svg/service-request.svg" alt="service-request-icon" class="align-self-center">
+                                                            </span>
+                                                            <em>Service Request</em>
+                                                          </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="item ux-small-scroll4" role="listitem">
+                                                        <a href="javascript:;">
+                                                            <div class="icon-card">
+                                                            <span>
+                                                                <img src="../assets/images/svg/recent-transaction.svg" alt="recent-transaction-icon" class="align-self-center">
+                                                            </span>
+                                                            <em>Recent Transaction</em>
+                                                          </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="item ux-small-scroll4" role="listitem">
+                                                        <a href="javascript:;">
+                                                            <div class="icon-card">
+                                                            <span>
+                                                                <img src="../assets/images/svg/recommended-cards.svg" alt="recommended-cards-icon" class="align-self-center">
+                                                            </span>
+                                                            <em>Recommended Cards</em>
+                                                          </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="item ux-small-scroll4" role="listitem">
+                                                        <a href="javascript:;">
+                                                            <div class="icon-card">
+                                                            <span>
+                                                                <img src="../assets/images/svg/invest-with-us.svg" alt="invest-icon" class="align-self-center">
+                                                            </span>
+                                                            <em>Invest with Us</em>
+                                                          </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="item ux-small-scroll4" role="listitem">
+                                                        <a href="javascript:;">
+                                                            <div class="icon-card">
+                                                            <span>
+                                                                <img src="../assets/images/svg/financial.svg" alt="financial-icon" class="align-self-center">
+                                                            </span>
+                                                            <em>Financial</em>
+                                                          </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="item ux-small-scroll4" role="listitem">
+                                                        <a href="javascript:;">
+                                                            <div class="icon-card">
+                                                            <span>
+                                                                <img src="../assets/images/svg/bill-pay-icon.svg" alt="bill-pay-icon" class="align-self-center">
+                                                            </span>
+                                                            <em>Pay Bills</em>
+                                                          </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="item ux-small-scroll4" role="listitem">
+                                                        <a href="javascript:;">
+                                                            <div class="icon-card">
+                                                            <span>
+                                                                <img src="../assets/images/svg/premium-pay.svg" alt="premium-pay-icon" class="align-self-center">
+                                                            </span>
+                                                            <em>Premium Pay Bills</em>
+                                                          </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="item ux-small-scroll4" role="listitem">
+                                                        <a href="javascript:;">
+                                                            <div class="icon-card">
+                                                            <span>
+                                                                <img src="../assets/images/svg/fasttag.svg" alt="fasttag-icon" class="align-self-center">
+                                                            </span>
+                                                            <em>Fasttag</em>
+                                                          </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="item ux-small-scroll4" role="listitem">
+                                                        <a href="javascript:;">
+                                                            <div class="icon-card">
+                                                            <span>
+                                                                <img src="../assets/images/svg/recharge.svg" alt="recharge-icon" class="align-self-center">
+                                                            </span>
+                                                            <em>Recharge</em>
+                                                          </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+ 
+                                        <div class="row">
+                                            <div class="widget-box1 clearfix">
+                                                <div class="component-title6">
+                                                    <div class="row1">
+                                                        <div class="col-9 col-md-9">
+                                                            <h3>Recent Transactions </h3>
+                                                        </div>
+                                                        <div class="col-3 col-md-3">
+                                                            <a href="#" class="viewAll">View All</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="component-box">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="card-scroll2">
+                                                            <div class="owl-carousel features-owl " role="list">
+                                                                <div class="item ux-small-scroll1" role="listitem">
+                                                                    <a href="javascript:;">
+                                                                        <span class="green1">
+                                                                            <!-- <em class="align-self-center">H</em> -->
+                                                                            <img src="../assets/images/icons/user3.png" alt="user-img">
+                                                                        </span>
+                                                                        <b><img src="../assets/images/svg/rupee2.svg">1000<small class="credited"></small> </b>
+                                                                        <em>29 Sep, Ashmita</em>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="item ux-small-scroll1" role="listitem">
+                                                                    <a href="javascript:;">
+                                                                        <span class="red1">
+                                                                            <em class="align-self-center">SS</em>
+                                                                        </span>
+                                                                        <b><img src="../assets/images/svg/rupee2.svg">1000<small class="debited"></small> </b>
+                                                                        <em class="align-self-center">29 Sep, Sameer Sath...</em>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="item ux-small-scroll1" role="listitem">
+                                                                    <a href="javascript:;">
+                                                                        <span class="red1">
+                                                                            <!-- <em class="align-self-center">DS</em> -->
+                                                                            <img src="../assets/images/icons/user14.png" alt="user-img">
+                                                                        </span>
+                                                                        <b><img src="../assets/images/svg/rupee2.svg">170<small class="credited"></small> </b>
+                                                                        <em>28 Sep, Deepak Sharma</em>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="item ux-small-scroll1" role="listitem">
+                                                                    <a href="javascript:;">
+                                                                        <span class="green1">
+                                                                            <em class="align-self-center">DP</em>
+                                                                        </span>
+                                                                        <b><img src="../assets/images/svg/rupee2.svg">40<small class="credited"></small> </b>
+                                                                        <em>29 Sep, Disha Patni</em>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="item ux-small-scroll1" role="listitem">
+                                                                    <a href="javascript:;">
+                                                                        <span class="yellow">
+                                                                            <em class="align-self-center">JM</em>
+                                                                        </span>
+                                                                        <b><img src="../assets/images/svg/rupee2.svg">1200<small class="debited"></small> </b>
+                                                                        <em>28 Sep, Jasmin</em>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="item ux-small-scroll1" role="listitem">
+                                                                    <a href="javascript:;">
+                                                                        <span class="blue1">
+                                                                            <em class="align-self-center">PD</em>
+                                                                        </span>
+                                                                        <b><img src="../assets/images/svg/rupee2.svg">3200<small class="debited"></small> </b>
+                                                                        <em>26 Sep, Pooja</em>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="item ux-small-scroll1" role="listitem">
+                                                                    <a href="javascript:;">
+                                                                        <span class="red1">
+                                                                            <em class="align-self-center">DD</em>
+                                                                        </span>
+                                                                        <b><img src="../assets/images/svg/rupee2.svg">1000<small class="credited"></small> </b>
+                                                                        <em>25 Sep, Dharmesh</em>
+                                                                    </a>
+                                                                </div>
+                                                                <!-- <div class="item ux-small-scroll1" role="listitem">
+                                                                    <a href="javascript:;">
+                                                                        <span class="green1">
+                                                                            <em class="align-self-center">SD</em>
+                                                                        </span>
+                                                                        <b><img src="../assets/images/svg/rupee2.svg">1000<small class="debited"></small> </b>
+                                                                        <em>29 Sep,Sanjana</em>
+                                                                    </a>
+                                                                </div> -->
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row1">
+                                             <div class="col-12 col-md-12 col-xl-6 col-lg-6">
+                                                <div class="widget-box1 height-custom">
+                                                    <div class="component-title6">
+                                                        <div class="row1">
+                                                            <div class="col-12 col-md-9">
+                                                                <h3>Recommended Cards</h3>
+                                                            </div>
+                                                            <div class="col-12 col-md-3">
+                                                               <a href="#" class="viewAll">View All</a> 
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="component-box ">
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-12">
+                                                                <div class="card-scroll3">
+                                                                    <div class="owl-carousel card-owl" role="list">
+                                                                        <div class="item" role="listitem">
+                                                                            <div class="card-info-details">
+                                                                                <div class="full-info">
+                                                                                    <img src="../assets/images/banner/nli-banner.png" alt="banner-img"/>
+                                                                                </div>
+                                                                            </div> 
+                                                                        </div>
+                                                                        <div class="item" role="listitem">
+                                                                            <div class="card-info-details">
+                                                                                <div class="full-info">
+                                                                                    <img src="../assets/images/banner/nli-banner.png" alt="banner-img"/>
+                                                                                </div>
+                                                                            </div> 
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                              <div class="col-12 col-md-12 col-xl-6 col-lg-6">
+                                                <div class="widget-box1 height-custom">
+                                                    <div class="component-title6">
+                                                        <div class="row1">
+                                                            <div class="col-12">
+                                                                <div id="DigiCertClickID_uCYaomTN"></div>
+
+                                                            </div>
+                                                            <div class="col-12 col-md-9">
+                                                                <h3>Invest With Us</h3>
+                                                            </div>
+                                                            <div class="col-12 col-md-3">
+                                                               <a href="#" class="viewAll">View All</a>  
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="component-box ">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="card-scroll3">
+                                                                <div class="owl-carousel invest-owl" role="list">
+                                                                    <div class=" item  card-details" role="listitem">
+                                                                        <div class="img-block">
+                                                                            <img src="../assets/images/svg/IPO.svg"> 
+                                                                            <div class="badge2">
+                                                                                Upcoming
+                                                                            </div>
+                                                                        </div>
+                                                                        <span><a href="#">ASBA/ IPO</a></span>
+                                                                    </div>
+                                                                    <div class=" item  card-details" role="listitem">
+                                                                        <div class="img-block">
+                                                                            <img src="../assets/images/svg/open-fd-rd.svg">
+                                                                        </div>
+                                                                        <span><a href="#">Open RD/ FD</a></span>
+                                                                    </div>
+                                                                    <div class=" item  card-details" role="listitem">
+                                                                        <div class="img-block">
+                                                                            <img src="../assets/images/svg/ppf-desk.svg">
+                                                                        </div>
+                                                                        <span><a href="#">Open PPF/ NPS</a></span>
+                                                                    </div>
+                                                                    <div class=" item  card-details" role="listitem">
+                                                                        <div class="img-block">
+                                                                            <img src="../assets/images/svg/insurance-g.svg">
+                                                                        </div>
+                                                                        <span><a href="#">Insurance</a></span>
+                                                                    </div>
+                                                                    <div class=" item  card-details" role="listitem">
+                                                                        <div class="img-block">
+                                                                            <img src="../assets/images/svg/IPO.svg">
+                                                                        </div>
+                                                                        <span><a href="#">ASBA/ IPO</a></span>
+                                                                    </div>
+                                                                    <div class=" item  card-details" role="listitem">
+                                                                        <div class="img-block">
+                                                                            <img src="../assets/images/svg/open-fd-rd.svg">
+                                                                        </div>
+                                                                        <span><a href="#">Open RD/ FD</a></span>
+                                                                    </div>
+                                                                 </div>
+                                                              </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                        </div>
+                                    </div>
+ 
+                                    <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12">
+                                        <div class="row1">
+                                            <div class="col-12 col-md-12 col-lg-12 col-xl-12 d-none d-xl-block">
+                                                <div class="right-ads mb-4">
+                                                    <a href="#">
+                                                        <img src="../assets/images/banner/Banner-ad.png" alt="banner-img" class="bor-r">
+                                                     </a>
+                                                </div>
+                                            </div>
+                                          <!-- <div class="col-lg-12 col-md-6 col-sm-12 col-12">
+                                                <div class="widget-box1 auto-height">
+                                                    <div class="component-title6 bg1">
+                                                        <h3>Expense Manager</h3>
+                                                    </div>
+                                                    <div class="component-box">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="charts-samples">
+                                                                    <canvas id="donut-chart" width="600" height="600"></canvas>
+                                                                    <div class="chart-heading">
+                                                                        <h3><img src="../assets/images/svg/rupee-grey.svg" alt="rupees-icon">12,000.00</h3>
+                                                                        <em>Expenses</em>
+                                                                    </div>
+                                                                </div>
+                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>   -->
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <div class="widget-box1 auto-height quickpay">
+                                                    <div class="component-title6 bg1 pb-2">
+                                                        <ul class="nav nav-tabs" role="tablist">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active account-details" data-toggle="tab" href="#home1">Insta Pay</a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link recent-trans" data-toggle="tab" href="#menu1">Insta bill Pay</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="component-box">
+                                                        <div class="tab-content">
+                                                            <div id="home1" class="tab-pane active pb-2">
+                                                                <div class="row1">
+                                                                    <div class="col-12 position-static">
+                                                                        <div class="form-info">
+                                                                        <form>
+                                                                            <div class="inner-card">
+                                                                                <a class="chooseAccount"><img src="../assets/images/svg/fromAccount.svg" class="left-img"><span>From Account</span></a>
+                                                                                <ul class="quickpay-Account">
+                                                                                    <li>
+                                                                                        <input type="radio" value="112221001010" name="accNo"><label>112221001010</label>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <input type="radio" value="11234234535" name="accNo"><label>11234234535</label>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <input type="radio" value="00000566545" name="accNo"><label>00000566545</label>
+                                                                                    </li>
+                                                                                </ul>
+
+                                                                                </ul>
+                                                                            </div>
+                                                                            <div class="inner-card">
+                                                                                <a class="ToAccount"><img src="../assets/images/svg/add-user.svg" class="left-img"><span>To User</span></a>
+                                                                            </div>
+                                                                            <div class="inner-card">
+                                                                                <img src="../assets/images/svg/amount.svg" alt="" class=" left-img">
+                                                                                <div class="input-wrapp amount">
+                                                                                    <img src="../assets/images/svg/rupee-slim.svg" alt="" class="rupee">
+                                                                                    <input type="text" name="amount" placeholder="Enter Amount">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="inner-card">
+                                                                                <img src="../assets/images/svg/remarks.svg" alt="" class="left-img">
+                                                                                <div class="input-wrapp">
+
+                                                                                    <input type="text" name="remark" placeholder="Remark" class="remark">
+                                                                                    <button type="submit" class="send-money"><img src="../assets/images/svg/right-arrow.svg"></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </form>
+                                                                    </div>
+
+                                                                        <div class="getAccountDetails">
+                                                                            <div class="row1 mb-3">
+                                                                                <div class="col-12">
+                                                                                    <div class="ux-selection">	  
+                                                                                        <label class="ux-selection2">Within
+                                                                                            <input type="radio" checked="checked" name="bankType" autocomplete="off" value="within">
+                                                                                            <span class="checkmark"></span>
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div class="ux-selection">	  
+                                                                                        <label class="ux-selection2">Outside
+                                                                                            <input type="radio" name="bankType" autocomplete="off" value="outside">
+                                                                                            <span class="checkmark"></span>
+                                                                                        </label>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            
+                                                                            <div class="inner-card">
+                                                                                <b class="input-header">Account Number</b>
+                                                                                <div class="input-wrapp">
+                                                                                    <input type="text" name="accNumber" placeholder="Enter Account Number">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="inner-card">
+                                                                                <b class="input-header">Confirm Account Number</b>
+                                                                                <div class="input-wrapp"> 
+                                                                                    <input type="text" name="ConfAccNumber" placeholder="Enter Account Number">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="inner-card withinBank">
+                                                                                <b class="input-header">IFSC</b>
+                                                                                <div class="input-wrapp">
+                                                                                     <input type="text" name="ifsc" placeholder="Enter IFSC  code" class="remark">
+                                                                                     <span class="check"><a href="#"> check </a></span> 
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="inner-card outsideBank">
+                                                                                <b class="input-header">Customer Name</b>
+                                                                                <div class="input-wrapp">
+                                                                                     <input type="text" name="ifsc" placeholder="Enter Customer Name" class="remark">
+                                                                                </div>
+                                                                            </div>
+                                                                            
+                                                                            <div class="row1">
+                                                                                <div class="col-6 pr-2">
+                                                                                    <div class="text-center">
+                                                                                        <button class="ux-button sm secondary">Cancel</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-6 pl-2">
+                                                                                    <div class="text-center">
+                                                                                        <button class="ux-button sm primary">Proceed</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="menu1" class="tab-pane fade">
+                                                                <ul class="transaction-list2">
+                                                                    <li>
+                                                                        <div class="full-info">
+                                                                            <div class="left-info">
+                                                                                <h5>20 Apr'18</h5>
+                                                                                <h6>VPS/NMMT/2018042114610/00</h6>
+                                                                            </div>
+                                                                            <div class="left-info">
+                                                                                <h5><img src="../assets/images/svg/rupee-bl.svg" alt="rupee-icon"> 110.00 <span class="debit">Dr</span> </h5>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="full-info">
+                                                                            <div class="left-info">
+                                                                                <h5>20 Apr'18</h5>
+                                                                                <h6>VPS/NMMT/2018042114610/00</h6>
+                                                                            </div>
+                                                                            <div class="left-info">
+                                                                                <h5><img src="../assets/images/svg/rupee-bl.svg" alt="rupee-icon"> 110.00 <span class="credit">Cr</span> </h5>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                        </div>
+                                        
+                                        <div class="vspacer50"></div>
+ 
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+ 
+                    </div>
+                 </div>
+              
+            </div>
+         </div>
+        
+    <!-- right main column End -->
+
+
+   <!-- Footer Code Starts Here -->
+
+        <footer>
+            <div class="global-footer">
+                <div class="in-glfooter">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-4 col-xl-6 col-lg-6 col-md-6 col-sm-4">
+                                <div class="glfooter-content">
+                                    <div class="glfooter-box">
+                                        <div class="glcopyright-text">
+                                            <em>Powered by</em> <img src="../assets/images/logo/kiya-logo.svg" alt="kiya-logo">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-8 col-xl-6 col-lg-6 col-md-6 col-sm-8">
+                                <div class="glfooter-content">
+                                    <div class="glfooter-box">
+                                        <div class="glcopyright-text1">
+                                            <em>Copyright © 2023 Infrasoft Technologies Ltd. All rights reserved.</em>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+  <!-- Footer Code Ends -->
+ 
+    </div> 
+    
+ <!-- main -->
+
+
+    <aside class="notification-panel sticky-panel themePanel">
+        <div class="notp-header">
+            <a href="javascript:;" class="btn-closenoty"></a>
+            <h5>Theme Customizer</h5>
+        </div>
+        <div class="notp-content">
+            <div class="notp-innercontent">
+                <div class="notp-nodatafound">
+                    <div class="nightmode clearfix">
+                        <h5>Night Mode</h5>
+                        <div class="modebox">
+                            <div class="el-switch-main">
+                                <img src="../assets/images/svg/moon.svg">
+                                <label class="el-switch">
+                                    <input type="checkbox" name="nightswtich">
+                                    <span class="el-switch-style"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="theme-block">
+                        <h5>Theme</h5>
+                        <div class="row1 mb-1">
+                            <div class="col-12">
+                                <ul class="theme-list">
+                                    <li class="dark active" theme="default" style="background-image: url(../assets/images/background/bg-dark.png)"></li>
+                                    <li class="light " theme="light" style="background-image: url(../assets/images/background/bg-light.png)"></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="theme-block">
+                        <h5>Layout Background</h5>
+                        <div class="row1 mb-1">
+                            <div class="col-12">
+                                <ul class="theme-list background-layout">
+                                    <li class="active" layoutBg="default" style="background-image: url(../assets/images/background/psb-pattern-grey.png)"></li>
+                                    <li layoutBg="white" style="background-color:#fff;    box-shadow: 0 0 5px rgb(0 0 0 / 20%);"></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="theme-block">
+                        <h5>Sidebar Background image</h5>
+                        <div class="row1 mb-1">
+                            <div class="col-12">
+                                <ul class="theme-list sidebarnav">
+                                    <li class="light" theme="light" style="background-image: url(../assets/images/background/bg-light.png)"></li>
+                                    <li class="dark" theme="default" style="background-image: url(../assets/images/background/bg-dark.png)"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="vspacer20"></div>
+                <div class="vspacer20"></div>
+                <div class="row1">
+                    <div class="col-12 col-xl-12 col-lg-12 col-md-12 ">
+                        <div class="ux-footer">
+                            <button class="ux-button sm primary float-right">Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- <div class="notp-footer">
+			<p>Test</p>
+		</div>  -->
+        <!-- <div class="page-tools">
+			<div class="lst-page-tools">
+				  <a href="#" class="rightpannel">
+					  <img src="../assets/images/svg/adjust.svg" alt="adjust-icon"> 
+					</a>
+			 </div>
+		 </div> -->
+    </aside>
+
+    <div class="notpanel-overlay"></div>
+
+  
+ <!--  modal popup Start -->
+
+   <!-- Logout Popup Start -->
+
+            <!-- <div class="popup-bottom sm-popup logout-popup">
+                <div class="row1">
+                    <div class="col-10">
+                        <h4 class="text-left">Confirmation</h4>
+                    </div>
+                    <div class="col-2">
+                        <button class="ux-button-icon close-btn">
+                            <img src="../assets/images/svg/close-b.svg" alt="cross-icon" class="img-vsmall">
+                        </button> 
+                </div>
+                </div>
+                <div class="row1">
+                    <div class="col-12">
+                        <p class="text-left">Are you sure you want to Logout?</p>
+                    </div>
+                </div>
+                <div class="row1 mt-2">
+                    <div class="col-12">
+                        <ul class="bottom-footer1">
+                            <li>
+                                <div class="btn-div custom-mar">
+                                    <button  class="ux-button secondary sm sm-mob close-btn" onclick="window.location.href = '#'">No</button>
+                                </div>
+                                <div class="btn-div custom-mar">
+                                    <button  class="ux-button primary sm sm-mob submit-btn" onclick="window.location.href = 'login.html'">Yes</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+         </div> -->
+
+  <!-- Logout Popup End -->   
+  
+  
+  <!-- Logout Popup Start -->
+
+        <div class="popup-bottom sm-popup logout-popup">
+            <div class="row1">
+                <div class="col-12">
+                    <h4 class="text-center">Logout</h4>
+                </div>
+            </div>
+            <div class="row1">
+                <div class="col-12">
+                    <p> 
+                        Are you sure you want to Logout?
+                    </p>
+                </div>
+            </div>
+            <div class="row1 mt-2">
+                <div class="col-6 text-center">
+                    <button class="ux-button secondary no md close-btn" onclick="window.location.href = '#'">No</button>
+                </div>
+                <div class="col-6 text-center">
+                    <button class="logout-btn ux-button primary md" onclick="window.location.href = 'login.html'">Yes</button>
+                </div>
+            </div>
+        </div>
+
+    <!-- Logout Popup End -->
+
+    <div class="ios-nav-overlay"></div>
+
+    <!--  modal popup end -->
+ 
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <script src="../js/lib/jquery-ui.min.js"></script>
+    <script src="../js/lib/owl.carousel.min.js"></script>
+    <script src="../js/lib/popper.min.js"></script>
+    <script src="../js/lib/jquery.mousewheel.min.js"></script>
+    <script src="../js/lib/jquery.mCustomScrollbar.js"></script>
+    <script src="../js/lib/datatables.min.js"></script>
+    <script src="../js/common.js"></script>
+    <!-- <script src="../js/lib/chart2.min.js"></script> -->
+
+    <script type="text/javascript">
+        mycardCarousel();
+        circleCarousel()
+        boxCarousel()
+        boxCarousel2()
+        // DonutChart();
+
+        $("button.btn-logout, a.btn-logout").click(function() {
+                // console.log('working');
+                if (!$('div.popup-bottom.logout-popup').hasClass('popup-active')) {
+                    $('div.popup-bottom.logout-popup').addClass('popup-active');
+                    $('div.ios-nav-overlay').fadeIn(400);
+                } else {
+                    $('div.popup-bottom.logout-popup').removeClass('popup-active');
+                    $('div.ios-nav-overlay').fadeOut(400);
+                }
+            });
+   
+            $("button.close-btn").click(function() {
+                // console.log('working');
+                $('div.popup-bottom.logout-popup').removeClass('popup-active');
+               $('div.ios-nav-overlay').fadeOut(400);
+            });
+        
+
+        $("ul.lst-nav-items").mCustomScrollbar({
+		    axis:"y",
+		    theme: "dark-2",
+            //theme:"dark-thin",
+			// autoExpandScrollbar:true,
+		   advanced:{autoExpandHorizontalScroll:true}
+		 });
+  
+        $('div.show-btn button.refresh-btn').click(function(e) {
+            console.log('clicked me!');
+            e.preventDefault();
+            e.stopPropagation();
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active')
+                $(this).parents('.ux-component5').find('h4 span.bal-info').css("display", "inline-block");
+                $(this).parents('.ux-component5').find('h4 span.bal-info-show').css("display", "none");
+            } else {
+                $(this).addClass('active')
+                $(this).parents('.ux-component5').find('h4 span.bal-info').css("display", "none");
+                $(this).parents('.ux-component5').find('h4 span.bal-info-show').css("display", "inline-block");
+            }
+        });
+
+        function mycardCarousel() {
+            $('div.wc-cardlist').owlCarousel({
+                margin: 20,
+                nav: true,
+                autoplay: false,
+                autoWidth:true,
+                autoplayTimeout: 3000,
+                loop: false,
+                rewind: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false,
+                    },
+                    600: {
+                        items: 1,
+                        nav: false
+                    },
+                    768: {
+                        items: 2,
+                        nav: false,
+                        // loop:false
+                    },
+                    1024: {
+                        items: 1,
+                        nav: false,
+                        // loop:false
+                    },
+                    1200: {
+                        items: 2,
+                        nav: false,
+                        // loop:false
+                    },
+                    1366: {
+                        items: 2,
+                        nav: false,
+                        // loop:false
+                    },
+                    1400: {
+                        items: 2,
+                        nav: false,
+                        // loop:false
+                    },
+                    1600: {
+                        items: 3,
+                        nav: false,
+                        // loop:false
+                    }
+                }
+            });
+        }
+
+        function boxCarousel2() {
+            $('.box-owl1').owlCarousel({
+                autoplay: false,
+                autoplayTimeout: 3000,
+                loop: false,
+                autoWidth: true,
+                rewind: true,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 3
+                    },
+                    480: {
+                        items: 3
+                    },
+                    640: {
+                        items: 4
+                    },
+                    768: {
+                        items: 5,
+                        nav: true,
+                        // loop:false
+                    },
+                    1024: {
+                        items: 4,
+                        nav: true,
+                        // loop:false
+                    },
+                    1200: {
+                        items: 4,
+                        nav: true,
+                        // loop:false
+                    },
+                    1366: {
+                        items: 5,
+                        nav: true,
+                        // loop:false
+                    },
+                    1400: {
+                        items: 5,
+                        nav: true,
+                        // loop:false
+                    },
+                    1600: {
+                        items: 6,
+                        nav: true,
+                        // loop:false
+                    }
+                }
+            })
+        }
+
+
+        function boxCarousel() {
+            $('.feature-owl').owlCarousel({
+                autoplay: true,
+                autoplayTimeout: 3000,
+                loop: false,
+                // rewind: true,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 3
+                    },
+                    600: {
+                        items: 4
+                    },
+                    1024: {
+                        items: 4,
+                        nav: false,
+                        // loop:false
+                    },
+                    1200: {
+                        items: 4,
+                        nav: false,
+                        // loop:false
+                    },
+                    1366: {
+                        items: 5,
+                        nav: false,
+                        // loop:false
+                    },
+                    1400: {
+                        items: 5,
+                        nav: false,
+                        // loop:false
+                    },
+                    1600: {
+                        items: 6,
+                        nav: false,
+                        // loop:false
+                    },
+                    1920: {
+                        items: 6,
+                        nav: false,
+                        // loop:false
+                    }
+                }
+            })
+        }
+
+        function circleCarousel() {
+            $('.features-owl').owlCarousel({
+                autoplay: true,
+                autoplayTimeout: 3000,
+                loop: false,
+                rewind: true,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 3
+                    },
+                    600: {
+                        items: 4
+                    },
+                    1024: {
+                        items: 4,
+                        nav: false,
+                        // loop:false
+                    },
+                    1200: {
+                        items: 4,
+                        nav: false,
+                        dots: false,
+                        // loop:false
+                    },
+                    1366: {
+                        items: 6,
+                        nav: false,
+                        dots: false,
+                        // loop:false
+                    },
+                    1400: {
+                        items: 6,
+                        nav: false,
+                        dots: false,
+                        // loop:false
+                    },
+                    1600: {
+                        items: 6,
+                        nav: false,
+                        dots: false,
+                        // loop:false
+                    },
+                    1680:{
+                        items: 8,
+                        nav: false,
+                        dots: false,
+                    }
+                }
+            })
+
+
+            $('.card-owl').owlCarousel({
+                margin: 20,
+                autoplay: false,
+                autoWidth: false,
+                loop: false,
+                rewind: false,
+                nav: false,
+                dots: true,
+                items: 1,
+                responsive: {
+                    10000: {
+                        dots: true,
+                    },
+                }
+            })
+
+
+            $('.invest-owl').owlCarousel({
+                // margin: 20,
+                autoplay: false,
+                loop: false,
+                rewind: false,
+                nav: false,
+                dots: true,
+                items: 4,
+                responsive: {
+					0: {
+                        items: 3,
+                    },
+                    600: {
+                        items: 3,
+                    },
+                    768: {
+                        dots: true,
+                        items:5,
+                    },
+                    1024: {
+                        items: 3,
+                        nav: false,
+                        // loop:false
+                    },
+                    1200: {
+                        items: 3,
+                        nav: false,
+                        // loop:false
+                    },
+                    1366: {
+                        items: 4,
+                        nav: false,
+                        // loop:false
+                    },
+                    1400: {
+                        items: 4,
+                        nav: false,
+                        // loop:false
+                    },
+                    1600: {
+                        items: 4,
+                        nav: false,
+                        // loop:false
+                    }
+                }
+            })
+
+        }
+ 
+        $(document).on('click', '.chooseAccount', function() {
+            $('.widget-box1.quickpay .tab-content .inner-card ul.quickpay-Account').slideToggle();
+
+
+        })
+        $(document).on('click', '.ToAccount', function() {
+            alert('test');
+            $('.widget-box1.quickpay .tab-content .getAccountDetails').addClass('active');
+            $(this).parents().eq(2).hide();
+
+
+        })
+        $(document).on('click', '.widget-box1.quickpay .tab-content .getAccountDetails button', function() {
+            $('.widget-box1.quickpay .tab-content .getAccountDetails ').removeClass('active');
+            
+          })
+
+        // $(document).on('change', '.widget-box1.quickpay .tab-content .inner-card ul.quickpay-Account li input', function() {
+
+        //     $('.widget-box1.quickpay .tab-content .inner-card a.chooseAccount span').text($(this).val());
+        //     $('.widget-box1.quickpay .tab-content .inner-card ul.quickpay-Account').slideUp();
+        // })
+        $('.outsideBank').hide();
+        $('input[name=bankType]').click(function(){
+            if($(this).val()=='outside'){
+                $('.outsideBank').show();
+                $('.withinBank').hide();
+            }
+            else{
+                $('.withinBank').show();
+                $('.outsideBank').hide();
+            }
+        })
+ 
+
+</script>
+
+
+</body>
+
+</html>
+

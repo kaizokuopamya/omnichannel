@@ -1,0 +1,33 @@
+.complaintpage .widget-box5{
+    min-height:250px;
+}
+.ux-linkbutton1, a.ux-linkbutton1 {
+    background-color: transparent;
+    border: none;
+    text-transform: capitalize;
+    padding: 0.2rem 1.2rem;
+    margin: 0px auto;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50px;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 0.8rem;
+    line-height: 1rem;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+}
+.ux-linkbutton1.RESOLVED, a.ux-linkbutton1.RESOLVED {
+    color: #007C3D;
+    background-color: rgba(0, 124, 61, 0.1);
+    text-decoration: none;
+}
+.ux-linkbutton1.INITIATED, a.ux-linkbutton1.INITIATED {
+    color: #0075b0;
+    background-color: rgba(0, 117, 176, 0.1);
+}
+.ux-linkbutton1.ASSIGNED, a.ux-linkbutton1.ASSIGNED {
+    color: #999100;
+    background-color: rgba(255, 242, 0, 0.2);
+}

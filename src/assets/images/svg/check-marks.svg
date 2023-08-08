@@ -1,0 +1,18 @@
+<svg id="check-marks" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Mask" d="M9.453.213a.7.7,0,0,1,1.006,0,.739.739,0,0,1,0,1.029l-6.4,6.545a.7.7,0,0,1-1.006,0L.208,4.878a.739.739,0,0,1,0-1.029.7.7,0,0,1,1.006,0L3.556,6.244Z" fill="#339ad5" stroke="#339ad5" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Group_36587" data-name="Group 36587">
+    <g id="Group_35947" data-name="Group 35947">
+      <g id="Ellipse_2667" data-name="Ellipse 2667" fill="#fff" stroke="#339ad5" stroke-width="2">
+        <circle cx="15" cy="15" r="15" stroke="none"/>
+        <circle cx="15" cy="15" r="14" fill="none"/>
+      </g>
+    </g>
+    <g id="Group_36583" data-name="Group 36583" transform="translate(6 5)">
+      <path id="Mask-2" data-name="Mask" d="M9.453.213a.7.7,0,0,1,1.006,0,.739.739,0,0,1,0,1.029l-6.4,6.545a.7.7,0,0,1-1.006,0L.208,4.878a.739.739,0,0,1,0-1.029.7.7,0,0,1,1.006,0L3.556,6.244Z" transform="translate(4 6)" fill="#339ad5" stroke="#339ad5" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

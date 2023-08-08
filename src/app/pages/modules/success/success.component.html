@@ -1,0 +1,24 @@
+<div class="prelogin-page">
+	<div class="registration-steps">
+		<div class="row1">
+			<div class="col-12 position-static">
+				<div class="inner-header">
+					<div class="registration-container">
+						<h4>{{dataService.successFull}}</h4> 
+                    </div>
+				</div>
+				<div class="registrationsteps-block registration-container success-page ">
+					<div class="img-block"> <img src="assets/images/svg/reg-success.svg" alt="reg-success"></div>
+					<div class="row1">
+						<div class="col-12 col-md-10 col-lg-10 col-xl-10 m-auto">
+							<h3>Success!</h3>
+							<h5>{{dataService.successMsg | translate}}</h5>
+							<h5 *ngIf="dataService.refId">Reference No - {{dataService.refId}}</h5>
+							<button (click)="goToPage('login')" class="mt-2 ux-button md primary">Login Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

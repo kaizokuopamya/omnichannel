@@ -1,0 +1,48 @@
+<div class="bfooter" *ngIf="footerData.length > 0">
+    <div class="row1">
+        <div class="col-12 col-lg-12 col-xl-12 col-md-12 col-sm-12 ">
+            <nav class="ios-global-nav">
+                <ul class="lst-ios-nav">
+                    <li *ngFor="let data of footerData; let i = index">
+                        <a href="javascript:" (click)="goToPage('/' + data.url)">
+                            <span class="inav-icon">
+                                <img alt="{{'footer-icon' + i}}" [src]="data.image" >
+                            </span> {{data.name | translate}}
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Footer Code Starts Here -->
+<footer *ngIf="showBrandingFooter">
+    <div class="global-footer">
+        <div class="in-glfooter">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-4 col-xl-6 col-lg-6 col-md-6 col-sm-4">
+                        <div class="glfooter-content">
+                            <div class="glfooter-box">
+                                <div class="glcopyright-text">
+                                    <em>Powered by </em> <img src="../assets/images/logo/kiya-logo.svg" alt="kiya-logo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8 col-xl-6 col-lg-6 col-md-6 col-sm-8">
+                        <div class="glfooter-content">
+                            <div class="glfooter-box">
+                                <div class="glcopyright-text1">
+                                    <em>Copyright © 2023 Infrasoft Technologies Ltd. All rights reserved.</em>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Footer Code Ends -->

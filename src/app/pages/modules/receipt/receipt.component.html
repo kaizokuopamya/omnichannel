@@ -1,0 +1,287 @@
+<div class="main bg-m">
+	<header class="global-header success-bg minus-nav" *ngIf="dataService.isCordovaAvailable">
+		<div class="in-header">
+			<div class="header-icons-lft ">
+				<div class="header-actions">
+					<button class="ux-button-header"> <img src="assets/images/svg/close-w.svg" (click)="navigate('/dashboardMobile')" alt="left-arrow-icon" class="img-vsmall" /> </button>
+				</div>
+			</div>
+			<div class="brand-logo"> </div>
+			<div class="header-icons-rit">
+				<div class="header-actions">
+					<button class="ux-button-header mr-2" (click)="downloadPdfReceipt('N')"> <img src="assets/images/svg/download1-w.svg" alt="download-icon" class="img-small" /> </button>
+					<button class="ux-button-header mr-2" (click)="downloadPdfReceipt('Y')"> <img src="assets/images/svg/share1-w.svg" alt="share-icon" class="img-small" /> </button>
+					<button class="ux-button-header mr-2" (click)="openPopup('fav-popup')" *ngIf="dataService.screenType != 'addPayee' && dataService.screenType != 'instaPay' && dataService.screenType != 'bbpsTransfer' && dataService.screenType != 'cardlessCashWithdraw'  && dataService.screenType != 'openDeposit' ">  <img [src]="isFavourite ? 'assets/images/svg/star1-active.svg': 'assets/images/svg/star1-w.svg'" alt="star-icon" class="img-small" /> </button>
+					<button class="ux-button-header mr-2" (click)="addAsPayee()" *ngIf="dataService.screenType == 'instaPay' "> <img src="assets/images/svg/add-user-white.svg" alt="star-icon" class="img-small" /> </button>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- <div class="nav-overlay"></div> -->
+	<div class="right-main-column ">
+		<div class="right-col-container pad-b full-width">
+			<!-- ======== body page content start from here ======== -->
+			<div class="body-page-container main-dashborad manage-payee">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-12 p-0">
+							<!-- <div class="breadcrumb">
+								<ul class="lst-breadcrumb">
+									<li *ngIf="dataService.screenType == 'fundTransfer' || dataService.screenType == 'instaPay'"> <a routerLink="/sendMoney">{{"SEND_MONEY" | translate }}</a> </li>
+									<li *ngIf="dataService.screenType == 'fundTransfer'"> <a routerLink="/sendMoney">{{"INITIATE_SEND_MONEY" | translate }}</a> </li>
+									<li *ngIf="dataService.screenType == 'chequeBookRequest'"> <a routerLink="/chequeBookRequest">{{"SERVICE_REQUEST" | translate}}</a> </li>
+									<li *ngIf="dataService.screenType == 'chequeBookRequest'"> <a routerLink="/chequeBookRequest">{{"CHEQUE_BOOK_REQUEST" | translate}}</a></li>
+									<li *ngIf="dataService.screenType == 'stopCheque'"> <a routerLink="/stopcheques">{{"SERVICE_REQUEST" | translate}}</a> </li>
+									<li *ngIf="dataService.screenType == 'stopCheque'"> <a routerLink="/stopcheques">{{"STOP_CHEQUE" | translate}}</a> </li>
+									<li *ngIf="dataService.screenType == 'addPayee' &&  dataService.beneficiaryType=='1'"><a routerLink="/addPayee">{{"SEND_MONEY" | translate }}</a> </li>
+									<li *ngIf="dataService.screenType == 'openDeposit' "><a routerLink="/openDeposit">{{"OPEN_DEPOSIT" | translate }}</a> </li>
+									<li *ngIf="dataService.screenType == 'closeDeposit' "><a routerLink="/closeDeposit">{{"CLOSE_DEPOSIT" | translate }}</a> </li>
+
+									<li> {{"RECEIPT" | translate }} </li>
+								</ul>
+							</div> -->
+							<app-breadcrumb routeName="RECEIPT"></app-breadcrumb>
+						</div>
+					</div>
+					<!--.row -->
+					<div class="vspacer15 customize d-none d-md-block d-lg-block d-xl-block"></div>
+					<div class="row no-gutters">
+						<div class="col-12">
+							<div class="row1">
+								<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-9" id="receiptPDF">
+									<!-- Greencard2 Start here -->
+									<div class="greencard2">
+										<div class="row1 hide-m" *ngIf="dataService.screenType != 'addPayee'">
+											<div class="col-md-8 col-12">
+												<h4>{{"RECEIPT" | translate }}</h4> </div>
+											<div class="col-md-4 col-12 text-right">
+												<div class="header-actions" *ngIf="dataService.screenType == 'bbpsTransfer'"> <img src="assets/images/icons/billpay.png" style="width:65px" alt="billpay-img" class="small-img"> </div>
+											</div>
+										</div>
+										<div class="row1">
+											<!-- Result -->
+											<div class="col-sm-12 col-12 col-md-12">
+												<div class="white-box2 mar-t pad-custom custom-bor">
+													<div class="row">
+														<div class="success">
+															<h5 class="pl-0" [ngClass]="{'success': receiptType === constant.val_Successful, 'error' : receiptType != constant.val_Successful }">
+                                                                <img [src]="receiptType == constant.val_Successful ? 'assets/images/svg/success-arrow.svg' :  'assets/images/svg/fail.svg'"
+                                                                    alt="success-icon"> {{receiptType}}
+                                                            </h5> 
+                                                            <small *ngIf="(dataService.endPoint != constant.serviceName_SCHEDULARTRANSMASTER) ">{{dataService.receiptmsg}}</small> 
+                                                            <small *ngIf="(dataService.endPoint == constant.serviceName_SCHEDULARTRANSMASTER && receiptType === constant.val_Successful)"> {{"TRANSACTION_SCHEDULED_SUCCESSFULLY" | translate}}</small> <small *ngIf="(dataService.endPoint == constant.serviceName_SCHEDULARTRANSMASTER && receiptType != constant.val_Successful )">{{dataService.receiptmsg}}</small>
+															
+                                                            <h4 *ngIf="(dataService.screenType != 'freezeAccount' && dataService.screenType != 'addPayee') && dataService.screenType != 'donationTransfer' && dataService.screenType != 'closeDeposit' && dataService.screenType != 'openDeposit' && dataService.screenType != 'nomieeDetails'">
+                                                                {{receiptResp?.amount}}</h4> 
+                                                                
+                                                            <h4 *ngIf="dataService.screenType == 'openDeposit'" class="pl-0" [ngClass]="{'success': receiptType === constant.val_Successful, 'error' : receiptType != constant.val_Successful }">{{dataService.feedbackType == 'FDDetails' ? receiptResp.depositAmount : dataService.openRDReceiptObj.installmentAmount}} </h4> 
+															
+															
+															<small class="mt-3" *ngIf="dataService.screenType != 'openDeposit' && dataService.screenType != 'closeDeposit'">
+                                                                <span *ngIf="dataService.screenType != 'addPayee'">
+																	{{receiptResp?.type == "vpa" ? ("RRN No. : " | translate) : ("TRANSACTION_ID" | translate) }}
+																	{{receipdRefID}}
+                                                                </span>
+                                                            </small>
+
+                                                            <small class="mt-2" *ngIf="dataService.screenType == 'openDeposit'">
+																<small *ngIf="dataService.FDRDAccNumber" class="mar-t bold">
+																	{{dataService.feedbackType == 'FDDetails' ? dataService.openFDReceiptObj.depositType : dataService.openRDReceiptObj.depositType }} Account Number {{dataService.FDRDAccNumber}}</small> 
+																<span>
+                                                                    {{"TRANSACTION_ID" | translate}} {{receipdRefID}}
+																</span> 
+															</small>
+
+															<ng-container  *ngIf="dataService.screenType == 'closeDeposit'">
+																<small *ngIf="receiptResp.FDAccNumber" class="mar-t bold">{{dataService.closeDepositType == 'closeFD'? 'FD' : 'RD' }} Account Number {{dataService.closeDepositType == 'closeFD'? receiptResp.FDAccNumber : receiptResp.RDAccNumber}}</small>
+																<small><span class="mt-2">	{{"TRANSACTION_ID" | translate}} {{receipdRefID}}  </span></small>
+															</ng-container>
+                                                        
+                                                        </div>
+													</div>
+													<div class="bg-img " [ngClass]="dataService.screenType == 'bbpsTransfer'  ? 'billpay-success-img' : '' " id="bank-logo"> <img src="assets/images/svg/psb-receipt icon.svg" alt="success-bg" data-html2canvas-ignore="false" /> <img src="assets/images/svg/b-icon1.svg" alt="success-bg" class="assure-bill-icon mr-2" *ngIf="dataService.screenType == 'bbpsTransfer'"> </div>
+												</div>
+											</div>
+											<div class="col-sm-12 col-12 col-md-12">
+												<div class="result-container1 mar-top" *ngIf="screenDetails">
+													<div class="info-bottom pad-custom">
+														<div class="mt-3"></div>
+														<div class="info-details" *ngFor="let key of keys(screenDetails)">
+															<div class="row">
+																<h6>{{ key | translate }}</h6>
+																<h5>{{ screenDetails[key] }}</h5> </div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-12 col-12 col-md-12" *ngIf="dataService.screenType == 'bbpsTransfer'">
+												<div class="result-container1 mar-top">
+												  <div class="info-bottom pad-custom d-block d-sm-none" >
+													<div class="info-details pt-3">
+													  <div class="text-center ">
+														  <img src="assets/images/svg/b-icon1.svg" alt="success-bg" style="width:60px; display:inline-block;" >
+													  </div>
+													</div> 
+												</div> 
+												<div class="info-bottom pad-custom" *ngIf="receiptType != constant.val_Successful">
+													<div class="info-details">
+													  <div class="row">
+														<h6>{{"BILLER_NAME" | translate}}</h6>
+														 <h5 class="info-heading"> 
+														  <span class="biller-icon">
+															<img src="{{dataService.billerdata.logourl}}" alt="logo">
+														   </span>
+														   {{dataService.billerdata.billerName}}
+														   </h5>
+													  </div>
+													</div>
+													<div class="info-details mb-3" *ngFor="let item of dataService.finalBilldata">
+														<div class="row">
+															<h6>{{item.label}}</h6>
+															<h5>{{item.field }} </h5>
+														</div>
+													</div> 
+												</div> 
+													<div class="info-bottom pad-custom" *ngIf="receiptType == constant.val_Successful">
+													
+													  <div class="info-details mb-3" *ngFor="let item of dataService.bbpsReceiptDetails">
+													
+														<div class="row"  *ngIf="item.label == 'Biller name'">
+														  <h6>{{"BILLER_NAME" | translate}}</h6>
+														   <h5 class="info-heading"> 
+															<span class="biller-icon">
+															  <img src="{{dataService.billerdata.logourl}}" alt="logo">
+															 </span>
+															 {{item.field}}
+															 </h5>
+														</div>
+													  <div class="row" *ngIf="item.label != 'Biller name'">
+														<h6>{{item.label}}</h6>
+														<h5>{{item.field }} </h5>
+													  </div>
+													</div>
+												   
+												  </div>
+												</div>
+											</div>
+											   <!--End :  BBPS Tranfer -->
+											<div class="col-12 col-md-12">
+												<div class="row1" data-html2canvas-ignore="false">
+													<div class="col-md-12 col-lg-6 col-12" [ngStyle]="{'visibility' : dataService.screenType != 'addPayee' && dataService.screenType != 'nomineeDetails'? 'none' : 'hidden'  }">
+														<ul class="link-list hide-m">
+															<li (click)="shareDetails()">
+																<a><img src="assets/images/svg/share.svg" alt="share-icon"> {{'SHARE' | translate}}</a>
+															</li>
+															<li (click)="downloadPdfReceipt('N')">
+																<a><img src="assets/images/svg/download.svg" alt="download-icon"> {{'DOWNLOAD' | translate}}</a>
+															</li>
+															<li (click)="downloadPdfReceipt('Y')">
+																<a> <img src="assets/images/svg/print.svg" alt="print-icon"> {{'PRINT' | translate}}</a>
+															</li>
+															<li (click)="addAndDeleteFav()" *ngIf="dataService.screenType == 'fundTransfer' && receiptResp?.paymentType != 'self'">
+																<div class="row" *ngIf="!isFavourite">
+																	<a> <img src="assets/images/svg/star.svg" alt="star-icon">{{'SAVE_AS_FAVOURITE'| translate}}</a>
+																</div>
+																<div class="row" *ngIf="isFavourite">
+																	<a> <img src="assets/images/svg/star-active.svg" alt="star-icon">{{'FAVOURITE'| translate}}</a>
+																</div>
+															</li>
+															<li (click)="addAsPayee()" *ngIf="dataService.screenType == 'instaPay'">
+																<div class="row">
+																	<a> <img src="assets/images/svg/add-user.svg" alt="add-user-icon">{{'ADD_AS_PAYEE'| translate}}</a>
+																</div>
+															</li>
+														</ul>
+													</div>
+													<div class="col-md-12 col-lg-6 col-12">
+														<ul class="bottom-footer1">
+															<li *ngIf="dataService.screenType != 'openDeposit' && dataService.screenType != 'closeDeposit' && dataService.screenType != 'nomineeDetails'">
+																<div class="btn-div" [ngStyle]="{display :dataService.screenType != 'addPayee' && dataService.screenType != 'debitCard' && dataService.screenType != 'reissuecard' &&  dataService.screenType != 'getPhysicalCard' && dataService.screenType != 'generatePin' && dataService.screenType != 'CardDetails' && dataService.screenType != 'blockCard' && dataService.screenType != 'cardlessCashWithdraw' ? 'block' : 'none'  }">
+																	<button (click)="goTofeedback()" *ngIf="dataService.screenType != 'bbpsTransfer'" class=" ux-button secondary sm-mob"> {{'FEEDBACK' | translate}}</button>
+																	<!-- <button (click)="setbbpsReminder()" *ngIf="dataService.screenType == 'bbpsTransfer'" class=" ux-button secondary sm-mob"> {{'SET_REMINDER' | translate}}</button> -->
+																</div>
+																<div class="btn-div" [ngClass]="dataService.screenType == 'addPayee' || dataService.screenType == 'cardlessCashWithdraw' ? 'w100' : '' ">
+																	<button class=" ux-button primary sm-mob" (click)="goBack()"> {{'HOME' | translate}}</button>
+																</div>
+															</li>
+
+                                                            <li *ngIf="dataService.screenType == 'openDeposit' || dataService.screenType == 'closeDeposit'">
+																<div class="btn-div">
+																	<button *ngIf="dataService.screenType == 'openDeposit'"class="ux-button secondary sm-mob" (click)="goToPage('openDeposit')">{{'MORE_DEPOSIT' | translate}}</button>
+																	<button *ngIf="dataService.screenType == 'closeDeposit'" class=" ux-button secondary sm-mob" (click)="goToPage('myDeposits')">{{'MORE_DEPOSIT' | translate}}</button>
+																
+																</div>
+																<div class="btn-div">
+																	<button class="ux-button primary sm-mob" (click)="goToPage('myDeposits')" *ngIf="dataService.feedbackType == 'FDDetails'">{{'VIEW_FD_DETAILS' | translate}}</button>
+																	<button class="ux-button primary sm-mob" (click)="goToPage('myDeposits')" *ngIf="dataService.feedbackType == 'RDDetails'">{{'VIEW_RD_DETAILS' | translate}}</button>
+																	<button class=" ux-button primary sm-mob" (click)="goBack()" *ngIf="dataService.screenType == 'closeDeposit'"> {{'HOME' | translate}}</button>
+																</div>
+															</li>
+
+															<li *ngIf="dataService.screenType == 'nomineeDetails'">
+																<div class="btn-div w100">
+																	<button class="ux-button primary sm-mob" (click)="goToPage('accountMiniStatement')">{{'BACK_TO_MY_ACCOUNTS' | translate}}</button>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Greencard2 End here -->
+								</div>
+								<!-- Right Column Ads Start -->
+								<div class="col-12 col-md-12 col-lg-12 col-xl-3 d-none d-xl-block">
+									<app-banner></app-banner>
+									<div class="vspacer30"></div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--.right-col-container-->
+	</div>
+</div>
+<div class="popup-bottom sm-popup fav-popup">
+	<div class="row">
+		<div class="col-12">
+			<h4 class="text-center">{{'CONFIRMATION' | translate}}</h4> </div>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<p *ngIf="!isFavourite"> {{'WOULD_YOU_LIKE_TO_ADD' | translate}} {{receiptResp?.type == "vpa" ? dataService.validateAddressResp.MASKNAME : receiptResp?.payee_name}} {{'TO_FAVORITES' | translate}} ? </p>
+			<p *ngIf="isFavourite"> {{'WOULD_YOU_LIKE_TO_REMOVE' | translate}} {{receiptResp?.type == "vpa" ? dataService.validateAddressResp.MASKNAME : receiptResp?.payee_name}} {{'FROM_FAVORITES' | translate}} ? </p>
+		</div>
+	</div>
+	<div class="row1 mt-2">
+		<div class="col-6 text-center">
+			<button class="ux-button secondary no md close-btn" (click)="closePopup('fav-popup')">{{'NO' | translate}}</button>
+		</div>
+		<div class="col-6 text-center">
+			<button class="logout-btn ux-button primary md" (click)="addAndDeleteFav()">{{'YES' | translate}}</button>
+		</div>
+	</div>
+</div>
+<div class="popup-bottom sm-popup show-fav-info">
+	<div class="row1">
+		<div class="col-12">
+			<h4 class="text-center"> <img src="./assets/images/svg/information.svg" alt="information-icon">
+                {{'INFORMATION' | translate}}
+            </h4> </div>
+	</div>
+	<div class="row1">
+		<div class="col-12">
+			<p>{{ information}}</p>
+		</div>
+	</div>
+	<div class="row1  mt-2">
+		<div class="col-12 text-center" (click)="closePopup('show-fav-info')">
+			<button class="ux-button primary submit-btn" type="button">{{'OK' | translate}}</button>
+		</div>
+	</div>
+</div>
+<div class="notpanel-overlay"></div>

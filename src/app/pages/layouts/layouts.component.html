@@ -1,0 +1,62 @@
+
+<div class="ios-nav-overlay"></div>
+<div id="pageLoader" class="loading-backdrop" style="display:none"><img src="assets/images/loader/pageloader.gif"></div>
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- Empty layout -->
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<empty-layout *ngIf="layout == 'empty'"></empty-layout>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- Classic layout -->
+<!-- -------------------------------------------------------------------------------------------------------->
+
+<classic-layout *ngIf="layout == 'classic'"></classic-layout>
+
+<!-- Show Common Info Popup Start -->
+<div class="popup-bottom show-common-info sm-popup">
+    <div class="row1">
+        <div class="col-12">
+            <h4 class="text-center"> <img src="./assets/images/svg/information.svg" alt="information-icon">{{ dataService.informationLabel}}
+            </h4>
+        </div>
+    </div>
+    <div class="row1">
+        <div class="col-12">
+            <p *ngIf="dataService.information != ''">{{ dataService.information}}</p>
+        </div>
+    </div>
+    <div class="row1  mt-2">
+        <div class="col-12 text-center" (click)="closePopups('div.popup-bottom.show-common-info')">
+            <button class="ux-button primary submit-btn" type="button">{{dataService.primaryBtnText}}</button>
+        </div>
+    </div>
+</div>
+<!-- Show Common Info Popup End -->
+
+<!--start Log Out popup-->
+
+<div class="popup-bottom sm-popup logout-popup">
+    <div class="row1">
+        <div class="col-12">
+            <h4 class="text-center">Logout</h4>
+        </div>
+    </div>
+    <div class="row1">
+        <div class="col-12">
+            <p> 
+                {{'DO_YOU_WANT_LOGOUT' | translate }} ?
+            </p>
+        </div>
+    </div>
+    <div class="row1 mt-2">
+        <div class="col-6 text-center">
+            <button class="ux-button secondary no md close-btn" (click)="closePopups('div.popup-bottom.logout-popup')">No</button>
+        </div>
+        <div class="col-6 text-center">
+            <button class="logout-btn ux-button primary md" (click)="_logout()">Yes</button>
+        </div>
+    </div>
+</div>
+
+<!--End LogOut Popup -->

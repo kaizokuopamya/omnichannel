@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="Group_40106" data-name="Group 40106" transform="translate(-550 -10859)">
+    <g id="Group_40105" data-name="Group 40105">
+      <g id="Group_40100" data-name="Group 40100" transform="translate(-7.001)">
+        <rect id="Rectangle_18713" data-name="Rectangle 18713" width="30" height="30" transform="translate(557 10859)" fill="none"/>
+      </g>
+    </g>
+    <g id="Group_40104" data-name="Group 40104" transform="translate(-273 -175.383)">
+      <g id="bank" transform="translate(826 11037.383)">
+        <path id="Path_43980" data-name="Path 43980" d="M23.775,8.907a.71.71,0,0,0,.718-.7V5.391a.7.7,0,0,0-.443-.649L12.521.054a.731.731,0,0,0-.55,0L.443,4.742A.7.7,0,0,0,0,5.391V8.2a.71.71,0,0,0,.718.7H1.961v7.969H1.722a.71.71,0,0,0-.718.7v2.109H.718a.71.71,0,0,0-.718.7V23.3a.71.71,0,0,0,.718.7H23.775a.71.71,0,0,0,.718-.7V20.391a.71.71,0,0,0-.718-.7h-.287V17.579a.71.71,0,0,0-.718-.7h-.239V8.907Zm-.718,12.187v1.5H1.435v-1.5ZM5.788,18.282v1.406H2.44V18.282ZM3.4,16.876V8.907H4.831v7.969Zm3.109,0H6.267V8.907H18.226v7.969h-.239a.71.71,0,0,0-.718.7v2.109H7.223V17.579A.71.71,0,0,0,6.506,16.876Zm15.547,1.406v1.406H18.7V18.282Zm-2.392-1.406V8.907H21.1v7.969ZM1.435,7.5V5.861l10.811-4.4,10.811,4.4V7.5Z" transform="translate(0 -0.001)" fill="#339ad5"/>
+        <path id="Path_43981" data-name="Path 43981" d="M160.328,100h-8.611a.718.718,0,0,0,0,1.435h8.611a.718.718,0,1,0,0-1.435Z" transform="translate(-143.777 -95.319)" fill="#339ad5"/>
+      </g>
+      <g id="block-user" transform="translate(833.488 11047.043)">
+        <path id="Path_43985" data-name="Path 43985" d="M22.26,18a4.757,4.757,0,1,0,4.757,4.757A4.76,4.76,0,0,0,22.26,18Zm0,1.464a3.293,3.293,0,1,1-3.293,3.293A3.3,3.3,0,0,1,22.26,19.466Z" transform="translate(-17.503 -18.002)" fill="#339ad5" fill-rule="evenodd"/>
+        <path id="Path_43986" data-name="Path 43986" d="M25.015,19.823l-5.692,5.692a.732.732,0,1,0,1.035,1.035l5.692-5.692a.732.732,0,0,0-1.035-1.035Z" transform="translate(-17.933 -18.432)" fill="#339ad5" fill-rule="evenodd"/>
+      </g>
+    </g>
+  </g>
+</svg>

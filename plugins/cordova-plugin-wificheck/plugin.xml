@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8' standalone="yes"?>
+<plugin id="cordova-plugin-wificheck" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>WCAndroidPlugin</name>
+    <description>WifiCheck Cordova Android Plugin to detect secure wifi.</description>
+    <engines>
+        <engine name="cordova" version=">=7.1.0"/>
+        <engine name="cordova-android" version=">=6.3.0"/>
+    </engines>
+    <js-module name="WCAndroidPlugin" src="www/WC.js">
+        <clobbers target="cordova.plugins.wc" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="WCAndroidPlugin">
+                <param name="android-package" value="com.cordova.plugins.wc.WC" />
+            </feature>
+        </config-file>
+        
+        
+    <config-file target="AndroidManifest.xml" parent="/*">
+          <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+           <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+          <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    </config-file>
+        <source-file src="src/android/com/cordova/plugins/wc/WC.java" target-dir="src/com/cordova/plugins/wc" />
+    </platform>
+</plugin>
+
+
+
+
+

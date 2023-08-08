@@ -1,0 +1,222 @@
+<div class="main bg-m">
+	<!-- Start Global Nav -->
+	<div class="nav-overlay"></div>
+	<!-- End Global Nav -->
+	<div class="right-main-column ">
+		<div class="right-col-container pad-b full-width">
+			<!-- ======== body page content start from here ======== -->
+			<div class="body-page-container main-dashborad manage-payee">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-12 p-0">
+							<app-breadcrumb routeName="FAVOURITE_PAYEE"></app-breadcrumb>
+						</div>
+					</div>
+					<!--.row -->
+					<div class="vspacer15 customize d-none d-md-block d-lg-block d-xl-block"></div>
+					<div class="row no-gutters">
+						<div class="col-12">
+							<div class="row1">
+								<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+									<!-- Greencard2 Start here -->
+									<div class="greencard2">
+										<div class="row1 hide-m">
+											<div class="col-md-8 col-12">
+												<h4>{{"FAVOURITE_PAYEE" | translate }} </h4> </div>
+											<div class="col-md-4 col-12"> </div>
+										</div>
+										<div class="row1">
+											<div class="col-sm-12 col-12 col-md-12">
+												<div class="widget-box5">
+													<div class="component-title6 custom-pad">
+														<div class="row1">
+															<div class="col-12 col-md-6 col-lg-7 col-xl-8">
+																<h4 class="default-grey">{{'FAVOURITE_PAYEE_LIST' | translate}} ({{favroutelist.length}})</h4>
+															 </div>
+															<div class="col-12 col-md-6 col-lg-5 col-xl-4">
+																<div class="row1">
+																	<div class="col-12 col-md-12">
+																		<div class="search-input ux-input  mt-0 mb-0">
+																			<input type="text" name="search" [(ngModel)]="searchText" (ngModelChange)="searchAccount($event)" placeholder='{{"SEARCH_HERE" | translate}}' > <em class="show-searchicon"></em>
+																			<p class="error-message"></p>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="no-accounts text-center statement-table widget-box5	 mb-0 py-5" *ngIf="favroutelist.length==0"> <img src="assets/images/svg/no-rec-found.svg" class="mb-3">
+														<h5 class="mb-5">{{"NO_FAVOURITE_FOUND" | translate }} </h5>
+														<!-- <button class="ux-button primary submit-btn " (click)="goToPage('/accountOpening')">Open a new account</button> -->
+													</div>
+													<div class="bg-white1" *ngIf="favroutelist.length!=0">
+														<div class="row">
+															<ul class="grid-list1">
+																<li class="grey-th">
+																	<div class="grid-info2">
+																		<div class="full-info">
+																			<h6>{{"PAYEE_NAME" | translate}}</h6> </div>
+																	</div>
+																	<div class="grid-info2">
+																		<div class="full-info">
+																			<h6>{{"NICK_NAME" | translate}}</h6> </div>
+																	</div>
+																	<div class="grid-info2">
+																		<div class="full-info">
+																			<h6>{{"PAYEE_TYPE" | translate}}</h6> </div>
+																	</div>
+																	
+																	<div class="grid-info2">
+																		<div class="full-info">
+																			<h6>{{"ACCOUNT_NUMBER" | translate}}</h6> </div>
+																	</div>
+																	<div class="grid-info2">
+																		<div class="full-info">
+																			<h6>{{"BANK_NAME" | translate}}</h6> </div>
+																	</div>
+																	<div class="grid-info2">
+																		<div class="full-info">
+																			<h6>{{"IFSC" | translate}}</h6> </div>
+																	</div>
+																	<div class="grid-info2">
+																		<div class="full-info">
+																			<h6>{{"TRANSACTION_LIMIT" | translate}}</h6> </div>
+																	</div>
+																	<div class="grid-info2">
+																		<div class="full-info">
+																			<h6>{{"MOBILE_NUMBER" | translate}}</h6> </div>
+																	</div>
+																	<div class="grid-info2">
+																		<div class="full-info">
+																			<h6>{{"MMID" | translate}}</h6> </div>
+																	</div>
+																	<div class="grid-info2">
+																		<div class="full-info"> </div>
+																	</div>
+																</li>
+																<!-- modified by USER PSB1-->
+																<li *ngIf="this.favroutelist.length == 0">
+																	<div class="col-12">
+																		<div class="row mt-3 mb-2">
+																			<div class="col-12 col-lg-12 col-md-12 col-sm-12 px-0 d-none d-sm-none d-xl-block d-lg-block d-md-block">
+																				<div class="dataTables_info text-center">
+																					{{"NO_PAYEE_FOUND" | translate}}
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</li>
+																	<li *ngFor="let favourites of favroutelist | paginate:config1, let i= index">
+																	<div class="grid-info2">
+																		<div class="full-info">
+																			<div class="left-info p-0">
+																				<h5>{{favourites.benefName}}</h5>
+																			</div> <em></em> </div>
+																	</div>
+																	<div class="grid-info2">
+																		<div class="full-info">
+																			<h6 class="display-mt">{{"NICK_NAME" | translate}}</h6>
+																			<h5>{{favourites.beneficiary_nick_name}} </h5> </div>
+																	</div>
+																	<div class="grid-info2">
+																		<div class="full-info">
+																			<h6 class="display-mt">{{"PAYEE_TYPE" | translate}}</h6>
+																			<h5 *ngIf="favourites.beneficiaryType=='INTRA'">Within</h5>
+																			<h5 *ngIf="favourites.beneficiaryType=='INTERBANK'">Outside</h5>
+																			<h5 *ngIf="favourites.beneficiaryType=='MMID'">MMID</h5>
+																		</div>
+																	</div>
+																	<div class="grid-info2">
+																		<div class="full-info">
+																			<h6 class="display-mt">{{"ACCOUNT_NUMBER" | translate}}</h6>
+																			<h5>{{favourites.beneficiary_account_no}}</h5> </div>
+																	</div>
+																	<div class="grid-info2">
+																		<div class="full-info">
+																			<h6 class="display-mt">{{"BANK_NAME" | translate}}</h6>
+																			<h5>{{favourites?.beneficiary_bank_name != 'null' ? favourites.beneficiary_bank_name : '-'}}</h5> </div>
+																	</div>
+																	<div class="grid-info2">
+																		<div class="full-info">
+																			<h6 class="display-mt">{{"IFSC" | translate}}</h6>
+																			<h5>{{favourites.ifsc_code && favourites.ifsc_code != 'null' ? favourites.ifsc_code : "-"}}</h5> </div>
+																	</div>
+																	<div class="grid-info2">
+																		<div class="full-info">
+																			<h6 class="display-mt">{{"TRANSACTION_LIMIT" | translate}}</h6>
+																			<h5><img src="assets/images/svg/rupee-bl.svg" alt="rupees-icon"> {{favourites.TransactionAmount && favourites.TransactionAmount != 'null' ? favourites.TransactionAmount : '-'}}</h5> </div>
+																	</div>
+																	<div class="grid-info2">
+																		<div class="full-info">
+																			<h6 class="display-mt">{{"MOBILE_NUMBER" | translate}}</h6>
+																			<h5> {{ favourites.beneficiaryMobileNo && favourites.beneficiaryMobileNo != 'null' ? favourites.beneficiaryMobileNo : '-' }}</h5> </div>
+																	</div>
+																	<div class="grid-info2">
+																		<div class="full-info">
+																			<h6 class="display-mt">{{"MMID" | translate}}</h6>
+																			<h5> {{favourites.MMID && favourites.MMID != 'null' ? favourites.MMID : '-'}}</h5> </div>
+																	</div>
+																	<div class="grid-info2">
+																		<div class="full-info text-right">
+																			<!-- <button class="star-btn active mr"> </button> -->
+																			<button class="ux-button sm primary-custom md" (click)="sendMoneyy(favourites)">{{"SEND_MONEY" | translate}}</button>
+																		</div>
+																	</div>
+																</li>
+																
+																<li>
+																	<div class="col-12">
+																		<div class="row  mt-3 mb-2">
+																			<div class="col-12 col-lg-6 col-md-6 col-sm-6 px-0 d-none d-sm-none d-xl-block d-lg-block d-md-block" *ngIf="this.favroutelist.length > 0">
+																				<div id="dt-sample_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                                                                                    <div class="dataTables_info pt-2" id="dt-sample_info" role="status" aria-live="polite">Showing {{this.favroutelist.length > 0 ? ((this.config1.currentPage -1) * this.config1.itemsPerPage) +1 : 0}} to {{this.favroutelist.length > (this.config1.currentPage * this.config1.itemsPerPage) ? (this.config1.currentPage * this.config1.itemsPerPage) : this.favroutelist.length}} of <b>{{this.favroutelist.length}}</b> entries</div>
+																				</div>
+																			</div>
+																			<div class="col-12 col-lg-6 col-md-6 px-0 d-none d-sm-none d-xl-block d-lg-block d-md-block text-right">
+																			
+																					<div class="pagination-container pull-right"  *ngIf="this.favroutelist.length > this.config1.itemsPerPage">
+																						<pagination-controls id='basicPaginate1' (pageChange)="pageChanged1($event)" class="my-pagination"></pagination-controls>
+																					</div>
+																				
+
+																			</div>
+																		</div>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Greencard2 End here -->
+								</div>
+								<!-- Right Column Ads Start -->
+								<!-- <div class="col-12 col-md-12 col-lg-12 col-xl-3 d-none d-xl-block">
+									<app-banner></app-banner>
+									<div class="vspacer30"></div>
+									<div class="offers-card">
+										<div class="header-block clearfix">
+											<h5>{{"OFFERS_ON_CARD"}}</h5> </div>
+										<div class="panel-body">
+											<div class="recentpayment-control">
+												<ul>
+													<li> <img src="assets/images/banner/offer-banner.png"> </li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div> -->
+								<!-- Right Column Ads Ends -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--.right-col-container-->
+	</div>
+	<!--.right-main-column-->
+</div>
+<!-- main -->

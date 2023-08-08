@@ -1,0 +1,30 @@
+.bg-white1.pad-custom{
+    min-height: 260px;
+    border-radius: 15px;
+}
+.dummySelect{
+    width:100%; 
+    background: url('../../../../../../assets/images/icons/arrow-down-r.png') no-repeat center right;
+    -webkit-appearance: none;
+    appearance: none;
+    background-position: bottom 11px right 6px;
+    background-size: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 0 0 rgb(0 0 0 / 30%);
+    color: rgba(0, 0, 0, 0.6);
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    height: 39px;
+    padding: 5px 35px 5px 0px;
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+    &.error{
+        border-bottom: 1px solid red
+    }
+}
+
+.ux-disabled{
+    pointer-events:none;
+}

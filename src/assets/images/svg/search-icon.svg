@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="fingerprint" transform="translate(643 1998)">
+    <g id="base" opacity="0">
+      <rect id="Rectangle_982" data-name="Rectangle 982" width="24" height="24" transform="translate(-643 -1998)" fill="#339ad5"/>
+      <rect id="Rectangle_983" data-name="Rectangle 983" width="20" height="20" transform="translate(-641 -1996)" fill="#339ad5"/>
+    </g>
+    <path id="search" d="M17.333,16.3l-4.366-4.366a7.327,7.327,0,1,0-1.034,1.034L16.3,17.333A.731.731,0,1,0,17.334,16.3ZM7.307,13.159a5.852,5.852,0,1,1,5.852-5.852,5.852,5.852,0,0,1-5.852,5.852Z" transform="translate(-639.758 -1994.758)" fill="#339ad5"/>
+  </g>
+</svg>

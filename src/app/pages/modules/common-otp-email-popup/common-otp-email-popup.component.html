@@ -1,0 +1,132 @@
+<div class="popup-bottom md-popup otp-email-popup">
+	<div class="row1">
+		<div class="col-12">
+			<h4 class="text-center">  {{'OTP_VERIFICATION' | translate}}</h4>
+		</div>
+		<!-- <div class="col-2">
+			<button class="ux-button-icon close-btn" (click)="closeOtpPopup('otp-popup','otpForm')"> <img src="assets/images/svg/close-b.svg" alt="cross-icon" class="img-vsmall"> </button>
+		</div> -->
+	</div>
+	<div class="row1">
+		<div class="col-12 col-md-8 col-lg-8 col-xl-8 m-auto">
+			<div class="mob-icon"> <img src="assets/images/icons/mobile.svg" alt="mobile-icon"> </div>
+			<h6 class="text-center mar-tb">  {{'OTP_SEND_MOBILE' | translate}} {{maskedMobileNo}}  {{'AND_EMAIL_ID' | translate}}
+				{{maskedEmailId}}</h6>
+		</div>
+	</div>
+	<form [formGroup]="otpForm">
+		<div class="row1">
+			<div class="col-12 col-md-8 col-lg-8 col-xl-8  m-auto">
+				<div class="row1">
+					<div class="col-12 col-md-12 col-xl-12 col-lg-12">
+						<div class="ux-input password1 mb-1">
+							<label for="mobileOtp text-center"> {{'MOBILE_OTP' | translate}}</label>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="row4">
+							<div class="col-sm-2 col-2 col-md-2" *ngFor="let item of mobileInput; let i = index">
+								<div class="ux-input password1 mb-1">
+									<input id="mobile{{i+1}}" type="tel" #mobileOTPRow limit-to="1" numbersOnly
+										placeholder="●" (keyup)=" onKeyUpEventOtp(i, $event,'mobile')"
+										(focus)="onFocusEvent(i,'mobile')" formControlName="{{item}}">
+								</div>
+							</div>
+						</div>
+						<div class="row1">
+							<div class="col-12">
+								<div class="ux-input password1 mt-0 mb-0">
+									<p class="error-message"></p>
+								</div>
+							</div>
+						</div>
+						<div class="row4">
+							<div class="col-6 col-md-6">
+								<div class="text-left">
+									<p class="text-left"> <span class="success-text"
+											*ngIf="mobileCounter > 0">{{mobileCounter| formatTimer }}</span> </p>
+								</div>
+							</div>
+							<div class="col-6 col-md-6">
+								<div class="text-right">
+									<button class="ux-linkbutton default-underline mt-3"
+										[ngClass]="mobileCounter > 0 ? 'mydisabled' : 'resendActive'"
+										(click)="resendOTPLink('mobile')">{{ 'RESEND' | translate }}</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row1">
+			<div class="col-12 col-md-8 col-lg-8 col-xl-8  m-auto">
+				<div class="row1">
+					<div class="col-12 col-md-12 col-xl-12 col-lg-12">
+						<div class="ux-input password1 mb-1">
+							<label for="emailOtp text-center"> {{'EMAIL_OTP' | translate}}</label>
+						</div>
+					</div>
+					<div class="col-12 col-md-12">
+						<div class="row4">
+							<div class="col-sm-2 col-2 col-md-2"  *ngFor="let item of emailInput; let i = index">
+								<div class="ux-input password1 mb-1">
+									<input id="email{{i + 1}}" type="tel" #emailOTPRow limit-to="1" placeholder="●"
+										(keyup)="onKeyUpEventOtp(i, $event,'email')" (focus)="onFocusEvent(i,'email')"
+										formControlName="{{item}}">
+								</div>
+							</div>
+							
+						</div>
+						<div class="row1">
+							<div class="col-12">
+								<div class="ux-input password1 mt-0 mb-0">
+									<p class="error-message"></p>
+								</div>
+							</div>
+						</div>
+						<div class="row4">
+							<div class="col-6 col-md-6">
+								<div class="text-left">
+									<p class="text-left"> <span class="success-text" *ngIf="counter > 0">{{counter|
+											formatTimer }}</span> </p>
+								</div>
+							</div>
+							<div class="col-6 col-md-6">
+								<div class="text-right">
+									<button class="ux-linkbutton default-underline mt-3"
+										[ngClass]="counter > 0 ? 'mydisabled' : 'resendActive'"
+										(click)="resendOTPLink('email')">{{ 'RESEND' | translate }}</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+	<div class="row1">
+		<div class="col-12">
+			<div class="ux-input password1 mt-0 mb-0">
+				<p class="error-message"></p>
+			</div>
+			<div class="text-center">
+				<span class="errormsg">{{otpfailMsg}}</span>
+			</div>
+		</div>
+	</div>
+	<div class="row1 mt-2">
+		<div class="col-12 col-md-8 col-lg-8 col-xl-8  m-auto">
+			<div class="row1">
+				<div class="col-6 text-center">
+					<button class="ux-button secondary sm-mob close-btn" type="submit"
+						(click)="closeOtpPopup()">{{'CANCEL' | translate}}</button>
+				</div>
+				<div class="col-6 text-center">
+					<button class="ux-button primary sm-mob otp-submit" type="submit" (click)="validateOtp()"
+						[disabled]="otpForm.invalid">{{ 'SUBMIT' | translate }}</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

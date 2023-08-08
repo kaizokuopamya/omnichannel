@@ -1,0 +1,303 @@
+<div class="main bg-m">
+	<div class="right-main-column ">
+		<div class="right-col-container pad-b full-width">
+			<!-- ======== body page content start from here ======== -->
+			<div class="body-page-container main-dashborad mycards bill-wrapper">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-12 p-0">
+							<app-breadcrumb routeName="PAYMENT_HISTORY"></app-breadcrumb>
+						</div>
+					</div>
+					<!--.row -->
+					<div class="vspacer15 customize d-none d-xl-block d-lg-block d-md-none d-sm-none "></div>
+					<div class="row no-gutters">
+						<div class="col-12">
+							<div class="row1">
+								<div class="col-12 col-sm-12 col-md-12 col-lg-12  col-xl-9">
+									<div class="greencard2 tracklist">
+										<div class="row1">
+											<div class="col-md-8 col-12  hide-m">
+												<h4>Payment History</h4> 
+											</div>
+											<div class="col-md-4 col-12">
+												<div class="header-actions mb-2">
+													<a class="filter-history " (click)="openFilter()"> <img src="assets/images/svg/filter.svg" alt="filter-icon"> Filter </a> <img src="assets/images/icons/billpay.png" alt="billpay-img" class="small-img  hide-m"> </div>
+											</div>
+										</div>
+										<div class="row1">
+											<div class="col-12 col-sm-12 col-md-12 col-lg-12">
+												<div class="widget-box5 mb-3">
+													<div class="bg-white1 pad-custom p-0">
+
+														<!-- <p class="text-center py-5" *ngIf="renderedData.length == 0">{{filterErrorMsg}}</p> -->
+														<div class="no-complaint text-center col-12 py-5" *ngIf="renderedData.length == 0">
+															<div class="ad-wrapper"> 
+																<img src="assets/images/svg/no_bills.svg" alt="ad-image" class="img-fluid"> 
+															</div>
+															 <small>{{filterErrorMsg}}</small> 
+														</div>
+														<ul class="bill-reminder-list payment-history-grid" *ngIf="renderedData.length != 0">
+															<li class="grey-th">
+																<div class="grid-info">
+																	<div class="full-info">
+																		<h6>Biller Name</h6> </div>
+																</div>
+																<div class="grid-info">
+																	<div class="full-info">
+																		<h6>Paid on</h6> </div>
+																</div>
+																<div class="grid-info">
+																	<div class="full-info">
+																		<h6>Status</h6> </div>
+																</div>
+																<div class="grid-info">
+																	<div class="full-info">
+																		<h6>Amount</h6> </div>
+																</div>
+															</li>
+															<li *ngFor="let item of renderedData | paginate: { itemsPerPage: itemsPerPage, currentPage: p }; let i = index" (click)="billHistoryDetails(item)">
+																<div class="grid-info">
+																	<div class="full-info">
+																		<div class="list-full" >
+																			<div class="icon1"> <img src="{{item.moreDetails.biller_logo}}" alt="airtel-logo"> </div>
+																			<h5>{{item.biller_name}}</h5>
+																			<h6 class="display-mt" *ngIf="item.short_name">
+																				{{item.short_name}} 
+																				<span>{{item.formatedTxnDate}}</span> 
+																			</h6> 
+																			<h6 class="display-mt" *ngIf="!item.short_name">
+																				<span>{{item.formatedTxnDate}}</span> 
+																			</h6> 
+																		</div>
+																	</div>
+																</div>
+																<div class="grid-info d-none d-sm-block">
+																	<div class="full-info">
+																		<h5>{{item.formatedTxnDate}}</h5> </div>
+																</div>
+																<div class="grid-info">
+																	<div class="full-info text-status">
+																		 <em class="text-success" *ngIf="item.biller_status == 'SUCCESS'" >Payment Successful</em> 
+																		  <em class="" *ngIf="item.biller_status == 'PENDING'" >Payment Pending</em>
+																		  <em class="text-reject" *ngIf="item.biller_status == 'FAILED'" >Payment Failed</em>
+																		 </div>
+																</div>
+																<div class="grid-info">
+																	<div class="full-info">
+																		<h5><img src="assets/images/svg/rupee-bl.svg" alt="rupee-icon"> {{item.debit_amount}}</h5> </div>
+																</div>
+															</li>
+															<!-- <li>
+																<div class="grid-info">
+																	<div class="full-info">
+																		<div class="list-full">
+																			<div class="icon1"> <img src="assets/images/icons/tata-sky.png" alt="airtel-logo"> </div>
+																			<h5>Monthly DTH Bill</h5>
+																			<h6 class="display-mt">Bill Payment due on <span>25 March 2020</span> </h6> </div>
+																	</div>
+																</div>
+																<div class="grid-info d-none d-sm-block">
+																	<div class="full-info">
+																		<h5>25 March 2020</h5> </div>
+																</div>
+																<div class="grid-info">
+																	<div class="full-info text-status"> <em class="text-success">Payment Successful</em> </div>
+																</div>
+																<div class="grid-info">
+																	<div class="full-info">
+																		<h5><img src="assets/images/svg/rupee-bl.svg" alt="rupee-icon">900</h5> </div>
+																</div>
+															</li> -->
+															<!-- <li>
+																<div class="grid-info">
+																	<div class="full-info">
+																		<div class="list-full">
+																			<div class="icon1"> <img src="assets/images/icons/mahanagar-gas.png" alt="airtel-logo"> </div>
+																			<h5>Monthly Gas Bill</h5>
+																			<h6 class="display-mt">Bill Payment due on <span>25 March 2020</span> </h6> </div>
+																	</div>
+																</div>
+																<div class="grid-info d-none d-sm-block">
+																	<div class="full-info">
+																		<h5>25 March 2020</h5> </div>
+																</div>
+																<div class="grid-info">
+																	<div class="full-info text-status"> <em class="text-reject">Payment Failed</em> </div>
+																</div>
+																<div class="grid-info">
+																	<div class="full-info">
+																		<h5><img src="assets/images/svg/rupee-bl.svg" alt="rupee-icon">900</h5> </div>
+																</div>
+															</li -->
+															<li *ngIf="renderedData.length > 10 ">
+																<div class="col-12">
+																	<div class="row  mt-3 mb-2">
+																		<div class="col-12 col-lg-6 col-md-6 col-sm-6 px-0 d-none d-sm-none d-xl-block d-lg-block d-md-block">
+																			<div id="dt-sample_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+																				<div class="dataTables_info pt-2" id="dt-sample_info" role="status" aria-live="polite"> 
+																					<!-- Showing 1 to 2 of -->
+																					 <b>{{renderedData.length}}</b> entries</div>
+																			</div>
+																		</div>
+																		<div class="col-12 col-lg-6 col-md-6 px-0  text-right">
+																			<div class="custom-paging">
+																				<div class="dataTables_wrapper">
+																					
+																					<div class="dataTables_paginate">
+
+																						<pagination-controls (pageChange)="p = $event" screenReaderPaginationLabel="Pagination"
+																						screenReaderPageLabel="page"  previousLabel="Previous"
+																						nextLabel="Next"
+																						screenReaderCurrentLabel="You're on page" >
+																					
+																					
+																						</pagination-controls>
+
+
+																						
+																					</div>
+																					<!--.dataTables_paginate -->
+																				</div>
+																				<!--.dataTables_wrapper -->
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</li> 
+														</ul>
+													</div>
+												</div>
+											</div>
+											<div class="col-12 col-md-12 hide-m">
+												<ul class="bottom-footer1">
+													<li>
+														<div class="btn-div w100">
+															<button class="ux-button secondary sm-mob" (click)="goToPage('retailRechargeBillPay')" >Back</button>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 col-md-12 col-lg-12 col-xl-3 d-none d-xl-block">
+									<app-banner></app-banner>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--.container-fluid-->
+			</div>
+			<!--.body-page-container-->
+		</div>
+		<!--.right-col-container-->
+	</div>
+	<!--.right-main-column-->
+
+</div>
+<!-- main -->
+
+<!-- Filter Popup Start -->
+<div class="popup-bottom filter1 sm-popup">
+	<div class="row1">
+		<div class="col-10">
+			<h4 class="text-left">{{popupHeader}}</h4> </div>
+		<div class="col-2">
+			<button class="ux-button-icon close-btn"  (click)="closePopup()"> <img src="assets/images/svg/close-b.svg" alt="cross-icon" class="img-vsmall"> </button>
+		</div>
+	</div>
+	<div class="row1 mt-2">
+		<div class="col-12">
+			<div class="ux-input pb-0">
+				<label>Search by</label>
+			</div>
+		</div>
+		<div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+			<div class="row1">
+				<div class="col-5 col-md-5">
+					<div class="ux-selection mar-custom">
+						<label class="ux-selection2">Duration
+							<input type="radio" value="duration" name="search1" (change)="resetform()"  [(ngModel)]="searchOptions" [checked]="searchOptions == 'duration' " > <span class="checkmark"></span> </label>
+						<div> </div>
+					</div>
+				</div>
+				<div class="col-7 col-md-7">
+					<div class="ux-selection mar-custom">
+						<label class="ux-selection2">Payment ID
+							<input type="radio"  value="transaction" name="search1" (change)="resetform()" [(ngModel)]="searchOptions" [checked]="searchOptions == 'transaction' " > <span class="checkmark"></span> </label>
+						<div> </div>
+					</div>
+				</div>
+			</div>
+        
+			<div id="transaction1" *ngIf="searchOptions == 'transaction' ">
+                <form [formGroup]="transactionForm">
+				<div class="row1 mt-3">
+					<div class="col-sm-12 col-12 col-md-12">
+						<div class="ux-input">
+							<label for="transactionNumber">Payment ID</label>
+							<input type="text" placeholder="Enter Payment ID" formControlName="transactionNumber">
+                            <p class="error-message mb-0" *ngIf="transactionForm.controls['transactionNumber'].hasError('required') && (transactionForm.controls['transactionNumber'].dirty || transactionForm.controls['transactionNumber'].touched)"> {{"REQUIRED_MSG" | translate}} </p>
+                            <p class="error-message mb-0" *ngIf="showFiltrtErrorMsg"> {{filterErrorMsg}} </p>
+
+						</div>
+					</div>
+				</div>
+				<div class="row1 mt-2">
+					<div class="col-6 text-center">
+						<button class="ux-button secondary no " (click)="resetform()" >Reset</button>
+					</div>
+					<div class="col-6 text-center">
+						<button class="ux-button primary md" type="submit" (click)="trackFilterSubmit('transaction')" >Apply</button>
+					</div>
+				</div>
+            </form>
+			</div>
+			<div id="duration1" *ngIf="searchOptions == 'duration' ">
+                <form [formGroup]="durationForm">
+				<div class="row1 mt-3">
+					<div class="col-sm-6 col-6 col-md-6">
+						<div class="ux-input">
+							<label>Start Date</label>
+							<!-- <input type="text" class="datepicker1" placeholder="DD/MM/YYYY"> <em class="calendar-ic cal-top"></em> -->
+                            <input type="text" [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="DD/MM/YYYY" [max]="maxFrom"  formControlName="startDate" (ngModelChange)="fromDateChange($event)" >
+                            <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time><em class=" calendar-ic cal-top" [owlDateTimeTrigger]="dt1"></em>
+                            <p class="error-message mb-0" *ngIf="durationForm.controls['startDate'].hasError('required') && (durationForm.controls['startDate'].dirty || durationForm.controls['startDate'].touched)"> {{"REQUIRED_MSG" | translate}} </p>
+
+						</div>
+					</div>
+					<div class="col-sm-6 col-6 col-md-6">
+						<div class="ux-input">
+							<label>End Date</label>
+							<!-- <input type="text" class="datepicker1" placeholder="DD/MM/YYYY"> <em class="calendar-ic cal-top"></em> -->
+                            <input type="text" [owlDateTime]="dt2" [owlDateTimeTrigger]="dt2" placeholder="DD/MM/YYYY" [min]="minend" [max]="maxend"    formControlName="endDate" (ngModelChange)="endDateChange($event)"  >
+                            <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time><em class=" calendar-ic cal-top" [owlDateTimeTrigger]="dt2"></em>
+                            <p class="error-message mb-0" *ngIf="durationForm.controls['endDate'].hasError('required') && (durationForm.controls['endDate'].dirty || durationForm.controls['endDate'].touched)"> {{"REQUIRED_MSG" | translate}} </p>
+						
+						</div>
+					</div>
+					<div class="col-12">
+						<p  class="errornote" style="color:gray;font-size:12px; font-style:italic"><b>NOTE: </b>Transaction history of last 1 year will be available from the current date</p>	
+					</div>
+				</div>
+				<div class="row1">
+					<div class="col-12">
+						<p class="error-message mb-0" *ngIf="showFiltrtErrorMsg"> {{filterErrorMsg}} </p>	
+					</div>
+				</div>
+				<div class="row1 mt-2">
+					<div class="col-6 text-center">
+						<button class="ux-button secondary md"(click)="resetform()" >Reset</button>
+					</div>
+					<div class="col-6 text-center">
+						<button class="duration-filter ux-button primary md"  (click)="trackFilterSubmit('duration')">Apply</button>
+					</div>
+				</div>
+            </form>
+			</div>
+		</div>
+	</div>
+</div>
+<!--  Filter Popup End -->

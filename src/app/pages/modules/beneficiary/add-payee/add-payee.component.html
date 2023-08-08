@@ -1,0 +1,465 @@
+<div class="main bg-m">
+    <!-- Start Global Nav -->
+    <!-- End Global Nav -->
+    <div class="right-main-column ">
+      <div class="right-col-container pad-b full-width">
+        <!-- ======== body page content start from here ======== -->
+        <div class="body-page-container main-dashborad manage-payee">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12 p-0">
+                <app-breadcrumb routeName="ADD_PAYEE"></app-breadcrumb>
+              </div>
+            </div>
+            <!--.row -->
+            <div class="vspacer15 customize d-none d-md-block d-lg-block d-xl-block"></div>
+            <div class="row no-gutters">
+              <div class="col-12">
+                <div class="row1">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-9">
+                    <!-- Greencard2 Start here -->
+                    <div class="greencard2">
+                      <div class="row1 hide-m">
+                        <div class="col-md-8 col-12">
+                          <h4 *ngIf="this.dataService.isEditPayee==false">{{"ADD_PAYEE" | translate}}</h4>
+                          <h4 *ngIf="this.dataService.isEditPayee==true">{{"MODIFY_PAYEE" | translate}}</h4>
+                        </div>
+                        <div class="col-md-4 col-12"> </div>
+                      </div>
+                      <div class="row1">
+                        <div class="col-sm-12 col-12 col-md-12">
+                          <div class="ux-nav-tabs" style="margin:0">
+                            <div class="responsive6 custom-card pad-custom mar-custom2">
+                              <div class="custom-width">
+                                <ul class="nav nav-tabs nav-justified bor-n" role="tablist">
+                                  <li class="nav-item2"> <a class="nav-link" [ngClass]="{'active': selectedBankType === 'within'}" data-toggle="tab" href="#within" (click)="changePaymentType('within')">{{"WITHIN_BANK" | translate}}</a> </li>
+                                  <li class="nav-item2"> <a class="nav-link" [ngClass]="{'active': selectedBankType === 'outside'}" data-toggle="tab" href="#outsidebank" (click)="changePaymentType('outside')">{{"OUTSIDE_BANK" | translate}}</a> </li>
+                                  <li class="nav-item2"> <a class="nav-link" [ngClass]="{'active': selectedBankType === 'mmid'}" data-toggle="tab" href="#mmid"(click)="changePaymentType('mmid')">{{"MMID" | translate}}</a> </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-12">
+                          <div class="tab-content bg-transparent mt-2">
+                            <!-- Within Bank -->
+                            <div id="within" class=" tab-pane " [ngClass]="selectedBankType == 'within' ? 'active' : 'fade'">
+                              <form [formGroup]="withinBankForm">
+                                <div class="row1">
+                                  <div class="col-sm-12 col-12 col-md-12">
+                                    <div class="widget-box5 mb-3">
+                                      <div class="bg-white1 pad-custom">
+                                        <div class="row1">
+                                          <div class="col-md-12 col-12">
+                                            <div class="row1">
+                                              <div class="col-md-6 col-lg-6 col-xl-4 col-12">
+                                                <div class="ux-input" [ngClass]="{'ux-disabled' : dataService.isEditPayee}" >
+                                                  <label class="payeenickName">{{"PAYEE_NICK_NAME" | translate}}</label>
+                                                  <input type="text" autocomplete="off" name="payeenickName" placeholder="{{'ENTER_PAYEE_NICK_NAME' | translate}}" formControlName="payeenickName" [maxlength]="20">
+                                                  <p class="error-message" *ngIf="withinBankForm.controls['payeenickName'].hasError('required') && (withinBankForm.controls['payeenickName'].dirty || withinBankForm.controls['payeenickName'].touched)">{{"REQUIRED_MSG" | translate}}</p>
+                                                  <p class="error-message" *ngIf="withinBankForm.controls['payeenickName'].hasError('pattern') && (withinBankForm.controls['payeenickName'].dirty || withinBankForm.controls['payeenickName'].touched)">{{"ALPHA_NUM_ALLOWED_MSG" | translate}}</p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="row1">
+                                          <div class="col-md-12 col-12">
+                                            <div class="row1">
+                                              <div class="col-md-6 col-lg-6 col-xl-4 col-12">
+                                                <div class="ux-input" [ngClass]="{'ux-disabled' : dataService.isEditPayee}" >
+                                                  <label for="payeeaccountNumber">{{"PAYEE_ACC_NUM" | translate}}</label>
+                                                  <input autocomplete="off" type="password" numbersOnly [maxlength]="accountDigitLength" name="payeeaccountNumber" placeholder="{{'PAYEE_ACCOUNT_NUMBER' | translate}}" formControlName="payeeaccountNumber" (input)="onConfirmAccountChange($event.target['value'] , 'within')" >
+                                                  <p class="error-message" *ngIf="withinBankForm.controls['payeeaccountNumber'].hasError('required') && (withinBankForm.controls['payeeaccountNumber'].touched)">{{"REQUIRED_MSG" | translate}}</p>
+                                                  <p class="error-message" *ngIf="withinBankForm.controls['payeeaccountNumber'].hasError('minlength') && (withinBankForm.controls['payeeaccountNumber'].touched)">{{"INVALID_ACC_MSG" | translate}}</p>
+                                                  <p class="error-message" *ngIf="ownAccCheck && (withinBankForm.controls['payeeaccountNumber'].dirty && withinBankForm.controls['payeeaccountNumber'].touched)"> Self Account cannot be added as beneficiary </p>
+                                                </div>
+                                              </div>
+                                              <div class="col-md-6 col-lg-6 col-xl-4 col-12">
+                                                <div class="ux-input" [ngClass]="{'ux-disabled' : dataService.isEditPayee}" >
+                                                  <label for="confirmaccountNumber">{{"CONFIRM_ACC_NUM" | translate}}</label>
+                                                  <input type="text" numbersOnly [maxlength]="accountDigitLength" autocomplete="off" placeholder="{{'ENTER_CONFIRM_ACCOUNT_NUMBER' | translate}}" formControlName="confirmaccountNumber" (input)="onConfirmAccountChange($event.target['value'] , 'within')">
+                                                  <p class="error-message" *ngIf="withinBankForm.controls['confirmaccountNumber'].hasError('required') && (withinBankForm.controls['confirmaccountNumber'].touched)">{{"REQUIRED_MSG" | translate}}</p>
+                                                  <p class="error-message" *ngIf="withinBankForm.controls['confirmaccountNumber'].hasError('minlength') && (withinBankForm.controls['confirmaccountNumber'].touched)">{{"INVALID_ACC_MSG" | translate}}</p>
+                                                  <p class="error-message" *ngIf="withinBankForm.controls['confirmaccountNumber'].hasError('min') && (withinBankForm.controls['confirmaccountNumber'].touched)">{{"ACC_NUM_NOT_ZERO" | translate}}</p>
+                                                  <p class="error-message" *ngIf="withinBankForm.controls['confirmaccountNumber'].touched && withinBankForm.errors?.['accountNotMatch']">Account Number Not matched</p>
+                                                  <p class="error-message" *ngIf="invalidAccount == true">Invalid Account Number</p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="row1">
+                                          <div class="col-md-12 col-12">
+                                            <div class="row1">
+                                              <div class="col-md-6 col-lg-6 col-xl-4 col-12">
+                                                <div class="ux-input" [ngClass]="{'ux-disabled' : true}" >
+                                                  <label for="payeeName">{{"PAYEE_NAME" | translate}}</label>
+                                                  <input autocomplete="off" type="text" name="payeeName" placeholder="{{'ENTER_PAYEE_NAME' | translate}}" formControlName="payeeName" [maxlength]="50">
+                                                  <p class="error-message" *ngIf="withinBankForm.controls['payeeName'].hasError('required') && (withinBankForm.controls['payeeName'].dirty || withinBankForm.controls['payeeName'].touched)">{{"REQUIRED_MSG" | translate}} </p>
+                                                  <p class="error-message" *ngIf="withinBankForm.controls['payeeName'].hasError('pattern') && (withinBankForm.controls['payeeName'].dirty || withinBankForm.controls['payeeName'].touched)">{{"ONLY_ALPHA_MSG" | translate}} </p>
+                                                </div>
+                                              </div>
+                                              <div class="col-md-6 col-lg-6 col-xl-4 col-12">
+                                                <div class="ux-input">
+                                                  <label class="transactionLimit">{{"TRANSACTION_LIMIT" | translate}}(₹)</label>
+                                                  <input type="text" #search inputmode="decimal" class="amount-input" placeholder="₹ 0" autocomplete="off" formControlName="transactionLimit" [maxlength]="20" (blur)="formatCurrency($event.target['value'])" id="amt1" data-a-sign="Rs."  (focus)="focusTransactionAmount($event.target['value'], withinBankForm, 'transactionLimit')">
+                                                  <p class="error-message" *ngIf="maxTransLimitError"> {{"MAX_TRANSACTION_LIMIT" | translate}}</p>
+                                                  <p class="error-message" *ngIf="withinBankForm.controls['transactionLimit'].hasError('required') && (withinBankForm.controls['transactionLimit'].dirty || withinBankForm.controls['transactionLimit'].touched)">{{"REQUIRED_MSG" | translate}}</p>
+                                                  <p class="error-message" *ngIf="withinBankForm.controls['transactionLimit'].hasError('min')"> {{"TRANSACTION_LIMIT_NOT_ZERO" | translate}}</p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="col-12">
+                                            <div class="ux-input">
+                                              <p class="info-message"  id="add-payee-msg">{{"BENEFICIARY_RBI_GUIDELINES" | translate}}</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-12 col-md-12">
+                                    <ul class="bottom-footer1">
+                                      <li>
+                                        <div class="btn-div">
+                                          <button class=" ux-button secondary sm-mob" (click)="onCancel()">{{"CANCEL" | translate}}</button>
+                                        </div>
+                                        <div class="btn-div">
+                                          <button class=" ux-button primary sm-mob" (click)="submitPayee(withinBankForm.value ,'withinBank')">{{"SUBMIT" | translate}}</button>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                            <!-- Out Side Bank -->
+                            <div id="outsidebank" class="tab-pane " [ngClass]="selectedBankType == 'outside' ? 'active' : 'fade'">
+                              <form [formGroup]="outsideBankForm">
+                                <div class="row1">
+                                  <div class="col-sm-12 col-12 col-md-12">
+                                    <div class="widget-box5 mb-3">
+                                      <div class="bg-white1 pad-custom">
+                                        <div class="row1">
+                                          <div class="col-md-12 col-12">
+                                            <div class="row1">
+                                              <div class="col-md-6 col-lg-6 col-xl-4 col-12">
+                                                <div class="ux-input" [ngClass]="{'ux-disabled' : dataService.isEditPayee}" >
+                                                  <label for="payeeName">{{"PAYEE_NAME" | translate}}</label>
+                                                  <input type="text" autocomplete="off" name="payeeName" placeholder="{{'ENTER_PAYEE_NAME' | translate}}" formControlName="payeeName" [maxlength]="50">
+                                                  <p class="error-message" *ngIf="outsideBankForm.controls['payeeName'].hasError('required') && (outsideBankForm.controls['payeeName'].dirty || outsideBankForm.controls['payeeName'].touched)">{{"REQUIRED_MSG" | translate}} </p>
+                                                  <p class="error-message" *ngIf="outsideBankForm.controls['payeeName'].hasError('pattern') && (outsideBankForm.controls['payeeName'].dirty || outsideBankForm.controls['payeeName'].touched)">{{"ONLY_ALPHA_MSG" | translate}}</p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="row1">
+                                          <div class="col-md-12 col-12">
+                                            <div class="row1">
+                                              <div class="col-md-6 col-lg-6 col-xl-4 col-12">
+                                                <div class="ux-input" [ngClass]="{'ux-disabled' : dataService.isEditPayee}">
+                                                  <label for="payeeaccountNumber">{{"PAYEE_ACC_NUM" | translate}}</label>
+                                                  <input type="password" alphaNumeric autocomplete="off" name="payeeaccountNumber"  [maxlength]="25" placeholder="{{'ENTER_PAYEE_ACCOUNT_NUMBER' | translate}}" formControlName="payeeaccountNumber">
+                                                  <p class="error-message" *ngIf="outsideBankForm.controls['payeeaccountNumber'].hasError('required') && (outsideBankForm.controls['payeeaccountNumber'].dirty || outsideBankForm.controls['payeeaccountNumber'].touched)">{{"REQUIRED_MSG" | translate}} </p>
+                                                  <p class="error-message" *ngIf="outsideBankForm.controls['payeeaccountNumber'].hasError('minlength') && (outsideBankForm.controls['payeeaccountNumber'].dirty || outsideBankForm.controls['payeeaccountNumber'].touched)">{{"ACC_NUM_MIN_LIMIT" | translate}}</p>
+                                                  <p class="error-message" *ngIf="outsideBankForm.controls['payeeaccountNumber'].hasError('maxlength') && (outsideBankForm.controls['payeeaccountNumber'].dirty || outsideBankForm.controls['payeeaccountNumber'].touched)">{{"ACC_NUM_MAX_LIMIT" | translate}}</p>
+                                                  <p class="error-message" *ngIf="outsideBankForm.controls['payeeaccountNumber'].hasError('min') && (outsideBankForm.controls['payeeaccountNumber'].dirty || outsideBankForm.controls['payeeaccountNumber'].touched)">{{"ACC_NUM_NOT_ZERO" | translate}}</p>
+                                                  <p class="error-message" *ngIf="outsideBankForm.controls['payeeaccountNumber'].hasError('pattern') && (outsideBankForm.controls['payeeaccountNumber'].dirty && outsideBankForm.controls['payeeaccountNumber'].touched)">{{"INVALID_ACC_MSG" | translate}}</p>
+                                                  <p class="error-message" *ngIf="ownAccCheck && (outsideBankForm.controls['payeeaccountNumber'].dirty && outsideBankForm.controls['payeeaccountNumber'].touched)">Self Account cannot be added as beneficiary</p>
+                                                </div>
+                                              </div>
+                                              <div class="col-md-6 col-lg-6 col-xl-4 col-12">
+                                                <div class="ux-input" [ngClass]="{'ux-disabled' : dataService.isEditPayee}" >
+                                                  <label for="confirmaccountNumber">{{"CONFIRM_ACC_NUM" | translate}}</label>
+                                                  <input type="text" alphaNumeric autocomplete="off" [maxlength]="25" name="confirmaccountNumber"  placeholder="{{'ENTER_CONFIRM_ACCOUNT_NUMBER' | translate}}" formControlName="confirmaccountNumber">
+                                                  <p class="error-message" *ngIf="outsideBankForm.controls['confirmaccountNumber'].hasError('required') && (outsideBankForm.controls['confirmaccountNumber'].dirty || outsideBankForm.controls['confirmaccountNumber'].touched)">{{"REQUIRED_MSG" | translate}} </p>
+                                                  <p class="error-message" *ngIf="outsideBankForm.controls['confirmaccountNumber'].hasError('minlength') && (outsideBankForm.controls['confirmaccountNumber'].dirty || outsideBankForm.controls['confirmaccountNumber'].touched)">Account Number should be 8 digit minimum</p>
+                                                  <p class="error-message" *ngIf="outsideBankForm.controls['confirmaccountNumber'].hasError('maxlength') && (outsideBankForm.controls['confirmaccountNumber'].dirty || outsideBankForm.controls['confirmaccountNumber'].touched)">Account Number should be 25 digit maximum</p>
+                                                  <p class="error-message" *ngIf="outsideBankForm.controls['confirmaccountNumber'].hasError('min') && (outsideBankForm.controls['confirmaccountNumber'].dirty || outsideBankForm.controls['confirmaccountNumber'].touched)"> Account Number cannot be zero</p>
+                                                  <p class="error-message" *ngIf="outsideBankForm.controls['confirmaccountNumber'].touched && outsideBankForm.errors?.['accountNotMatch']">Account Number Not matched</p>
+                                                </div>
+                                              </div>
+                                              <div class="col-md-6 col-lg-6 col-xl-4 col-12">
+                                                <div class="ux-input" [ngClass]="{'ux-disabled' : dataService.isEditPayee}" >
+                                                  <label for="ifsc">{{"IFSC" | translate}}</label>
+                                                  <input type="text" autocomplete="off" name="ifsc" (input)="getBranchDtlFromIfsc()" placeholder="{{'ENTER_IFSC' | translate}}" [maxlength]="11" formControlName="ifsc" (click)="clearIfscPrevData()"> 
+                                                  <em (click)="inputClick()" class="show-search"></em>
+                                                  <p class="info-message"> {{bankAddress}}</p>
+                                                  <p class="error-message" *ngIf="outsideBankForm.controls['ifsc'].hasError('minlength') && (outsideBankForm.controls['ifsc'].dirty && outsideBankForm.controls['ifsc'].touched)">Enter 11 digit IFSC code </p>
+                                                  <p class="error-message" *ngIf="outsideBankForm.controls['ifsc'].hasError('required') && (outsideBankForm.controls['ifsc'].dirty || outsideBankForm.controls['ifsc'].touched)">{{"REQUIRED_MSG" | translate}} </p>
+                                                  <p class="error-message" *ngIf="isBankCustomer">{{"WITHIN_BANK_CATEGORY_MSG"  |translate}}</p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="row1">
+                                          <div class="col-md-12 col-12">
+                                            <div class="row1">
+                                              <div class="col-md-6 col-lg-6 col-xl-4 col-12">
+                                                <div class="ux-input" [ngClass]="{'ux-disabled' : dataService.isEditPayee}" >
+                                                  <label class="payeenickName">{{"PAYEE_NICK_NAME" | translate}}</label>
+                                                  <input type="text" autocomplete="off" name="payeenickName" placeholder="{{'ENTER_PAYEE_NICK_NAME' | translate}}" formControlName="payeenickName" [maxlength]="20">
+                                                  <p class="error-message" *ngIf="outsideBankForm.controls['payeenickName'].hasError('required') && (outsideBankForm.controls['payeenickName'].dirty || outsideBankForm.controls['payeenickName'].touched)">{{"REQUIRED_MSG" | translate}} </p>
+                                                  <p class="error-message" *ngIf="outsideBankForm.controls['payeenickName'].hasError('pattern') && (outsideBankForm.controls['payeenickName'].dirty || outsideBankForm.controls['payeenickName'].touched)">{{"ALPHA_NUM_ALLOWED_MSG" | translate}} </p>
+                                                </div>
+                                              </div>
+                                              <div class="col-md-6 col-lg-6 col-xl-4 col-12">
+                                                <div class="ux-input" >
+                                                  <label class="transactionLimit">{{"TRANSACTION_LIMIT" | translate}}(₹)</label>
+                                                  <input type="text" inputmode="decimal" class="amount-input" placeholder="₹ 0" autocomplete="off" formControlName="transactionLimit" [maxlength]="20"(blur)="formatCurrency($event.target['value'])" id="amt2" data-a-sign="Rs."  (focus)="focusTransactionAmount($event.target['value'], outsideBankForm, 'transactionLimit')">
+                                                  <p class="error-message" *ngIf="maxTransLimitError"> {{"MAX_TRANSACTION_LIMIT" | translate}}</p>
+                                                  <p class="error-message" *ngIf="outsideBankForm.controls['transactionLimit'].hasError('min')">{{"TRANSACTION_LIMIT_NOT_ZERO" | translate}}</p>
+                                                  <p class="error-message" *ngIf="outsideBankForm.controls['transactionLimit'].hasError('required') && (outsideBankForm.controls['transactionLimit'].dirty || outsideBankForm.controls['transactionLimit'].touched)">{{"REQUIRED_MSG" | translate}} </p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="col-12">
+                                            <div class="ux-input">
+                                              <p class="info-message"  id="add-payee-msg">{{"BENEFICIARY_RBI_GUIDELINES" | translate}}</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-12 col-md-12">
+                                    <ul class="bottom-footer1">
+                                      <li>
+                                        <div class="btn-div">
+                                          <button class=" ux-button secondary sm-mob"
+                                            (click)="onCancel()">{{"CANCEL" | translate}}</button>
+                                        </div>
+                                        <div class="btn-div">
+                                          <button class=" ux-button primary sm-mob"
+                                            (click)="submitPayee(outsideBankForm.value ,'outsideBank')">{{"SUBMIT" | translate}}</button>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                            <!-- MMID Section -->
+                            <div id="mmid" class="tab-pane " [ngClass]="selectedBankType == 'mmid' ? 'active' : 'fade'">
+                              <form [formGroup]="mmidForm">
+                                <div class="row1">
+                                  <div class="col-sm-12 col-12 col-md-12">
+                                    <div class="widget-box5 mb-3">
+                                      <div class="bg-white1 pad-custom">
+                                        <div class="row1">
+                                          <div class="col-md-12 col-12">
+                                            <div class="row1">
+                                              <div class="col-md-6 col-lg-6 col-xl-4 col-12">
+                                                <div class="ux-input" [ngClass]="{'ux-disabled' : dataService.isEditPayee}" >
+                                                  <label for="mobileNumber">{{"MOBILE_NUMBER" | translate}}</label>
+                                                  <input type="text" autocomplete="off" numbersOnly [maxlength]="10" name="mobileNumber" placeholder="{{'ENTER_MOBILE_NUMBER' | translate}}" formControlName="mobileNumber" [maxlength]="10">
+                                                  <p class="error-message" *ngIf="mmidForm.controls['mobileNumber'].hasError('required') && (mmidForm.controls['mobileNumber'].dirty || mmidForm.controls['mobileNumber'].touched)">{{"REQUIRED_MSG" | translate}}</p>
+                                                  <p class="error-message" *ngIf="mmidForm.controls['mobileNumber'].hasError('minlength') && (mmidForm.controls['mobileNumber'].dirty || mmidForm.controls['mobileNumber'].touched)">{{"10_DIGIT_MSG" | translate}} </p>
+                                                  <p class="error-message" *ngIf="mmidForm.controls['mobileNumber'].touched && !mmidForm.controls['mobileNumber'].hasError('minlength') && mmidForm.hasError('invalidMobNo')">{{"MOBILE_MSG" | translate}} </p>
+                                                </div>
+                                              </div>
+                                              <div class="col-md-6 col-lg-6 col-xl-4 col-12">
+                                                <div class="ux-input" [ngClass]="{'ux-disabled' : dataService.isEditPayee}" >
+                                                  <label for="mmid">{{"MMID" | translate}}</label>
+                                                  <input type="text" autocomplete="off" name="mmid" numbersOnly [maxlength]="7" placeholder="{{'ENTER_MMID' | translate}}" formControlName="mmid">
+                                                  <p class="error-message" *ngIf="mmidForm.controls['mmid'].hasError('required') && (mmidForm.controls['mmid'].dirty || mmidForm.controls['mmid'].touched)">{{"REQUIRED_MSG" | translate}}</p>
+                                                  <p class="error-message" *ngIf="mmidForm.controls['mmid'].hasError('maxlength') && (mmidForm.controls['mmid'].dirty || mmidForm.controls['mmid'].touched)">{{"MMID_7_CHAR"  |translate}}</p>
+                                                  <p class="error-message" *ngIf="mmidForm.controls['mmid'].hasError('minlength') && (mmidForm.controls['mmid'].dirty || mmidForm.controls['mmid'].touched)">{{"MMID_LESS_7_CHAR" | translate}}</p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="row1">
+                                          <div class="col-md-12 col-12">
+                                            <div class="row1">
+                                              <div class="col-md-6 col-lg-6 col-xl-4 col-12">
+                                                <div class="ux-input" [ngClass]="{'ux-disabled' : dataService.isEditPayee}" >
+                                                  <label for="payeeName">{{"PAYEE_NAME"  | translate}}</label>
+                                                  <input type="text" autocomplete="off" name="payeeName" placeholder="{{'ENTER_PAYEE_NAME' | translate}}" formControlName="payeeName" [maxlength]="40">
+                                                  <p class="error-message" *ngIf="mmidForm.controls['payeeName'].hasError('required') && (mmidForm.controls['payeeName'].dirty || mmidForm.controls['payeeName'].touched)">{{"REQUIRED_MSG" | translate}}</p>
+                                                  <p class="error-message" *ngIf="mmidForm.controls['payeeName'].hasError('pattern') && (mmidForm.controls['payeeName'].dirty || mmidForm.controls['payeeName'].touched)">{{"ONLY_ALPHA_MSG" | translate}} </p>
+                                                </div>
+                                              </div>
+                                              <div class="col-md-6 col-lg-6 col-xl-4 col-12">
+                                                <div class="ux-input" [ngClass]="{'ux-disabled' : dataService.isEditPayee}" >
+                                                  <label class="payeenickName">{{"PAYEE_NICK_NAME" | translate}}</label>
+                                                  <input type="text" autocomplete="off" name="payeenickName" placeholder="{{'ENTER_PAYEE_NICK_NAME' | translate}}" formControlName="payeenickName" [maxlength]="20">
+                                                  <p class="error-message" *ngIf="mmidForm.controls['payeenickName'].hasError('required') && (mmidForm.controls['payeenickName'].dirty || mmidForm.controls['payeenickName'].touched)">{{"REQUIRED_MSG" | translate}}</p>
+                                                  <p class="error-message" *ngIf="mmidForm.controls['payeenickName'].hasError('pattern') && (mmidForm.controls['payeenickName'].dirty || mmidForm.controls['payeenickName'].touched)">{{"ALPHA_NUM_ALLOWED_MSG" | translate}} </p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="row1">
+                                          <div class="col-md-12 col-12">
+                                            <div class="row1">
+                                              <div class="col-md-6 col-lg-6 col-xl-4 col-12">
+                                                <div class="ux-input">
+                                                  <label class="transactionLimit">{{"TRANSACTION_LIMIT" | translate}} ( ₹)</label>
+                                                  <input type="text" inputmode="decimal" class="amount-input" placeholder="₹ 0" autocomplete="off" formControlName="transactionLimit" [maxlength]="20" value="" (blur)="formatCurrency($event.target['value'])" id="amt3" data-a-sign="Rs." (focus)="focusTransactionAmount($event.target['value'], mmidForm, 'transactionLimit')">
+                                                  <p class="error-message " *ngIf="maxTransLimitError"> {{"MAX_TRANSACTION_LIMIT" | translate}}</p>
+                                                  <p class="error-message" *ngIf="mmidForm.controls['transactionLimit'].hasError('required') && (mmidForm.controls['transactionLimit'].dirty || mmidForm.controls['transactionLimit'].touched)">{{"REQUIRED_MSG" | translate}}</p>
+                                                  <p class="error-message" *ngIf="mmidForm.controls['transactionLimit'].hasError('min') && (mmidForm.controls['transactionLimit'].dirty || mmidForm.controls['transactionLimit'].touched)"> Amount cannot be 0</p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-12 col-md-12">
+                                    <ul class="bottom-footer1">
+                                      <li>
+                                        <div class="btn-div">
+                                          <button class="ux-button secondary sm-mob" (click)="onCancel()">{{"CANCEL" | translate}}</button>
+                                        </div>
+                                        <div class="btn-div">
+                                          <button class="ux-button primary sm-mob" (click)="submitPayee(mmidForm.value , 'mmid')">{{"SUBMIT" | translate}}</button>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                           
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Greencard2 End here -->
+                  </div>
+                  <!-- Right Column Ads Start -->
+                  <div class="col-12 col-md-12 col-lg-12 col-xl-3 d-none d-xl-block">
+                    <app-banner></app-banner>
+                    <div class="vspacer30"></div>
+                  </div>
+                  <!-- Right Column Ads Ends -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--.right-col-container-->
+    </div>
+    <!--.right-main-column-->
+  </div>
+  <!-- main -->
+  
+  
+  
+  <!-- Search IFSC text Start 1 -->
+  <div class="popup-bottom search-ifsc1 sm-popup">
+    <div class="row1">
+      <div class="col-10">
+        <h4>{{"SEARCH_IFSC" | translate}} </h4>
+      </div>
+      <div class="col-2">
+        <button class="ux-button-icon close-btn" (click)="commonMethod.closePopup('div.popup-bottom.search-ifsc1')"> <img
+            src="assets/images/svg/close-b.svg" alt="cross-icon" class="img-vsmall"> </button>
+      </div>
+    </div>
+    <form [formGroup]="searchIfscForm" id="search-ifsc-form">
+      <div class="row1">
+        <div class="col-12">
+          <div class="ux-input">
+            <label>{{"BANK_NAME" | translate}}</label>
+            <input type="text" placeholder="Enter Bank Name" formControlName="enterBank" autocomplete="off"> </div>
+        </div>
+      </div>
+      <div class="row1">
+        <div class="col-12">
+          <div class="ux-input">
+            <label>{{"BRANCH_NAME" | translate}}</label>
+            <input type="text" placeholder="Enter Branch Name" formControlName="enterBranch" autocomplete="off"> </div>
+        </div>
+      </div>
+      <div class="row1 mt-2">
+        <div class="col-12 text-center">
+          <button type="submit" class="ux-button primary md" (click)="gotoContinue()">{{"CONTINUE" | translate}} </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- Search IFSC text End 1 -->
+  
+  <!-- Search IFSC 2 -->
+  <div class="popup-bottom search-ifsc2">
+    <div class="row1">
+      <div class="col-10">
+        <h4>{{"SEARCH_IFSC" | translate }}</h4>
+      </div>
+      <div class="col-2">
+        <button class="ux-button-icon close-btn" (click)="closepopup('div.search-ifsc2')"> <img src="assets/images/svg/close-b.svg"
+            alt="cross-icon" class="img-vsmall"> </button>
+      </div>
+    </div>
+    <div class="ifscList">
+      <div class="row">
+        <div class="col-12">
+          <div class="row1">
+            <div class="col-12 col-md-4 clearfix" *ngFor="let item of searchIfsc">
+              <div class="ux-selection mar-custom ifscList " (click)="getToAccValue(item)">
+                <label class="ux-selection2">{{item.bank}}
+                  <br /> <span>{{item.branch}}</span>
+                  <br /> <span>{{item.IFSC}}</span>
+                  <input type="radio" checked="checked" name="search-ifsc"> <span class="checkmark"></span> </label>
+                <div> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- Search IFSC End 2-->
+  
+    <!-- Search IFSC 2 -->
+    <div class="popup-bottom payee-already-added sm-popup">
+        <div class="row1">
+          <div class="col-12">
+              <h4 class="text-center"> {{'INFORMATION' | translate}}
+              </h4>
+          </div>
+      </div>
+      <div class="row1">
+          <div class="col-12">
+              <p>Entered payee details is already added</p>
+          </div>
+      </div>
+      <div class="row1  mt-2">
+          <div class="col-12 text-center" (click)="closepopup('div.popup-bottom.payee-already-added')">
+              <button class="ux-button primary submit-btn" type="button">{{'OK' | translate}}</button>
+          </div>
+      </div>
+    </div>
+    <!-- Search IFSC End 2-->
+  
+    <div class="popup-bottom limit-updated-successfully sm-popup">
+      <div class="row1">
+        <div class="col-12">
+            <h4 class="text-center"> {{'INFORMATION' | translate}}
+            </h4>
+        </div>
+    </div>
+    <div class="row1">
+        <div class="col-12">
+            <p>Limit updated successfully</p>
+        </div>
+    </div>
+    <div class="row1  mt-2">
+        <div class="col-12 text-center" (click)="closepopup('div.popup-bottom.limit-updated-successfully')">
+            <button class="ux-button primary submit-btn" type="button">{{'OK' | translate}}</button>
+        </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="landline-postpaid" transform="translate(14043 -12817)">
+    <g id="fingerprint" transform="translate(-13400 14815)" opacity="0">
+      <g id="Group_40181" data-name="Group 40181">
+        <rect id="Rectangle_982" data-name="Rectangle 982" width="24" height="24" transform="translate(-643 -1998)" fill="#148AFF"/>
+        <rect id="Rectangle_983" data-name="Rectangle 983" width="20" height="20" transform="translate(-641 -1996)" fill="#148AFF"/>
+      </g>
+    </g>
+    <g id="telephone-2" transform="translate(-14040 12820)">
+      <path id="Path_44067" data-name="Path 44067" d="M17.419,3.154H6.309V.526a.526.526,0,1,0-1.051,0V2.1H.526A.526.526,0,0,0,0,2.629v14.79a.526.526,0,0,0,.526.526H17.419a.526.526,0,0,0,.526-.526V3.68A.526.526,0,0,0,17.419,3.154ZM5.257,16.893H1.051V3.154H5.257Zm11.636,0H6.309V4.206H16.893Z" fill="#148AFF"/>
+      <path id="Path_44068" data-name="Path 44068" d="M212.526,155.171h7.36a.526.526,0,0,0,.526-.526v-3.119a.526.526,0,0,0-.526-.526h-7.36a.526.526,0,0,0-.526.526v3.119A.526.526,0,0,0,212.526,155.171Zm.526-3.119h6.309v2.068h-6.309Z" transform="translate(-204.57 -145.708)" fill="#148AFF"/>
+      <path id="Path_44069" data-name="Path 44069" d="M212.526,302.051h1.051a.526.526,0,1,0,0-1.051h-1.051a.526.526,0,0,0,0,1.051Z" transform="translate(-204.57 -290.451)" fill="#148AFF"/>
+      <path id="Path_44070" data-name="Path 44070" d="M303.577,301h-1.051a.526.526,0,1,0,0,1.051h1.051a.526.526,0,1,0,0-1.051Z" transform="translate(-291.416 -290.451)" fill="#148AFF"/>
+      <path id="Path_44071" data-name="Path 44071" d="M393.577,301h-1.051a.526.526,0,0,0,0,1.051h1.051a.526.526,0,0,0,0-1.051Z" transform="translate(-378.261 -290.451)" fill="#148AFF"/>
+      <path id="Path_44072" data-name="Path 44072" d="M212.526,362.051h1.051a.526.526,0,1,0,0-1.051h-1.051a.526.526,0,1,0,0,1.051Z" transform="translate(-204.57 -348.348)" fill="#148AFF"/>
+      <path id="Path_44073" data-name="Path 44073" d="M303.577,361h-1.051a.526.526,0,1,0,0,1.051h1.051a.526.526,0,1,0,0-1.051Z" transform="translate(-291.416 -348.348)" fill="#148AFF"/>
+      <path id="Path_44074" data-name="Path 44074" d="M393.577,361h-1.051a.526.526,0,0,0,0,1.051h1.051a.526.526,0,0,0,0-1.051Z" transform="translate(-378.261 -348.348)" fill="#148AFF"/>
+      <path id="Path_44075" data-name="Path 44075" d="M213.577,421h-1.051a.526.526,0,1,0,0,1.051h1.051a.526.526,0,1,0,0-1.051Z" transform="translate(-204.57 -406.245)" fill="#148AFF"/>
+      <path id="Path_44076" data-name="Path 44076" d="M303.577,421h-1.051a.526.526,0,1,0,0,1.051h1.051a.526.526,0,1,0,0-1.051Z" transform="translate(-291.416 -406.245)" fill="#148AFF"/>
+      <path id="Path_44077" data-name="Path 44077" d="M393.577,421h-1.051a.526.526,0,0,0,0,1.051h1.051a.526.526,0,0,0,0-1.051Z" transform="translate(-378.261 -406.245)" fill="#148AFF"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,58 @@
+.bg-white1.pad-custom{
+    min-height: 260px;
+    border-radius: 15px;
+    overflow: visible;
+}
+.widget-box5{
+    overflow:visible;
+}
+.staticAmt{
+    margin:0; padding:0; 
+    li{
+        position: relative; display:inline-block; margin-right: 5px;cursor:pointer;
+        &:hover{
+            span{
+            background-color: green;color:white;
+            }
+        }
+        span{display:inline-block;border:1px solid green;
+       
+        font-size: 12px; line-height: 12px; padding:5px 10px;
+        border-radius: 100px;
+        
+         color :green; 
+         text-align: center;
+        
+        }
+       
+        input{
+            position:absolute; width:100%; height:100%; z-index: 9;opacity: 0;cursor:pointer;
+            &:checked ~ span{
+                background-color: green;color: white;;
+            }
+        }
+    }
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.posrelative{
+    &.itsCC{
+        
+        input{opacity:0}
+        .dummytext{display: block;opacity:1}
+    }
+    position: relative;
+    input{position: relative;}
+    .dummytext{
+        z-index: 2;  position: absolute;width:100%; height:100%; color: rgba(0, 0, 0, 0.6);top:0px;display:none;
+    }
+}

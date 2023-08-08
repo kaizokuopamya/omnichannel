@@ -1,0 +1,172 @@
+<div class="main bg-m">
+	<header class="global-header success-bg minus-nav" *ngIf="DataService.isCordovaAvailable">
+		<div class="in-header">
+		  <div class="header-icons-lft ">
+			<div class="header-actions">
+			  <button class="ux-button-header">
+				<img src="assets/images/svg/close-w.svg"  (click)="goToPage('registerBillerView')"   alt="left-arrow-icon"
+				  class="img-vsmall" />
+			  </button>
+			</div>
+		  </div>
+		  <div class="brand-logo">
+			<h3>{{"RECEIPT"| translate}}</h3>
+		  </div>
+		  <div class="header-icons-rit">
+			
+		  </div>
+		</div>
+	
+	</header>
+	<div class="right-main-column ">
+		<div class="right-col-container pad-b full-width">
+			<!-- ======== body page content start from here ======== -->
+			<div class="body-page-container main-dashborad bill-wrapper">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-12 p-0">
+							<app-breadcrumb  routeName="RECEIPT"></app-breadcrumb>
+						</div>
+					</div>
+					<!--.row -->
+					<div class="vspacer15 customize d-none d-md-block d-lg-block d-xl-block"></div>
+					<div class="row no-gutters">
+						<div class="col-12">
+							<div class="row1">
+								<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-9">
+									<!-- Greencard2 Start here -->
+									<div class="greencard2">
+										<div class="row1 hide-m">
+											<div class="col-md-10 col-12">
+												<h4>{{"RECEIPT" | translate}}</h4> </div>
+											<div class="col-md-2 col-12">
+												<div class="header-actions"> <img src="assets/images/icons/billpay.png" alt="billpay-img" class="small-img"> </div>
+											</div>
+										</div>
+										<div class="row1">
+											<div class="col-sm-12 col-12 col-md-12">
+												<div class="white-box2 mar-t pad-custom  custom-bor">
+													<div class="row">
+														<div class="success" >
+															<h5 [ngClass]="{'Success': respStatus == 'Success', 'error' : respStatus == 'Failed' }"> 
+																<img [src]="respStatus == 'Success' ? 'assets/images/svg/success-arrow.svg' :  'assets/images/svg/fail.svg'" alt="success-icon"> {{respStatus}}
+															</h5> 
+															
+															<small>{{responseMsg}}</small> 
+															
+														 <em class="small-text">{{newBillerRegistraionResponse?.registration_date}}</em>
+														 <br>
+													 	</div>
+													</div>
+													<div class="bg-img billpay-success-img">
+														<!-- <img src="assets/images/svg/b-icon1.svg" alt="assure-icon"> -->
+														<img src="assets/images/svg/psb-receipt icon.svg" alt="success-bg"  class="success-icon"/>
+                                                        <img src="assets/images/svg/b-icon1.svg" alt="success-bg" class="assure-bill-icon">
+                                                    </div>
+												</div>
+											</div>
+											<div class="col-sm-12 col-12 col-md-12">
+												<div class="result-container1 mar-top">
+													<div class="info-bottom pad-custom">
+														<div class="info-details mt-3" *ngIf="newBillerRegistraionResponse?.billerid">
+															<div class="row">
+																<h6>Biller ID</h6>
+																<h5>{{newBillerRegistraionResponse?.billerid}}</h5> </div>
+														</div>
+														<div class="info-details" *ngIf="respStatus == 'Failed'">
+															<div class="row">
+																	<h6>Short Name</h6>
+																	<h5>{{confirmArray?.shortName}}</h5> </div>
+															
+														</div>
+														
+														<div class="info-details">
+															<!-- <div class="row">
+																<div class="left-info"> <span class="biller-icon">
+                                                                                <img src="{{confirmArray.billerLogo}}" alt="adani-logo">
+                                                                            </span> </div>
+																<div class="right-info">
+																	<h6>Biller Name</h6>
+																	<h5>{{confirmArray?.billerName}}</h5> </div>
+															</div> -->
+															<div class="row">
+																<h6>{{"BILLER_NAME" | translate}}</h6>
+																 <h5 class="info-heading"> 
+																	<span class="biller-icon">
+																		<img src="{{confirmArray.billerLogo}}" alt="logo">
+																	 </span>
+																	 {{confirmArray?.billerName}}
+																   </h5>
+															</div>
+														</div>
+														<div class="info-details" *ngFor="let item of newBillerRegistraionResponse?.authenticators">
+															<div class="row">
+																<h6>{{item?.parameter_name}}</h6>
+																<h5>{{item?.value}}</h5> </div>
+														</div>
+														<div class="info-details " *ngIf="newBillerRegistraionResponse?.billeraccountid">
+															<div class="row">
+																<h6>Biller Account ID</h6>
+																<h5>{{newBillerRegistraionResponse?.billeraccountid}}</h5> </div>
+														</div>
+														<!-- <div class="info-details d-block d-sm-none">
+															<div class="row">
+																<div class="left-info">
+																	<h6>Reference Number</h6>
+																	<h5>3646236472837</h5> </div>
+																<div class="right-info"> <span class="biller-icon assure-icon">
+                                                                                <img src="assets/images/svg/b-icon1.svg" alt="adani-logo">
+                                                                            </span> </div>
+															</div>
+														</div> -->
+														<div class="info-details" *ngIf="newBillerRegistraionResponse?.short_name">
+															<div class="row">
+																<h6>Short Name</h6>
+																<h5>{{newBillerRegistraionResponse?.short_name}}</h5> </div>
+														</div>
+														<div class="info-details" *ngIf="newBillerRegistraionResponse?.status">
+															<div class="row">
+																<h6>Status</h6>
+																<h5>{{newBillerRegistraionResponse?.status}}</h5> </div>
+														</div>
+														<div class="info-details" *ngIf="newBillerRegistraionResponse?.servicestartdate">
+															<div class="row">
+																<h6>Service start date</h6>
+																<h5>{{newBillerRegistraionResponse?.servicestartdate}}</h5> </div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-12 col-md-12">
+												<div class="row1">
+													<div class="col-md-12 col-lg-12  col-12">
+														<ul class="bottom-footer1">
+															<li>
+																<div class="btn-div hide-m">
+																	<button class=" ux-button primary sm-mob"   type="button" (click)="goToPage('retailRechargeBillPay')"> Back To Home </button>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Greencard2 End here -->
+								</div>
+								<!-- Right Column Ads Start -->
+								<div class="col-12 col-md-12 col-lg-12 col-xl-3 d-none d-xl-block">
+									<app-banner></app-banner>
+								</div>
+								<!-- Right Column Ads Ends -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--.right-col-container-->
+	</div>
+	<!--.right-main-column-->
+</div>
+<!-- main -->

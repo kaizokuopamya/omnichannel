@@ -1,0 +1,84 @@
+<div class="prelogin-page">
+	<div class="registration-steps">
+		<div class="row1">
+			<div class="col-12 position-static">
+				<div class="inner-header">
+					<div class="registration-container">
+						<!-- <a class="prev-tab"> <img src="assets/images/icons_old/cross-w.png" alt="cross-w"></a> -->
+						<h4>More Services</h4>
+						<a class="close-registration"><img (click)="closeService()" src="assets/images/svg/close-w.svg"></a>
+					</div>
+				</div>
+				<div class="registrationsteps-block registration-container clearfix more-service mb-2">
+					<div class="moreservice-container2"> 
+						<!-- <img src="assets/images/icons/products_image.png"> -->
+						<div class="col-12">
+							<ul class="more-services-list2 align-left">
+								<ng-container *ngFor="let list of moreServiceList">
+									<li *ngIf="list.redirectionType == 'PAGE' && (!dataService.isnliMoreService || list.redirectionUrl == null)">
+										<a (click)="gotoPage(list)">
+											<div class="icon1">
+												<img [src]="list.imageLink" [alt]="list.optionName">
+											</div>
+											<em>{{list.optionName | translate}}</em>
+										</a>
+									</li>
+									<li *ngIf="list.redirectionType == 'LINK'">
+										<a target="_blank" [href]="list.redirectionUrl">
+											<div class="icon1">
+												<img [src]="list.imageLink" [alt]="list.optionName">
+											</div>
+											<em>{{list.optionName | translate}}</em>
+										</a>
+									</li>
+									<li *ngIf="list.redirectionType == 'SUBMENU'">
+										<a (click)="OpenServicePopup(list)">
+											<div class="icon1">
+												<img [src]="list.imageLink" [alt]="list.optionName">
+											</div>
+											<em>{{list.optionName | translate}}</em>
+										</a>
+									</li>
+								</ng-container>
+							</ul>
+						</div>
+					</div> 
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- .full-container -->
+</div>
+<!-- .prelogin-page -->
+
+<div class="popup-bottom sm-popup subcategory-popup">
+	<div class="row1">
+		<div class="col-10">
+			<h4 class="text-left">{{subMenuTitle | translate}}</h4>
+		</div>
+		<div class="col-2">
+			<button class="ux-button-icon close-btn" (click)="closePopup()">
+				<img src="assets/images/svg/close-b.svg" alt="cross-icon" class="img-vsmall">
+			</button>
+		</div>
+	</div>
+	<div class="row1">
+		<div class="col-12 p-0">
+			<ul class="unorderlist6">
+				<ng-container *ngFor="let subList of moreServiceSubList">
+					<li *ngIf="subList.redirectionType == 'LINK'">
+						<a target="_blank" [href]="subList.redirectionUrl">{{subList.optionName | translate}}
+							<img src="assets/images/svg/link.svg" alt="link-icon"> 
+						</a>
+					</li>
+					<li *ngIf="subList.redirectionType == 'PAGE'">
+						<a (click)="gotoPage(subList?.appRedirctLink)">{{subList.optionName | translate}}
+							<img src="assets/images/svg/link.svg" alt="link-icon"> 
+						</a>
+					</li>
+				</ng-container>
+			</ul>
+		</div>
+	</div>
+</div>
+<app-terms-conditions [termsConditionType]="termsConditionRegistration"></app-terms-conditions>

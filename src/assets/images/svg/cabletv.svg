@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="cabletv" transform="translate(14043 -12818)">
+    <g id="fingerprint" transform="translate(-13400 14816)">
+      <g id="Group_40175" data-name="Group 40175" opacity="0">
+        <rect id="Rectangle_982" data-name="Rectangle 982" width="24" height="24" transform="translate(-643 -1998)" fill="#148AFF"/>
+        <rect id="Rectangle_983" data-name="Rectangle 983" width="20" height="20" transform="translate(-641 -1996)" fill="#148AFF"/>
+      </g>
+    </g>
+    <g id="tv" transform="translate(-14040 12821.001)">
+      <path id="Path_44039" data-name="Path 44039" d="M16.394,3.159H10.258L12.519.9a.527.527,0,0,0-.745-.745L8.987,2.941,6.2.154A.527.527,0,0,0,5.455.9L7.716,3.159H1.58A1.582,1.582,0,0,0,0,4.739v10.6a1.582,1.582,0,0,0,1.58,1.58h1.58v.527a.527.527,0,0,0,1.053,0V16.92h9.548v.527a.527.527,0,0,0,1.053,0V16.92h1.58a1.582,1.582,0,0,0,1.58-1.58V4.739A1.581,1.581,0,0,0,16.394,3.159ZM16.92,15.34a.527.527,0,0,1-.527.527H1.58a.527.527,0,0,1-.527-.527V4.739a.527.527,0,0,1,.527-.527H16.394a.527.527,0,0,1,.527.527Z" transform="translate(0 0)" fill="#148AFF"/>
+      <path id="Path_44040" data-name="Path 44040" d="M71.128,150h-10.6a.527.527,0,0,0-.527.527v8.5a.527.527,0,0,0,.527.527h10.6a.527.527,0,0,0,.527-.527v-8.5A.527.527,0,0,0,71.128,150Zm-.527,8.5H61.053v-7.442H70.6Z" transform="translate(-57.894 -144.735)" fill="#148AFF"/>
+      <circle id="Ellipse_2683" data-name="Ellipse 2683" cx="0.501" cy="0.501" r="0.501" transform="translate(14.84 6.637)" fill="#148AFF"/>
+      <circle id="Ellipse_2684" data-name="Ellipse 2684" cx="0.501" cy="0.501" r="0.501" transform="translate(14.84 8.643)" fill="#148AFF"/>
+      <path id="Path_44041" data-name="Path 44041" d="M422.527,300a.527.527,0,0,0-.527.527V302.7a.527.527,0,0,0,1.053,0v-2.177A.527.527,0,0,0,422.527,300Z" transform="translate(-407.186 -289.469)" fill="#148AFF"/>
+    </g>
+  </g>
+</svg>

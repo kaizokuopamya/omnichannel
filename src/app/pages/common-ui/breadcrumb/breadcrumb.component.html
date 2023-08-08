@@ -1,0 +1,7 @@
+<div class="breadcrumb">
+    <ul class="lst-breadcrumb">
+        <li *ngFor="let name of dataService.breadcrumblist" >
+            <a (click)="dataService.breadcrumroute(name.routeName)"  [ngClass]="{'AUTHORIZATION'  : 'unclickable', 'CONFORMATION' : 'unclickable'}[name.currentRoute]" >{{translate.transform(name.currentRoute)}}</a>
+        </li>
+    </ul>
+</div>

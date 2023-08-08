@@ -1,0 +1,69 @@
+<nav class="global-nav" #globalNav>
+       
+            <div class="nav-header">
+                <!-- <div class="brand-logo"  *ngIf="this.constant.getPlatform() == 'web'">
+                    <a href="javascript:;" (click)="goToPage('dashboard')">
+                        <img src="./assets/images/logo/logo_main.svg" alt="logo" title="logo">
+                    </a>
+                </div> -->
+                
+                <div class="nav-header">
+                  <!-- <a href="javascript:;" class="btn-closeglnav hi-btn-menu"  (click)="closeSideNAV()"></a> -->
+                       <div class="user-details1">
+                      <a href="javascript:;">
+                          <span class="round-circle blue">
+                            <h3 *ngIf="dataService.profileImage == '' ">{{ custName | firstLastChar | uppercase }}</h3>
+                            <img *ngIf="dataService.profileImage != '' " [src]="dataService.profileImage" onerror="this.src='./assets/images/svg/user-profile-w.svg'" alt="user-img">
+                          </span>
+                      </a>
+                      <div class="in-details">
+                          <h5>{{custName | titlecase}}</h5>
+                          <small>{{'LAST_LOGIN' | translate}} {{dataService.lastLoginDate | date: 'medium'}}</small>
+                          <small>{{'Version' | translate}} {{appVersion}}</small>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="nav-items">
+              <ul class="lst-nav-items">
+                  <li [ngClass]="{'coming-soon' : menu?.isEnable == 'N' , 'drilldown' :  menu?.subMenu?.length > 0  }" *ngFor="let menu of mainMenuList | async;let i=index" >
+                    <a (click)="goToPage(menu?.URL)" [ngClass]="{'glnv-dropdown': menu?.subMenu?.length > 0}">
+                        <img [src]="'./assets/images/menu_web/'+ menu.JSON_KEY" alt="icon" class="" data-toggle="tooltip" data-placement="right" title="{{menu.menuName | translate}} "> {{menu.menuName | translate}}
+                         <span class="chevron" *ngIf="menu?.subMenu?.length > 0"></span>
+                     </a>
+                   <div class="overlap-badge coming-soon" *ngIf="menu?.isEnable == 'N'" ><small style="color: red;">{{menu?.textToDisplay}}</small></div>
+               
+                    <div *ngIf="menu?.subMenu?.length > 0" class="mysubnavigation-items">
+                        <ul class="lst-subnavigation">
+                            <li *ngFor="let sub of menu?.subMenu;let j=index">
+                                <a (click)="goToPage(sub?.pageurl)">
+                                    {{sub.submenuname | translate}}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </li>
+              </ul>
+
+            </div>
+        <div class="nav-footer">
+            <div class="poweredby">
+                <div class="row">
+                    <div class="col-12 col-xl-12 p-0">
+                        <p class="hide-m">
+                            <img src="assets/images/svg/version-g.svg" alt="vrsion-icon">{{'Version' | translate}} {{appVersion}}
+                        </p>
+                        <p class="hide-desk" (click)="logout(globalNav)">
+                            <a href="javascript:;">
+                                <img src="assets/images/menu_web/logout.svg" alt="logout-icon">
+                                   {{'Logout' | translate}}
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+</nav>

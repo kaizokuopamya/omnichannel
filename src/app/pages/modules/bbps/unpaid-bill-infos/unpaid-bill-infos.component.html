@@ -1,0 +1,298 @@
+<div class="main bg-m">
+	<div class="right-main-column ">
+		<div class="right-col-container pad-b full-width">
+			<!-- ======== body page content start from here ======== -->
+			<div class="body-page-container main-dashborad mycards bill-wrapper">
+				<div class="container-fluid">
+					<div class="">
+						<div class="row">
+							<div class="col-12 p-0">
+								<app-breadcrumb routeName="UNPAID_BILL_INFO"></app-breadcrumb>
+							</div>
+						</div>
+					<!--.row -->
+					<div class="vspacer15 customize d-none d-xl-block d-lg-block d-md-none d-sm-none "></div>
+					<div class="row no-gutters">
+						<div class="col-12">
+							<div class="row1">
+								<div class="col-12 col-sm-12 col-md-12 col-lg-12  col-xl-9">
+									<div class="greencard2 tracklist">
+										<div class="row1 hide-m">
+											<div class="col-md-10 col-12">
+												<h4>Bill Details</h4> </div>
+											<div class="col-md-2 col-12">
+												<div class="header-actions"> <img src="assets/images/icons/billpay.png" alt="billpay-img" class="small-img"> </div>
+											</div>
+										</div>
+										<div class="row1">
+											<div class="col-12 col-sm-12 col-md-12 col-lg-12 hide-m">
+												<div class="widget-box5 mb-3">
+													<div class="bg-white1 pad-custom p-0">
+														<ul class="bill-reminder-list grid-col-4 bill-gird-list1">
+															<li>
+																<div class="grid-info">
+																	<div class="full-info">
+																		<div class="list-full">
+																			<div class="icon1" style="background-image: url({{renderableData.logo}});"> </div>
+																			<h5>{{renderableData.shortName}}</h5>
+																			<h6 class="display-mt"	>Bill Payment due on <span>{{renderableData.dueDate}}</span> </h6> </div>
+																	</div>
+																</div>
+																<div class="grid-info d-none d-sm-block">
+																	<div class="full-info">
+																		<h5 *ngIf="renderableData.dueDate">{{renderableData.dueDate}}</h5> </div>
+																</div>
+																<div class="grid-info">
+																	<div class="full-info text-status"> 
+																		<em class="text-reject" *ngIf="renderableData.leftDays || renderableData.leftDays == 0" >
+																			<span *ngIf="renderableData.leftDays > 0 && renderableData.leftDays != 1">{{renderableData.leftDays}}  Days left</span>
+																			<span *ngIf="renderableData.leftDays > 0 && renderableData.leftDays == 1">{{renderableData.leftDays}}  Day left</span>
+																			<span *ngIf="renderableData.leftDays == 0"> Today's Due</span>
+																			<span *ngIf="renderableData.leftDays < 0"> Overdue</span>
+																										
+
+																		</em> 
+																</div>
+																</div>
+																<div class="grid-info">
+																	<div class="full-info">
+																		<h5><img src="assets/images/svg/rupee-bl.svg" alt="rupee-icon" *ngIf="renderableData.leftDays">{{renderableData.amt}}</h5> </div>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-12 col-12 col-md-12">
+												<div class="white-box2 result-container1 cust-min-height  mb-3 mt-0 p-0">
+													<div class="info-bottom pad-custom biller-info">
+														<div class="info-details">
+															<!-- <div class="row">
+																<div class="left-info">
+																	<span class="biller-icon" style="background-image: url({{renderableData.logo}});left:0;">
+
+                                                                    </span>
+																	<div style="padding-left: 50px;">
+																		<h6>Biller Name</h6>
+																		<h5>{{renderableData.billerName}}</h5> </div>
+																</div>
+															</div> -->
+
+															<div class="row">
+																<h6>{{"BILLER_NAME" | translate}}</h6>
+																 <h5 class="info-heading"> 
+																	<span class="biller-icon">
+																		<img src="{{renderableData.logo}}" alt="logo">
+																	 </span>
+																	 {{renderableData.billerName}}
+																   </h5>
+															</div>
+														</div>
+														<div class="info-details pr-35">
+															<div class="row">
+																<h6>Short Name</h6>
+																<h5>{{renderableData.shortName}}</h5>
+															</div>
+														</div>
+														<div class="info-details pr-35" *ngFor="let item of renderableData.loopingData">
+															<div class="row">
+																<h6>{{item.label}}</h6>
+																<h5>{{item.field}}</h5> </div>
+														</div>
+			
+														
+														
+														<div class="info-details d-block d-sm-none">
+															<div class="row">
+																<h6>Amount</h6>
+																<h5><img src="assets/images/svg/rupee-bl.svg" *ngIf="renderableData.leftDays" alt="rupee-icon">{{renderableData.amt}}</h5> </div>
+														</div>
+														<!-- <div class="info-details d-block d-sm-none">
+															<div class="row1">
+																<div class="col-6">
+																	<div class="left-info1">
+																		<h5> <a (click)="goToPage('editBillReminder')" class="reminder-btn set"> <img src="assets/images/svg/reminder-g.svg" alt="reminder-icon" class="big-img"> Edit Reminder</a> </h5> </div>
+																</div>
+																<div class="col-6">
+																	<div class="right-info1">
+																		<h5> <a (click)="goToPage('deleteBillReminderConfirmation')" class="block-btn block">  <img src="assets/images/svg/delete.svg" alt="block-icon" class="big-img"> Delete Reminder</a> </h5> </div>
+																</div>
+															</div>
+														</div> -->
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row1  d-none d-xl-block d-lg-block d-md-block d-sm-none">
+											<div class="col-md-12 col-lg-12 col-12 ">
+												<ul class="bottom-footer1">
+													<li class="">
+														<div class=" ml-0 text-center ">
+															<button class=" ux-button primary sm-mob mb-2 mr-2" (click)="onModifyClick()" >Modify</button>
+															<button class=" ux-button primary sm-mob mb-2 mr-2" (click)="commonMethod.openPopup('.confirmMsg')" >Remove Biller</button>
+															<button class=" ux-button secondary sm-mob mb-2   " (click)="goToPageCustom(DataService.breadcrumblist[DataService.breadcrumblist.length - 2].routeName)" >Back</button>
+															
+														</div>
+													</li>
+												</ul>
+												
+											</div>
+											<!-- <div class="col-md-8 col-lg-8 col-12 ">
+												<ul class="bottom-footer1">
+													<li>
+														<div class="btn-div">
+															<button class=" ux-button secondary sm-mob delete-btn" (click)="goToPage('editBillReminder')" >Edit Reminder</button>
+														</div>
+														<div class="btn-div">
+															<button class=" ux-button primary sm-mob" (click)="goToPage('deleteBillReminderConfirmation')" >Delete Reminder</button>
+														</div>
+													</li>
+												</ul>
+											</div> -->
+										</div>
+										<div class="footer-container sticky-actions d-block d-md-none d-lg-none d-xl-none " >
+											<div class="footer-inactions minus-rt-col">
+												<div class="container-fluid">
+													<div class="row">
+														<div class="col-6 col-md-6 text-center">
+															<button class="filter-btn ux-button secondary md" (click)="onModifyClick()">Modify</button>
+														</div> 
+														<div class="col-6 col-md-6 text-center">
+															<button class="ux-button primary md" (click)="commonMethod.openPopup('.confirmMsg')">Remove Biller</button>
+														</div> 
+													</div> 
+												</div> 
+											</div> 
+										</div>
+									</div>
+								</div>
+								<div class="col-12 col-md-12 col-lg-12 col-xl-3 d-none d-xl-block">
+									<app-banner></app-banner>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--.container-fluid-->
+			</div>
+			<!--.body-page-container-->
+		</div>
+		<!--.right-col-container-->
+	</div>
+	<!--.right-main-column-->
+</div>
+<!-- main -->
+
+<!-- =========== modal popup end ===============  -->
+
+<div class="popup-bottom sm-popup modifyBiller" [ngClass]="{'footer-custom': DataService.bezellessIphone}">
+	<div class="row1">
+		<div class="col-12">
+			<h4 class="text-center">
+				<img src="./assets/images/svg/information.svg" alt="error-icon"> Information
+			</h4>
+		</div>
+	</div>
+	<form [formGroup]="updateShortname" (ngSubmit)="updateShortnameSubmit()">
+		<div class="row1">
+			<div class="col-12 col-md-12 col-lg-12 col-xl-12 " >
+				<div class="ux-input">
+					<label>Short Name</label>
+					<input type="text" placeholder="Enter Short Name" name="shortName" formControlName="shortName">
+					<p class="error-message" *ngIf="updateShortname.controls['shortName'].hasError('required') && (updateShortname.controls['shortName'].dirty || updateShortname.controls['shortName'].touched)"> {{"REQUIRED_MSG" | translate}} </p>
+					<p class="error-message"
+                    *ngIf="updateShortname.controls['shortName'].hasError('pattern') && (updateShortname.controls['shortName'].dirty || updateShortname.controls['shortName'].touched)">Special Characters are not allowed</p>
+                
+				</div>
+			</div>
+		</div>
+		<div class="row1  mt-2">
+			<div class="col-12 text-center">
+				<button class="ux-button secondary submit-btn mx-1 sm" type="button" (click)="commonMethod.closeAllPopup()">Close</button>
+				<button class="ux-button primary submit-btn mx-1 sm" type="submit">Save</button>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="popup-bottom sm-popup confirmMsg" [ngClass]="{'footer-custom': DataService.bezellessIphone}">
+	<div class="row1">
+		<div class="col-12">
+			<h4 class="text-center">
+				<img src="./assets/images/svg/information.svg" alt="error-icon"> Confirmation
+			</h4>
+		</div>
+	</div>
+	<div class="row1">
+		<div class="col-12 mb-4">
+			
+			<p>Are you sure you want to remove Biller<b>{{billdetails.billeraccount.short_name}}</b>?</p>
+		</div>
+	</div>
+	<div class="row1  mt-2">
+		<div class="col-12 text-center">
+			<button class="ux-button secondary submit-btn mx-1 sm" (click)="commonMethod.closeAllPopup()">Close</button>
+			<button class="ux-button primary submit-btn mx-1 sm" (click)="removeBiller()">Yes</button>
+		</div>
+	</div>
+</div>
+<div class="popup-bottom sm-popup successMsgupdateshortname" [ngClass]="{'footer-custom': DataService.bezellessIphone}" >
+	<div class="row1">
+		<div class="col-12">
+			<h4 class="text-center">
+				<img src="./assets/images/svg/information.svg" alt="error-icon"> Information
+			</h4>
+		</div>
+	</div>
+	<div class="row1">
+		<div class="col-12 mb-4">
+			
+			<p><b>{{renderableData.shortName}}</b> has been Successfully Updated.</p>
+		</div>
+	</div>
+	<div class="row1  mt-2">
+		<div class="col-12 text-center">
+			<button class="ux-button primary submit-btn mx-1 sm" (click)="goToPage('retailRechargeBillPay')">OK</button>
+
+		</div>
+	</div>
+</div>
+<div class="popup-bottom sm-popup successMsg" [ngClass]="{'footer-custom': DataService.bezellessIphone}" >
+	<div class="row1">
+		<div class="col-12">
+			<h4 class="text-center">
+				<img src="./assets/images/svg/information.svg" alt="error-icon"> Information
+			</h4>
+		</div>
+	</div>
+	<div class="row1">
+		<div class="col-12 mb-4">
+			
+			<p><b>{{billdetails.billeraccount.short_name}}</b> has been Successfully removed from the biller list.</p>
+		</div>
+	</div>
+	<div class="row1  mt-2">
+		<div class="col-12 text-center">
+			<button class="ux-button primary submit-btn mx-1 sm" (click)="onOkclick('retailRechargeBillPay')">OK</button>
+
+		</div>
+	</div>
+</div>
+<div class="popup-bottom sm-popup errorMSg" [ngClass]="{'footer-custom': DataService.bezellessIphone}" >
+	<div class="row1">
+		<div class="col-12">
+			<h4 class="text-center">
+				<img src="./assets/images/svg/information.svg" alt="error-icon"> Information
+			</h4>
+		</div>
+	</div>
+	<div class="row1">
+		<div class="col-12 mb-4">
+			<p>{{apiErrorMsg}}</p>
+		</div>
+	</div>
+	<div class="row1  mt-2">
+		<div class="col-12 text-center">
+			<button class="ux-button primary submit-btn" (click)="commonMethod.closeAllPopup()">Close</button>
+		</div>
+	</div>
+</div>

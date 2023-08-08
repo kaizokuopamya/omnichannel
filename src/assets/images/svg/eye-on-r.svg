@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="eye-on" transform="translate(643 1998)">
+    <g id="base" transform="translate(-643 -1998)" opacity="0">
+      <rect id="Rectangle_982" data-name="Rectangle 982" width="20" height="20" fill="#7e2323"/>
+      <rect id="Rectangle_983" data-name="Rectangle 983" width="16.667" height="16.667" transform="translate(1.667 1.667)" fill="#7e2323"/>
+    </g>
+    <g id="eye" transform="translate(-640.5 -1993.833)">
+      <path id="Path_44092" data-name="Path 44092" d="M14.48,6.864A8.241,8.241,0,0,0,7.466,2.655,8.241,8.241,0,0,0,.452,6.864a3.054,3.054,0,0,0,0,3.212,8.241,8.241,0,0,0,7.014,4.209,8.241,8.241,0,0,0,7.014-4.209A3.054,3.054,0,0,0,14.48,6.864ZM13.419,9.425a7.041,7.041,0,0,1-5.953,3.616A7.041,7.041,0,0,1,1.513,9.425a1.816,1.816,0,0,1,0-1.909A7.041,7.041,0,0,1,7.466,3.9a7.035,7.035,0,0,1,5.953,3.616A1.816,1.816,0,0,1,13.419,9.425Z" transform="translate(0.004 -2.655)" fill="#7e2323"/>
+      <path id="Path_44093" data-name="Path 44093" d="M10.111,7a3.111,3.111,0,1,0,3.111,3.111A3.111,3.111,0,0,0,10.111,7Zm0,4.978a1.867,1.867,0,1,1,1.867-1.867A1.867,1.867,0,0,1,10.111,11.978Z" transform="translate(-2.641 -4.296)" fill="#7e2323"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,159 @@
+ 
+ <div class="right-main-column minus-rt-col mar-custom">
+    <div class="right-col-container">
+  
+ <div class="body-page-container">
+    <div class="container-fluid">
+       <div class="row">
+          <div class="bg-section">
+             <div class="col-12">
+                 <div class="row1">
+                     <div class="col-sm-12 col-12 col-md-12">
+                         <div class="row1">	
+                             <div class="col-sm-12 col-12 col-md-12">
+                                 <div class="ux-nav-tabs" style="margin:0">
+                                  <div class="responsive3"> 
+                                    <ul class="nav nav-tabs nav-justified bor-n" role="tablist">
+                                           <li class="nav-item">
+                                               <a class="nav-link active" data-toggle="tab" href="#paybills">Pay Bill</a>
+                                           </li>
+                                           <li class="nav-item">
+                                               <a class="nav-link" data-toggle="tab" href="#recentpay">Recent Payments</a>
+                                           </li>
+                                       </ul>
+   
+                                       <!-- Tab panes -->
+                                       <div class="tab-content p-0 custom-tab-content2 bg-transparent">
+                                          <div id="paybills" class=" tab-pane active">
+                                          <div class="row1"> 
+                                            <div class="col-sm-12 col-12 col-md-12">
+                                              <div class="white-bg1 pad-custom mar-tb">
+                                                 <div class="row mt-2">
+                                                     <div class="col-sm-12 col-12 col-md-12">
+                                                         <div class="ux-input">
+                                                            <input type="text" placeholder="Search biller name"  (input)="filterBiller($any($event.target).value)" >
+                                                            <p></p>
+                                                           </div> 
+                                                       </div>
+                                                 </div>    
+                                               <div class="col-sm-12 col-12 col-md-12 p-0">
+                                                   <ul class="biller-info-list">
+                                                       <li *ngFor="let item of filteredBillerList">
+                                                           <a (click)="onSeachResultClick(item)" >
+                                                               <div class="list-full">
+                                                                 <div class="icon1">
+                                                                     <img src="{{item.biller_logo}}" alt="logo">  
+                                                                  </div>
+                                                                    <h6>{{item.biller_name}}</h6>
+                                                               </div>
+                                                           </a>
+                                                       </li>
+                                                   </ul>
+                                               </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                      </div>
+                                       <div id="recentpay" class="tab-pane fade">
+                                         <div class="row1"> 
+                                             <div class="col-sm-12 col-12 col-md-12">
+                                                <div class="white-bg1 pad-custom mar-tb">
+
+                                                    <!-- <p class="p-5 text-center" *ngIf="finalRecentrans.length == 0">No recent transaction done for {{DataService.billcategory}}</p> -->
+                                                    <div class="no-complaint text-center col-12 py-5" *ngIf="finalRecentrans.length == 0">
+                                                        <div class="ad-wrapper"> 
+                                                            <img src="assets/images/svg/no_bills.svg" alt="ad-image" class="img-fluid"> 
+                                                        </div>
+                                                         <small>No recent transaction done for {{DataService.billcategory}}</small> 
+                                                    </div>
+                                                    <ul class="payment-list">
+                                                     
+                                                 <li  *ngFor="let item of finalRecentrans">
+                                                     <div class="full-container">
+                                                     <div class="row1">
+                                                         <div class="col-8 col-md-8">
+                                                             <div class="left-info">
+                                                                 <h5>{{item.biller_name}}</h5>
+                                                                 <h6>Paid on : {{item.formatedTxnDate}}</h6>
+                                                                 <div class="rupee-info"> 
+                                                                     <span class="" style="background-image: url({{item.moreDetails.biller_logo}});">
+                                                                         <!-- <img src="assets/images/svg/rupee-r.svg" alt="rupees-icon"> -->
+                                                                     </span>
+                                                                 </div>
+                                                             </div>
+                                                         </div>
+                                                         <div class="col-4 col-md-4">
+                                                             <div class="right-info">
+                                                                 <h5> ₹{{item.debit_amount}}</h5>
+                                                                 
+                                                                 <em *ngIf="item.payment_status == 'PAID'"> Successful <img [src]="item.payment_status == 'PAID' ? 'assets/images/svg/success-circle.svg' : item.payment_status == 'PENDING' ? 'assets/images/svg/disable.svg' : item.payment_status == 'FAILED' ? 'assets/images/svg/warning.svg' : 'assets/images/svg/warning.svg' "   alt="success-icon" class="img-small"> </em>
+                                                                 <em *ngIf="item.payment_status == 'PENDING'"> Pending <img src="assets/images/svg/success-circle.svg" alt="success-icon" class="img-small"> </em>
+                                                                 <em *ngIf="item.payment_status == 'FAILED'"> Unsuccessful <img src="assets/images/svg/success-circle.svg" alt="success-icon" class="img-small"> </em>
+                                                                 <em *ngIf="item.payment_status == 'REJECTED'"> Rejected<img src="assets/images/svg/success-circle.svg" alt="success-icon" class="img-small"> </em>
+                                                             </div>
+                                                         </div>
+                                                     </div>
+                                                     </div>
+    
+                                                 </li>
+                                                 
+                                             
+                                                 <!-- li>
+                                                     <div class="full-container">
+                                                     <div class="row1">
+                                                         <div class="col-8 col-md-8">
+                                                             <div class="left-info">
+                                                                 <h5>Request</h5>
+                                                                 <h6>By : Tarini Enterprices</h6>
+                                                                 <div class="rupee-info"> 
+                                                                     <span class="red1">
+                                                                         <img src="../assets/images/svg/rupee-r.svg" alt="rupees-icon">
+                                                                     </span>
+                                                                 </div>
+                                                             </div>
+                                                         </div>
+                                                         <div class="col-4 col-md-4">
+                                                             <div class="right-info">
+                                                                 <h5> <img src="../assets/images/svg/rupee-bl.svg" alt="rupees-icon"> 800.<span>00</span></h5>
+                                                             </div>
+                                                         </div>
+                                                     </div>
+                                                     </div>
+                                                     <div class="full-container">
+                                                     <div class="row1">
+                                                         <div class="col-8 col-md-8">
+                                                             <div class="left-info1">
+                                                                 <em>02 Mar 2020 15:12</em>
+                                                             </div>
+                                                         </div>
+                                                         <div class="col-4 col-md-4">
+                                                             <div class="right-info">
+                                                                 <em>Decline <img src="../assets/images/svg/disable.svg" alt="failed-icon" class="img-small"> </em>
+                                                             </div>
+                                                         </div>
+                                                     </div>
+                                                     </div>	 
+                                                 </li> -->
+                                              </ul>
+                                             </div> 
+                                            </div> 
+                                          </div>
+                                       </div>
+                                   </div> 
+                                </div>  
+                              </div>  
+                            </div> 
+                          </div>
+                                 
+                               
+                       </div>
+                     </div> 
+                  </div> 
+               </div>
+            </div> 
+
+                
+       </div> 
+     </div> 
+    </div>  
+ </div> 

@@ -1,0 +1,63 @@
+<aside class="notification-panel sticky-panel themePanel" id="themePanel">
+
+    <div class="notp-header">
+        <a href="javascript:;" class="btn-closenoty"></a>
+        <h5> {{"THEME_CUSTOMIZER" | translate }}</h5>
+    </div> 
+    <div class="notp-content">
+        <div class="notp-innercontent">
+            <div class="notp-nodatafound">
+                <div class="nightmode clearfix">
+                    <h5> {{"NIGHT_MODE" | translate }}</h5>
+                    <div class="modebox">
+                        <div class="el-switch-main">
+                            <img src="assets/images/svg/moon.svg">
+                            <label class="el-switch">
+                                <input type="checkbox" name="nightswtich" [checked]="darkcheck" (change)="ondarkModeChange()">
+                                <span class="el-switch-style"></span>
+                            </label>	
+                        </div>
+                    </div>
+                </div>
+                <div class="theme-block">
+                    <h5> {{"THEME" | translate }}</h5>
+                    <div class="row1 mb-1">
+                        <div class="col-12">
+                            <ul class="theme-list themechange">
+                                
+                                <li class="dark" *ngFor="let item of themeList"   [ngClass]="{'active': dataService.themeName === item.themeName}"  style="background-image: url({{item.imageUrl}})" (click)="ThemeChange(item.themeName , 'theme')"></li> 
+                            
+                                <li class="dark"    [ngClass]="{'active': dataService.themeName === 'default'}"  theme="default" style="background-image: url(../assets/images/background/bg-dark.png)" (click)="ThemeChange('default' , 'theme')"></li>
+                                <li class="light " [ngClass]="{'active': dataService.themeName === 'light'}"  theme="light" style="background-image: url(../assets/images/background/light-pattern.png)" (click)="ThemeChange('light', 'theme')"></li>
+                                <li class="light " [ngClass]="{'active': dataService.themeName === 'independence'}"  theme="independence" style="background-image: url(../assets/images/background/psb-mobile-bg.png)" (click)="ThemeChange('independence' , 'theme')"></li>
+                                
+                            </ul>
+                        </div>
+                    </div> 
+                </div> 
+                <div class="theme-block" *ngIf="!darkcheck">
+                    <h5> {{"LAYOUT_BACKGROUND" | translate }}</h5>
+                    <div class="row1 mb-1">
+                        <div class="col-12">
+                            <ul class="theme-list background-layout">
+                                <li [ngClass]="{'active': dataService.themeBackground === 'default'}"  layoutbg="default" style="background-image: url(./assets/images/background/psb-pattern-grey.png)" (click)="ThemeChange('default' , 'background')"></li>
+                                <li [ngClass]="{'active': dataService.themeBackground === 'white'}" layoutbg="white" style="background-color:#fff;    box-shadow: 0 0 5px rgb(0 0 0 / 20%);"  (click)="ThemeChange('white' , 'background')"></li>
+                            
+                            </ul>
+                        </div>
+                    </div> 
+                </div> 
+              </div>
+         <div class="vspacer20"></div>
+         <div class="vspacer20"></div>
+       <div class="row1">
+           <div class="col-12 col-xl-12 col-lg-12 col-md-12 ">
+                <div class="ux-footer">
+                   <button class="ux-button sm primary float-right" (click)="updateTheme()"> {{"SAVE" | translate }}</button>
+                </div>
+             </div>
+          </div>
+
+          </div> 
+        </div> 
+</aside>

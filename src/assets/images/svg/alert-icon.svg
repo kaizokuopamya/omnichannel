@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="Group_40224" data-name="Group 40224" transform="translate(14043 -12817)">
+    <g id="fingerprint" transform="translate(-14043 12817)" opacity="0">
+      <g id="Group_40181" data-name="Group 40181" transform="translate(0)">
+        <rect id="Rectangle_982" data-name="Rectangle 982" width="20" height="20" fill="#7e2323"/>
+        <rect id="Rectangle_983" data-name="Rectangle 983" width="16.667" height="16.667" transform="translate(1.667 1.667)" fill="#e88e8e"/>
+      </g>
+    </g>
+    <g id="warning" transform="translate(-14040.932 12819.95)">
+      <path id="Path_44177" data-name="Path 44177" d="M25.832,23.384,19.254,34.778a1.353,1.353,0,0,0,1.172,2.03H33.582a1.353,1.353,0,0,0,1.172-2.03L28.176,23.384a1.353,1.353,0,0,0-2.344,0Z" transform="translate(-19.072 -22.708)" fill="#f3b73f"/>
+      <g id="Group_40223" data-name="Group 40223" transform="translate(7.081 4.191)">
+        <rect id="Rectangle_18723" data-name="Rectangle 18723" width="1.702" height="5.186" rx="0.851" transform="translate(0)" fill="#fff7ed"/>
+        <circle id="Ellipse_2690" data-name="Ellipse 2690" cx="0.851" cy="0.851" r="0.851" transform="translate(0 6.385)" fill="#fff7ed"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,358 @@
+<div class="main bg-m">
+	<div class="right-main-column">
+		<div class="right-col-container pad-b full-width">
+			<!-- ======== body page content start from here ======== -->
+			<div class="body-page-container">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-12 p-0">
+							<app-breadcrumb routeName="REKYC">  </app-breadcrumb>
+						</div>
+					</div>
+					<!--.row -->
+					<div class="vspacer15 customize d-none d-md-block d-lg-block d-xl-block"></div>
+					<div class="row no-gutters">
+						<div class="col-12">
+							<div class="row1">
+								<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-9">
+					
+									<!-- Greencard2 Start here -->
+									
+								   <div class="greencard2">
+									   <div class="row1 hide-m">
+										   <div class="col-12">
+											   <h4>Re-KYC</h4>
+										   </div>
+									   </div>
+									  
+									   <div class="row1">
+										   <div class="col-sm-12 col-12 col-md-12">
+											   <div class="widget-box5 mb-3">
+												   <div class="bg-white1 pad-custom tax-wrapper py-2">
+													   <div class="row1">
+														   <div class="col-md-12 col-12">
+															   <div class="row1">
+																  <div class="col-12 col-md-12 col-lg-12">
+																	<div class="ux-input">
+																		   <label>Is there any change in your KYC information/KYC document ?</label>
+																	   </div>
+																   </div>
+																   <div class="col-12 col-md-12 col-lg-12 "> 
+																	   <ul class="radio-list5">
+																		   <li>
+																			   <div class="ux-selection">
+																				   <label class="ux-selection2">Yes
+																					   <input type="radio" checked="checked" value="yes" name="kyc-info" [(ngModel)]="selectedKycOption" (click)="kycAddressChange()">
+																					   <span class="checkmark"></span>
+																				   </label>
+																			   </div>
+																		   </li>
+																		   <li>
+																			   <div class="ux-selection">
+																				   <label class="ux-selection2">No
+																					   <input type="radio" value="no" name="kyc-info" [(ngModel)]="selectedKycOption" (click)="kycAddressChange()">
+																					   <span class="checkmark"></span>
+																				   </label>
+																			   </div>
+																		   </li>
+																		</ul>
+																   </div>
+																  <div class="col-12 col-md-12">
+																	   <div class="ux-input mt-0">
+																		   <p class="error-message"></p>  
+																		</div>
+																   </div>
+																 <div class="col-12 col-md-12 mt-4" *ngIf="selectedKycOption == 'no' ">
+																	<div class="ux-selection">
+																		<div class="ux-selection1 p-0">
+																			 <label>l hereby declare that the given information provided by me is correct and true to the best of my knowledge. I will be responsible for any legal actions arising out of any incorrect information being submitted in my documents
+																			   <input type="checkbox" name="" [(ngModel)]="isTermsEnabled"> 
+																				<span class="checkmark"></span>
+																				 </label> 
+																			  </div>
+																		 </div>
+																	  </div>
+																	   <div class="col-12 col-md-12">
+																		   <div class="ux-input mt-0">
+																			   <p class="error-message"></p>  
+																			</div>
+																		</div>
+																	  </div>
+																	</div>
+																  </div>
+															   </div>
+														   </div>
+													   </div>
+					
+													   <div class="vspacer40 d-none d-md-block d-lg-block d-xl-block"></div>
+													   <div class="vspacer20 d-none d-md-block d-lg-block d-xl-block"></div>
+					
+													   <div class="col-12 col-md-12">
+														   <ul class="bottom-footer1">
+															   <li>
+																   <div class="btn-div hide-m">
+																	   <button class="ux-button secondary sm-mob"(click)="cancel()">Cancel</button>
+																   </div>
+																   <div class="btn-div w100">
+																	   <button class="ux-button primary sm-mob otp-btn" [disabled]="selectedKycOption == 'no' && !isTermsEnabled" (click)="onProceed()">Proceed</button>
+																   </div>
+															   </li>
+														   </ul>
+													   </div>
+					
+												   </div>
+											   </div>
+					
+									   <!-- greencard2 -->
+							  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+
+
+<!-- OTP Popup Start -->
+    
+<div class="popup-bottom sm-popup otp-popup">
+	<div class="row1">
+	  <div class="col-10">
+		  <h4 class="text-left">OTP Verification</h4>
+	  </div>
+	  <div class="col-2">
+		<button class="ux-button-icon close-btn" (click)="closePopup('otp')" >
+			<img src="assets/images/svg/close-b.svg" alt="cross-icon" class="img-vsmall">
+		</button>
+	</div>
+	 </div>
+	<div class="row1">
+		<div class="col-12 col-md-12 col-lg-12 col-xl-12 m-auto">
+			<div class="mob-icon hide-m">
+				<img src="assets/images/icons/mobile.svg" alt="mobile-icon">
+			</div>
+			 <h6 class="text-center mar-tb">Please enter 6 digit OTP sent on Mobile Number & Email Id</h6>
+		</div>
+	</div>
+
+	<div class="row1">
+		<div class="col-12 col-md-10 col-lg-10 col-xl-10 m-auto">
+			<div class="row1">
+			  <div class="col-12 col-md-12 col-xl-12 col-lg-12">
+				<div class="ux-input password1 mb-1">
+					<label for="mobileOtp text-center">Mobile OTP</label>
+				 </div>
+			  </div>
+				<div class="col-12">
+					<form [formGroup]="otpSessionForm">
+						<div class="row4">
+							<div class="col-sm-2 col-2 col-md-2" *ngFor="let otpInput of otpFormInput | slice:0:6; index as i">
+								<div class="ux-input password1 mb-1">
+									<!-- <input id="otppassword1" type="password" maxlength="1" placeholder="●" onkeyup=" onKeyupEvent(1, event )" onfocus="onfocusEvent(1)"> -->
+									<input id="otppassword{{i}}" autocomplete="off" #OTPFormRow type="password" maxlength="1" placeholder="●"  (keyup)="onKeyUpEvent(i, $event, 'otp')" formControlName="{{otpInput}}" pattern="\d*" tabindex='{{i}}'>
+								</div>
+							</div>
+						</div>
+					</form>
+					<div class="row1">
+						<div class="col-12">
+							<div class="ux-input password1 mt-0 mb-0">
+								<p class="error-message"></p>
+							</div>
+							<div class="text-center">
+								<span class="errormsg">{{otpfailMsg}}</span>
+							</div>
+						</div>
+					</div>
+					<div class="row4">
+						<div class="col-6 col-md-6">
+							<div class="text-left">
+								<p class="text-left">
+									<span class="success-text" *ngIf="counter > 0" >{{counter| formatTimer }}</span>
+								</p>
+							</div>
+						</div>
+						<div class="col-6 col-md-6">
+							<div class="text-right">
+								<button class="ux-linkbutton default-underline mt3" (click)="resendOTP(2)" [ngClass]="counter > 0 ? 'mydisabled' : 'resendActive'" tabindex="-1">{{ 'RESEND' | translate }}</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row1 mt-2">
+		<div class="col-12 col-md-10 col-lg-10 col-xl-10 m-auto">
+			<div class="row1">
+				<!-- <div class="col-12 col-md-6 text-center hide-m">
+					<button class="ux-button secondary sm-mob close-btn">Cancel</button>
+				</div> -->
+				<div class="col-12 col-md-12 text-center">
+					<button class="ux-button primary md otp-submit" (click)="submitKycStatus()" [disabled]="!otpSessionForm.valid" >Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+ <!-- OTP Popup End-->
+
+
+ <!-- TPIN Popup Start -->
+
+<div class="popup-bottom sm-popup tpin-popup">
+	<div class="row1">
+	  <div class="col-10">
+		  <h4 class="text-left">TPIN </h4>
+	  </div>
+	  <div class="col-2">
+		<button class="ux-button-icon close-btn" (click)="closePopup('tpin')">
+			<img src="assets/images/svg/close-b.svg" alt="cross-icon" class="img-vsmall">
+		</button>
+	</div>
+	 </div>
+	<div class="row1">
+		<div class="col-12 col-md-12 col-lg-12 col-xl-12 m-auto">
+			<div class="mob-icon hide-m">
+				<img src="../assets/images/svg/tpin.svg" alt="tpin-icon">
+			</div>
+			 <h6 class="text-center mar-tb">Please enter 6 digit TPIN</h6>
+		</div>
+	</div>
+
+	<div class="row1">
+		<div class="col-12 col-md-10 col-lg-10 col-xl-10 m-auto">
+			<div class="row1">
+			  <div class="col-12 col-md-12 col-xl-12 col-lg-12">
+				<div class="ux-input password1 mb-1">
+					<label for="mobileOtp text-center">Mobile TPIN</label>
+				 </div>
+			  </div>
+			  <div class="col-12 col-md-12">
+				<div class="row4">
+					<div class="col-sm-2 col-2 col-md-2">
+						<div class="ux-input password1 mb-1">
+							<input id="eotppassword1" type="password" maxlength="1" placeholder="●" onkeyup="onKeyupEvent5(1, event)" onfocus="onfocusEvent5(1)">
+						</div>
+					</div>
+					<div class="col-sm-2 col-2 col-md-2">
+						<div class="ux-input password1 mb-1">
+							<input id="eotppassword2" type="password" maxlength="1" placeholder="●" onkeyup="onKeyupEvent5(2, event)" onfocus="onfocusEvent5(2)">
+						</div>
+					</div>
+					<div class="col-sm-2 col-2 col-md-2">
+						<div class="ux-input password1 mb-1">
+							<input id="eotppassword3" type="password" maxlength="1" placeholder="●" onkeyup="onKeyupEvent5(3, event)" onfocus="onfocusEvent5(3)">
+						</div>
+					</div>
+					<div class="col-sm-2 col-2 col-md-2">
+						<div class="ux-input password1 mb-1">
+							<input id="eotppassword4" type="password" maxlength="1" placeholder="●" onkeyup="onKeyupEvent5(4, event)" onfocus="onfocusEvent5(4)">
+						</div>
+					</div>
+					<div class="col-sm-2 col-2 col-md-2">
+						<div class="ux-input password1  mb-1">
+							<input id="eotppassword5" type="password" maxlength="1" placeholder="●" onkeyup="onKeyupEvent5(5, event)" onfocus="onfocusEvent5(5)">
+						</div>
+					</div>
+					<div class="col-sm-2 col-2 col-md-2">
+						<div class="ux-input password1 mb-1">
+							<input id="eotppassword6" type="password" maxlength="1" placeholder="●" onkeyup="onKeyupEvent5(6, event)" onfocus="onfocusEvent5(6)">
+						</div>
+					</div>
+				</div>
+				<div class="row1">
+					<div class="col-12">
+						<div class="ux-input password1 mt-0 mb-0">
+							<p class="error-message"></p>
+						</div>
+					</div>
+				</div>
+				<div class="row4">
+					<div class="col-6 col-md-6">
+						<!-- <div class="text-left">
+							<p class="text-left">
+								<span class="success-text">00.20</span>
+							</p>
+						</div> -->
+					</div>
+					<div class="col-6 col-md-6">
+						<div class="text-right">
+							<button class="ux-linkbutton default-underline mt-3">Forgot TPIN?</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row1 mt-2">
+		<div class="col-12 col-md-10 col-lg-10 col-xl-10 m-auto">
+			<div class="row1">
+				<!-- <div class="col-12 col-md-6 text-center hide-m">
+					<button class="ux-button secondary sm-mob close-btn">Cancel</button>
+				</div> -->
+				<div class="col-12 col-md-12 text-center">
+					<button class="ux-button primary md otp-submit">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- TPIN Popup End-->
+
+
+<!-- Success Popup Start -->
+
+<div class="popup-bottom sm-popup success-popup">
+	<div class="row1">
+		<div class="col-12">
+			<h4 class="text-center"> <img src="assets/images/svg/success-circle.svg" alt="success-icon"> Success</h4>
+		</div>
+	</div>
+	<div class="row1">
+		<div class="col-12">
+			<p>
+				Your Re-KYC has been updated successfully
+			</p>
+		</div>
+	</div>
+	<div class="row1 mt-2">
+		 <div class="col-12 text-center">
+			<button class="ux-button primary md ok-btn" (click)="closePopup('ReKycSuccess')" >OK</button>
+		</div>
+	</div>
+</div>
+
+  <!-- Success Popup End -->
+
+
+ <!-- Information Popup Start -->
+
+<div class="popup-bottom sm-popup information-popup">
+	<div class="row1">
+		<div class="col-12">
+			<h4 class="text-center"> <img src="assets/images/svg/information.svg" alt="information-icon" > Information</h4>
+		</div>
+	</div>
+	<div class="row1">
+		<div class="col-12">
+			<p>
+				Please visit your Home branch for KYC updation
+			</p>
+		</div>
+	</div>
+	<div class="row1 mt-2">
+		 <div class="col-12 text-center">
+			<button class="ux-button primary md ok-btn" (click)="closePopup('ReKycBranch')" >OK</button>
+		</div>
+	</div>
+</div>
+
+  <!-- Information Popup End -->

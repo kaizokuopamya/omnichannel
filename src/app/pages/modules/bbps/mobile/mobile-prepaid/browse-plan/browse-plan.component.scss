@@ -1,0 +1,31 @@
+.bill-reminder-list li .grid-info .full-info h6.sort{
+    position:relative;padding-right:15px; display:inline-block;
+    &.active{
+        &.up:after{
+            top:6px;
+            border-bottom:2px solid transparent; 
+            border-right: 2px solid transparent;
+            border-top: 2px solid green;
+            border-left: 2px solid green;
+        }
+        &:after{
+            border-bottom:2px solid green; 
+            border-right: 2px solid green;
+            border-top: 2px solid transparent;
+            border-left: 2px solid transparent;
+        }
+    }
+   
+    &:after{
+        content: '';
+        height:8px; width:8px; 
+        border-bottom:2px solid gray; 
+        border-right: 2px solid gray;
+        transform:rotate(45deg);
+        position: absolute;
+        right:0px; top:2px;
+        transform-origin:center;
+    }
+
+
+}

@@ -1,0 +1,71 @@
+<div class="row1">
+	<div class="col-sm-12 col-12 col-md-12">
+		<div class="white-box2 p-0 mar-t">
+			<!-- <div class="white-box2 mar-t pad-custom custom-bor"> -->
+			<div class="info-bottom pad-custom pad-custom-setting">
+				<div class="info-details">
+					<div class="row">
+						<h6> {{'CHEQUE_NUMBER' | translate}}</h6>
+						<!-- <h5>{{newinwardDetail.cheque_Number}}</h5> -->
+						<em *ngIf="newinwardDetail.cheque_Number.length==1"> {{'00000' + newinwardDetail.cheque_Number}}</em>
+						 <em *ngIf="newinwardDetail.cheque_Number.length==2"> {{'0000' + newinwardDetail.cheque_Number}}</em>
+						<em *ngIf="newinwardDetail.cheque_Number.length==3"> {{'000' + newinwardDetail.cheque_Number}}</em>
+						<em *ngIf="newinwardDetail.cheque_Number.length==4"> {{'00' + newinwardDetail.cheque_Number}}</em> 
+						<em *ngIf="newinwardDetail.cheque_Number.length==5"> {{'0' + newinwardDetail.cheque_Number}}</em> 
+						<em *ngIf="newinwardDetail.cheque_Number.length==6"> {{newinwardDetail.cheque_Number}}</em> 
+						</div>
+				</div>
+				<div class="info-details">
+					<div class="row">
+						<h6> {{'CHEQUE_NAME' | translate}}</h6>
+						<h5>{{newinwardDetail.name}}</h5> </div>
+				</div>
+				<div class="info-details">
+					<div class="row">
+						<h6> {{'AMOUNT' | translate}}</h6>
+						<h5>{{newinwardDetail.amount | customcurrency: "symbol"}}</h5> </div>
+				</div>
+				<div class="info-details">
+					<div class="row">
+						<h6> {{'ISSUE_DATE' | translate}}</h6>
+						<h5>{{newinwardDetail.dateOfIssue}}</h5> 
+						<h5 *ngIf="newinwardDetail.dateOfIssue!=''">{{newinwardDetail.dateOfIssue}}</h5>
+						<h5 *ngIf="newinwardDetail.dateOfIssue==''">xx-xx-xxxx</h5>
+					</div>
+				</div>
+				<div class="info-details">
+					<div class="row">
+						<h6> {{'PASSING_REJECTION_DATE' | translate}}</h6>
+						<!-- <h5>{{newinwardDetail.dateOfRejection}}</h5> -->
+						<h5 *ngIf="newinwardDetail.inquiryStatus=='PASSED'">{{newinwardDetail.dateOfPassing}}</h5>
+						<h5 *ngIf="newinwardDetail.inquiryStatus=='REJECTED'">{{newinwardDetail.dateOfRejection}}</h5> </div>
+				</div>
+				<div class="info-details">
+					<div class="row">
+						<h6> {{'CHEQUE_BOOK_STATUS' | translate}}</h6>
+						<h5>{{newinwardDetail.inquiryStatus}}</h5> </div>
+				</div>
+				<div class="info-details">
+					<div class="row">
+						<h6> {{'REASON' | translate}}</h6>
+						<h5 *ngIf="newinwardDetail.inquiryStatus!='PASSED'">{{newinwardDetail.reason}}</h5>
+						<h5 *ngIf="newinwardDetail.inquiryStatus=='PASSED'">Not Applicable</h5> </div>
+				</div>
+				<div class="info-details" style="display:none">
+					<div class="row">
+						<h6> {{'OPENING_BALANCE' | translate}}</h6>
+						<h5>{{newinwardDetail.balance | customcurrency: "symbol"}}</h5> </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-12 col-md-12 d-none d-sm-block">
+		<ul class="bottom-footer1">
+			<li>
+				<div class="btn-div">
+					<button class="ux-button secondary sm-mob" (click)="cancel()"> {{'BACK' | translate}}</button>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

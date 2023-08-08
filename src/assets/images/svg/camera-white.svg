@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <g id="fingerprint" transform="translate(643 1998)">
+    <g id="base" transform="translate(-643 -1998)" opacity="0">
+      <rect id="Rectangle_982" data-name="Rectangle 982" width="16" height="16" fill="#fff"/>
+      <rect id="Rectangle_983" data-name="Rectangle 983" width="13.333" height="13.333" transform="translate(1.333 1.333)" fill="#fff"/>
+    </g>
+    <g id="camera" transform="translate(-640.98 -1995.98)">
+      <path id="Path_45863" data-name="Path 45863" d="M9.468,1.993H9.215L8.127.582A1.506,1.506,0,0,0,6.943,0H5.017A1.506,1.506,0,0,0,3.833.582L2.745,1.993H2.492A2.5,2.5,0,0,0,0,4.485V9.468A2.5,2.5,0,0,0,2.492,11.96H9.468A2.5,2.5,0,0,0,11.96,9.468V4.485A2.5,2.5,0,0,0,9.468,1.993Zm-4.846-.8A.5.5,0,0,1,5.017,1H6.943a.5.5,0,0,1,.395.194l.619.8H4Zm6.341,8.277a1.5,1.5,0,0,1-1.495,1.495H2.492A1.5,1.5,0,0,1,1,9.468V4.485A1.5,1.5,0,0,1,2.492,2.99H9.468a1.5,1.5,0,0,1,1.495,1.495Z" transform="translate(0 0)" fill="#fff"/>
+      <path id="Path_45864" data-name="Path 45864" d="M8.99,8a2.99,2.99,0,1,0,2.99,2.99A2.99,2.99,0,0,0,8.99,8Zm0,4.983a1.993,1.993,0,1,1,1.993-1.993A1.993,1.993,0,0,1,8.99,12.983Z" transform="translate(-3.01 -4.013)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

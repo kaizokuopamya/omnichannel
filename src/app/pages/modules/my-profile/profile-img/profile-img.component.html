@@ -1,0 +1,67 @@
+<div class="row1">
+    <div class="col-sm-12 col-12 col-md-12">
+        <div class="widget-box5 mb-3">
+            <div class="bg-white1 pad-custom mtc">
+                <div class="row1">
+                    <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-5">
+
+                        <div class="myprofile-info"
+                            (click)="platform == 'web'? fileUpload.click() : selectImage()">
+                            <div class="profile-circle">
+                                <h4 *ngIf="dataService.profileImage == '' && custName">
+                                    {{custName | firstLastChar | uppercase }}
+                                </h4>
+                                <img *ngIf="dataService.profileImage != '' "
+                                    [src]="dataService.profileImage"
+                                    onError="this.onerror=null;this.src='./assets/images/svg/user-profile-w.svg';"
+                                    alt="">
+                                <!-- <img src="../assets/images/svg/profile-icon.svg" alt=""> -->
+                                <!-- <img src="../assets/images/icons/user8.png" alt="user-img">  -->
+                                <a class="browse-photo">
+                                    <img src="assets/images/svg/camera.svg"
+                                        alt="">
+                                    <input #fileUpload type="file"
+                                        (click)="fileUpload.value = null"
+                                        (change)="uploadImage($event)"
+                                        style="display:none" accept="image/*">
+                                </a>
+
+                            </div>
+                            <h3 *ngIf="custName">{{custName | titlecase}}</h3>
+                        <!---	<em>Last login on {{lastLogin}}</em>-->
+                        <!-- <em> {{'LAST_LOGIN' | translate}} {{lastLogin}}</em> -->
+                        <em> {{'LAST_EDITED_ON' | translate}} {{lastLogin}}</em>
+                        </div>
+                    </div>
+                    <div
+                        class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-7 pr-1 pl-1">
+                        <ul class="profile-link2">
+                            <li *ngIf="dataService.profileTabSelection !=  'password'">
+                                <a
+                                    (click)="goToPage('securityUpdate', 'password')">
+                                    <img src="assets/images/svg/change-mpin.svg"
+                                        alt="change-password-icon">  {{'CHANGE_PASSWORD' | translate}} </a>
+                            </li>
+<!-- <li> -->
+                            <li  *ngIf="platform != 'web'">
+                                <a (click)="goToPage('securityUpdate', 'mpin')">
+                                    <img src="assets/images/svg/change-mpin.svg"
+                                        alt="change-mpin-icon"> {{'CHANGE_MPIN' | translate}} </a>
+                            </li>
+                            <li  *ngIf="platform == 'web' && dataService.profileTabSelection !=  'tpin'">
+                                <a (click)="goToPage('securityUpdate', 'tpin')">
+                                    <img src="assets/images/svg/change-mpin.svg"
+                                        alt="change-tpin-icon">  {{'CHANGE_TPIN' | translate}}</a>
+                            </li>
+                            <li>
+                                <a (click)="goToResetTpin('resetTpin')">
+                                    <img src="assets/images/svg/change-mpin.svg"
+                                        alt="change-tpin-icon">  {{'RESET_TPIN' | translate}} </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

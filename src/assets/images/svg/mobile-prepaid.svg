@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="mobile-prepaid" transform="translate(14043 -12817)">
+    <g id="fingerprint" transform="translate(-13400 14815)" opacity="0">
+      <g id="Group_40181" data-name="Group 40181">
+        <rect id="Rectangle_982" data-name="Rectangle 982" width="24" height="24" transform="translate(-643 -1998)" fill="#148AFF"/>
+        <rect id="Rectangle_983" data-name="Rectangle 983" width="20" height="20" transform="translate(-641 -1996)" fill="#148AFF"/>
+      </g>
+    </g>
+    <path id="Subtraction_49" data-name="Subtraction 49" d="M-171.265-121h-8.75a1.767,1.767,0,0,1-1.765-1.765v-16.25a1.767,1.767,0,0,1,1.765-1.765h8.75a1.767,1.767,0,0,1,1.765,1.765v16.25A1.767,1.767,0,0,1-171.265-121Zm-8.75-18.75a.736.736,0,0,0-.735.734v16.25a.736.736,0,0,0,.735.735h8.75a.736.736,0,0,0,.735-.735v-16.25a.736.736,0,0,0-.735-.734h-1.385v1.048a.515.515,0,0,1-.515.515h-4.95a.515.515,0,0,1-.515-.515v-1.048Zm2.415,0h0v.532h3.92v-.532Z" transform="translate(-13855.36 12959.89)" fill="#148AFF"/>
+  </g>
+</svg>

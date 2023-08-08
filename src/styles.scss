@@ -1,0 +1,80 @@
+/* You can add global styles to this file, and also import other style files */
+
+// ###################################### BBPS ############################################
+.widget-box5.min-height{
+    min-height: 265px;
+}
+
+.board-display{
+    padding-left: 34px !important;
+    display:block;
+}
+
+.custom-dropdown-dummy {
+
+    position: relative;
+    background: url(assets/images/icons/arrow-down-r.png) no-repeat center right;
+    background-position: bottom 11px right 6px; 
+    background-size: 15px;
+    z-index: 9999;
+   
+    .biller-logo-wrap{
+        width: 25px;
+        display: inline-block;
+        position: absolute;
+        top: 6PX;
+        img{width:100%;}
+    }
+    .billerselect{
+        // padding-left: 28px!important;
+        padding-right: 25px!important;
+    }
+    #board-name{
+        position: absolute; top:100%; left:0; border-radius: 0 0 10px 10px;z-index: 9999;
+        border: 1px solid gray; width: 100%;background-color:#ffffff; max-height: 250px;
+        overflow: auto;
+        
+        li{
+            padding:5px;position: relative; cursor:pointer; padding-right:60px;    border-bottom: 1px solid #e0e0e0;
+            &:hover{
+                background-color: rgba(0, 124, 61, 0.2);
+            }
+            img{
+                &.boardlogo{
+                    position: absolute;left:4px; top:4px;width: 24px;    object-fit: contain;
+                    height: 24px;
+                }
+                &.bbpslogo {
+                    position: absolute;right:4px; top:4px;width: 50px;    object-fit: contain;
+                   
+                }
+            }
+        }
+    }
+   > span.dispayblock{
+       img{width:24px;   object-fit: contain;
+        height: 24px;}
+        display:block;
+      
+        border: none;
+        word-wrap: normal;
+        white-space: nowrap;
+        overflow: hidden;
+        border-radius: 0px;
+        box-shadow: none;
+        margin-bottom: 0px;
+        color: rgba(0, 0, 0, 0.6);
+        display: block;
+        width: 100%;
+        font-size: 1rem;
+        height: 39px;
+        padding: 8px 35px 5px 0px;
+    }
+}
+
+#errorMessage{
+    text-align: left;
+    color: #c51523;
+    display: block;
+}
+

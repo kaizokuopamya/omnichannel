@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="fingerprint" transform="translate(643 1998)">
+    <g id="base" transform="translate(-643 -1998)" opacity="0">
+      <rect id="Rectangle_982" data-name="Rectangle 982" width="20" height="20" fill="#339ad5"/>
+      <rect id="Rectangle_983" data-name="Rectangle 983" width="16.667" height="16.667" transform="translate(1.667 1.667)" fill="#339ad5"/>
+    </g>
+    <g id="Group_42343" data-name="Group 42343" transform="translate(-639.899 -1996.333)">
+      <g id="_22_Icons_Line_Edit" data-name="22) Icons/Line/Edit" transform="translate(0 0)">
+        <path id="Shape" d="M12.774,16.667H.855A.836.836,0,1,1,.855,15h11.92a.836.836,0,1,1,0,1.672ZM.851,13.324a.854.854,0,0,1-.6-.243A.821.821,0,0,1,0,12.412L.37,8.928A1.669,1.669,0,0,1,.855,7.916L8.517.394a1.728,1.728,0,0,1,2.265.058l2.333,2.29a1.584,1.584,0,0,1,.059,2.265L5.512,12.529a1.718,1.718,0,0,1-1.03.476l-3.55.318H.851ZM6.814,4.4,2.021,9.069l-.23,2.5,2.555-.234,4.768-4.68ZM9.6,1.623,7.938,3.294l2.282,2.24,1.7-1.629Z" transform="translate(0)" fill="#339ad5"/>
+      </g>
+    </g>
+  </g>
+</svg>

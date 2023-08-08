@@ -1,0 +1,73 @@
+<div class=" prelogin-page">
+    <div class=" registration-steps">
+        <div class="row1">
+            <div class="col-12">
+                <div class="inner-header">
+                    <div class="registration-container">
+                        <a class="prev-tab" (click)="backToPrevPage()"><img src="assets/images/svg/left-arrow.svg">Back to Login</a>
+                        <h4>{{'RETAIL_ACCOUNT_REGISTRATION' |  translate }}</h4>
+                        <a class="close-registration" ><img (click)="mobPrevclick( )" src="assets/images/svg/close-w.svg"></a>
+                    </div>
+                </div>
+
+
+                <div class="registrationsteps-block registration-container clearfix">
+                    <div class="steps-block">
+                        <span class="close"><img src="assets/images/svg/close-b.svg"></span>
+                        <ul>
+                            <li *ngFor="let step of registrationsteps; index as i"
+                                [ngClass]="{'active':step.stepActive,'completed':step.stepStatus === 'completed' , 'inprogress':step.stepStatus === 'inprogress'}">
+                                <input type="radio" [value]="step.tabName" [(ngModel)]="step.tabName" name="steps"
+                                    [checked]="step.stepActive">
+                                    <!-- (change)="onstepChange(step.tabName , step.stepIndex )" -->
+                                <span class="step-number">{{step.stepIndex}}</span><b class="step-name">
+                                    {{step.stepname}}</b>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-block">
+                        <div *ngIf="activeTab =='step1'">
+                            <app-registration-cust-details (nextEvent)="nextstep($event)" (otpgenerate)="openOtp($event)" (termsConditionEvent)="termsConditionPopup($event)">
+                            </app-registration-cust-details>
+                        </div>
+                         <div *ngIf="activeTab =='step2'">
+                            <app-registration-validate-reg-details (nextEvent2)="nextstep($event)" 
+                                (prevEvent)="prevstep($event)"></app-registration-validate-reg-details>
+                        </div> 
+                        <div *ngIf="activeTab =='step3'">
+
+                            <app-registration-username (nextEvent2)="nextstep($event)" (prevEvent)="prevstep($event)">
+                            </app-registration-username>
+                        </div>
+                        
+                        <!-- <div *ngIf="activeTab =='step4'">
+
+                            <app-registration-create-upi (nextEvent2)="nextstep($event)" (prevEvent)="prevstep($event)">
+                            </app-registration-create-upi>
+                        </div> -->
+                        <div *ngIf="activeTab =='step4'">
+                            <app-registration-mpin (nextEvent2)="nextstep($event)" (prevEvent)="prevstep($event)">
+                            </app-registration-mpin>
+
+                        </div>
+                        <div *ngIf="activeTab =='step5' ">
+                            <app-registration-tpin (nextEvent2)="nextstep($event)" (prevEvent)="prevstep($event)">
+                            </app-registration-tpin>
+                        </div> 
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<ng-container *ngIf="otpstart">
+	<app-common-otpPopup [otpModel]="OTPInputMessage" (otpPopOutput) ="GetOtpPopData($event)" ></app-common-otpPopup>
+</ng-container>
+
+<app-terms-conditions [termsConditionType]="termsCondition"></app-terms-conditions>

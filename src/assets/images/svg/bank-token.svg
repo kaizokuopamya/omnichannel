@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="bank-token" transform="translate(643 1998)">
+    <g id="base" opacity="0">
+      <rect id="Rectangle_982" data-name="Rectangle 982" width="24" height="24" transform="translate(-643 -1998)" fill="#148AFF"/>
+      <rect id="Rectangle_983" data-name="Rectangle 983" width="20" height="20" transform="translate(-641 -1996)" fill="#148AFF"/>
+    </g>
+    <g id="chip" transform="translate(-640.849 -1995.849)">
+      <g id="Group_36565" data-name="Group 36565" transform="translate(0 0)">
+        <g id="Group_36564" data-name="Group 36564">
+          <path id="Union_34" data-name="Union 34" d="M390.763-52.167A9.883,9.883,0,0,1,387.85-59.2a9.94,9.94,0,0,1,1.4-5.086,10,10,0,0,1,3.661-3.579l.086-.049.384.679-.086.049a9.139,9.139,0,0,0-1.693,1.234l.977.977a7.776,7.776,0,0,1,4.832-2.005v-1.38a9.1,9.1,0,0,0-3.158.7l-.093.039-.3-.719.093-.039a9.886,9.886,0,0,1,3.851-.773,9.884,9.884,0,0,1,7.035,2.914,9.884,9.884,0,0,1,2.914,7.034,9.884,9.884,0,0,1-2.914,7.035,9.884,9.884,0,0,1-7.035,2.914A9.884,9.884,0,0,1,390.763-52.167Zm10.049.152-.092.037a7.747,7.747,0,0,1-2.532.557v1.379A9.151,9.151,0,0,0,404-52.452l-.972-.972a7.863,7.863,0,0,1-1.452,1.039l-.087.048-.379-.682.088-.049a7.019,7.019,0,0,0,3.613-6.134,7.018,7.018,0,0,0-7.01-7.01,7.018,7.018,0,0,0-7.01,7.01,7.018,7.018,0,0,0,7.01,7.01,6.968,6.968,0,0,0,2.629-.509l.093-.037Zm-9.131-.364a9.159,9.159,0,0,0,5.728,2.336v-1.38a7.793,7.793,0,0,1-4.752-1.932Zm-.558-.545.974-.974a7.775,7.775,0,0,1-2.079-4.914h-1.379A9.141,9.141,0,0,0,391.123-52.924Zm12.453-1.052.972.972a9.151,9.151,0,0,0,2.41-5.808h-1.38A7.8,7.8,0,0,1,403.576-53.976Zm.07-10.368a7.793,7.793,0,0,1,1.932,4.752h1.38a9.159,9.159,0,0,0-2.336-5.727Zm-15.008,4.752h1.38a7.785,7.785,0,0,1,2.005-4.833l-.977-.977A9.18,9.18,0,0,0,388.638-59.592Zm9.551-7.39A7.777,7.777,0,0,1,403.1-64.9l.975-.974a9.145,9.145,0,0,0-5.888-2.484Z" transform="translate(-387.949 69.051)" fill="#148AFF"/>
+          <path id="Union_40" data-name="Union 40" d="M387.85-68.37v-.78h.816v.78Z" transform="translate(-378.408 72.751)" fill="#148AFF"/>
+          <path id="Union_36" data-name="Union 36" d="M387.85-68.37v-.78h.816v.78Z" transform="translate(-378.408 84.468)" fill="#148AFF"/>
+          <path id="Union_38" data-name="Union 38" d="M387.85-68.37v-.78h.816v.78Z" transform="translate(-384.267 78.61)" fill="#148AFF"/>
+          <path id="Union_39" data-name="Union 39" d="M387.85-68.37v-.78h.816v.78Z" transform="translate(-382.725 74.293)" fill="#148AFF"/>
+          <path id="Union_41" data-name="Union 41" d="M387.85-68.37v-.78h.816v.78Z" transform="translate(-373.783 74.601)" fill="#148AFF"/>
+          <rect id="Rectangle_17850" data-name="Rectangle 17850" width="0.617" height="0.581" transform="translate(14.166 13.567)" fill="#148AFF"/>
+          <path id="Rectangle_17850_-_Outline" data-name="Rectangle 17850 - Outline" d="M-.1-.1H.717V.681H-.1ZM.517.1H.1V.481H.517Z" transform="translate(14.166 13.567)" fill="#148AFF"/>
+          <path id="Union_37" data-name="Union 37" d="M387.85-68.37v-.78h.816v.78Z" transform="translate(-383.034 82.618)" fill="#148AFF"/>
+          <path id="Union_35" data-name="Union 35" d="M387.85-68.37v-.78h.816v.78Z" transform="translate(-372.55 78.61)" fill="#148AFF"/>
+          <path id="Union_42" data-name="Union 42" d="M387.85-64.8l3.263-4.351,3.263,4.351-3.263,4.351Zm.976,0,2.287,3.05L393.4-64.8l-2.288-3.05Z" transform="translate(-381.263 74.649)" fill="#148AFF"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
